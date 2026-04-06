@@ -1,0 +1,13 @@
+# OS and editor files
+.DS_Store
+Thumbs.db
+*.tmp
+*.log
+
+# IDE files
+.idea/
+.vs/
+
+# Generated PlantUML outputs
+.codex/steering/diagrams/generated/
+.codex/specs/**/diagrams/generated/
