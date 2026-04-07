@@ -39,8 +39,19 @@ Prefer EARS-style requirements where practical:
 
 `WHEN <condition> THE SYSTEM SHALL <behavior>`
 
+Keep requirements specific enough to be testable.
+Split separate behaviors into separate requirement statements.
+
+## File roles
+
+- `requirements.md` describes what must be true.
+- `design.md` explains how the requirements will be satisfied, including architecture, interactions, and tradeoffs.
+- `tasks.md` breaks the work into concrete implementation steps that can be executed and verified.
+
 ## Scope guidance
 
 - A feature spec is a change unit, not a service or component.
 - A spec may affect one component, many components, or only project structure.
 - Use feature specs for non-trivial work with multiple tasks and meaningful design decisions.
+- For trivial fixes or very small changes, skip feature spec creation unless structured planning is clearly useful.
+- Reference `.design/c4/` when a spec changes the enduring system, container, component, or code-level architecture.

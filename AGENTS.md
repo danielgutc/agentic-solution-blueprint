@@ -2,9 +2,11 @@
 
 ## Use project context
 
-- Use `.design/steering/product.md` for product direction.
-- Use `.design/steering/tech.md` for technology choices and constraints.
-- Use `.design/steering/structure.md` for repository layout and workflow rules.
+- Use `.design/foundation/product.md` for product direction.
+- Use `.design/foundation/tech.md` for technology choices and constraints.
+- Use `.design/foundation/structure.md` for repository layout and workflow rules.
+- Use `.design/c4/` as the canonical architecture area.
+- Keep C4 components nested under their owning container.
 - Treat feature specs as change units, not as services or components.
 
 ## Follow file-type instructions
@@ -29,4 +31,4 @@
 
 - Keep project design artifacts in `.design/`.
 - Keep Codex-specific memory and skills in `.codex/`.
-- Update relevant steering, spec, or instruction files when structural conventions change.
+- Update relevant foundation, architecture, spec, or instruction files when structural conventions change.
