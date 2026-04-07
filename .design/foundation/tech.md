@@ -4,8 +4,18 @@
 
 Use this file to describe the selected technology stack, tooling, and technical constraints for the current project.
 
-## Guidance
+## Recommended sections
 
-- Record language and framework choices.
-- Record build, test, deployment, and runtime constraints.
-- Record important technical decisions and their rationale.
+- Languages and runtimes
+- Frameworks and platforms
+- Build and package tools
+- Testing approach
+- Deployment model
+- Constraints
+- Key technical decisions
+
+## Authoring guidance
+
+- Record decisions and rationale, not just chosen tools.
+- Update this file when technical direction changes in a way that affects future work.
+- Keep detailed implementation notes in specs or code, not here.

@@ -10,6 +10,12 @@
 - `tools/` contains repository-local scripts and developer automation.
 - `tests/` contains cross-cutting integration and end-to-end validation.
 
+## Blueprint intent
+
+- Keep this repository business-agnostic so it can seed different kinds of projects.
+- Treat the current C4 files as examples of the structure, not as constraints on the final system.
+- Add, rename, or remove containers and components as the actual project architecture becomes clear.
+
 ## C4 Layout
 
 - Keep one system description under `.design/c4/system/`.

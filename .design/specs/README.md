@@ -55,3 +55,9 @@ Split separate behaviors into separate requirement statements.
 - Use feature specs for non-trivial work with multiple tasks and meaningful design decisions.
 - For trivial fixes or very small changes, skip feature spec creation unless structured planning is clearly useful.
 - Reference `.design/c4/` when a spec changes the enduring system, container, component, or code-level architecture.
+
+## Blueprint usage
+
+- Treat the files in this folder as reusable examples of the spec workflow.
+- Copy the `repository-setup` shape when creating a new feature spec.
+- Keep project-specific detail inside the feature folder rather than expanding this README.
