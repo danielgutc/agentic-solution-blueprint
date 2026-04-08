@@ -15,8 +15,8 @@ This folder contains the canonical architecture description for the project crea
 - Store one or more PlantUML diagrams beside the related Markdown file.
 - Keep components nested under their owning container.
 
-## Example structure
+## Template structure
 
-- `client/` and `server/` are example containers only.
-- Replace them, rename them, or add more containers to fit the real project.
-- Use the sample component folders as formatting examples for future components.
+- Add container folders under `containers/` only when the project architecture defines them.
+- Add component folders only under an existing container.
+- Keep `system/` as the entry point for the whole-system view.
