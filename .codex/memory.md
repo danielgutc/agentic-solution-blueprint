@@ -6,7 +6,9 @@ Current stable notes:
 
 - This repository is a reusable, business-agnostic project blueprint.
 - The canonical design layout is `design/foundation/`, `design/c4/`, and `design/instructions/`.
+- `design/foundation/` is centered on `product.md`, `requirements.md`, `tech.md`, `design.md`, and `traceability-matrix.md`.
 - In the C4 structure, components live under their owning container.
 - `AGENTS.md` is the single instruction entry point for Codex in this repository.
 - `design/instructions/markdown.md` is markdown-focused only.
-- The reusable baselines are captured on branch `blueprint` and tags `blueprint-v1` and `blueprint_V2`.
+- Real built components belong under `implementation/`.
+- The reusable baselines are captured on branch `blueprint` and tags `blueprint-v1`, `blueprint_V2`, and `blueprint_V3`.
