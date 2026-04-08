@@ -7,7 +7,7 @@ Use PlantUML as the source format for architecture and design diagrams in this r
 ## Rules
 
 - Commit the `.puml` source file rather than generated image output.
-- Keep diagrams close to the steering or spec they support.
+- Keep diagrams close to the design artifact or architecture area they support.
 - Prefer simple, readable diagrams over overly detailed ones.
 - Make diagram titles specific to the decision or structure being described.
 
@@ -19,5 +19,5 @@ Use PlantUML as the source format for architecture and design diagrams in this r
 
 ## Recommended Usage
 
-- Use steering diagrams for long-lived architectural views.
-- Use spec-local diagrams for feature-specific flows, interactions, and boundaries.
+- Use `design/c4/` for long-lived architectural views.
+- Use diagrams beside the relevant enduring design artifact when they clarify flows, interactions, or boundaries.

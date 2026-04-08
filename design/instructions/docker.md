@@ -21,4 +21,4 @@ Use Docker files to provide reproducible local development and automation enviro
 ## Validation
 
 - Build definitions should be easy to run locally.
-- Changes to Docker files should be reflected in the relevant spec or task when they affect developer workflow.
+- Changes to Docker files should be reflected in the relevant foundation, design, or implementation artifacts when they affect developer workflow.

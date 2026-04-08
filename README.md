@@ -2,15 +2,15 @@
 
 This repository is a reusable blueprint for starting new software projects with:
 
-- shared project guidance under `.design/foundation/`
-- enduring architecture under `.design/c4/`
-- implementation instructions under `.design/instructions/`
-- change planning under `.design/specs/`
+- shared project guidance under `design/foundation/`
+- enduring architecture under `design/c4/`
+- implementation instructions under `design/instructions/`
+- runtime components under `implementation/`
 
 ## Top-level layout
 
 - `.codex/` contains Codex-specific context only.
-- `.design/` contains the blueprint.
+- `design/` contains the blueprint.
 - `implementation/` contains the real application components once implementation begins.
 - `tools/` contains repo-local utilities and automation scripts.
 - `tests/` contains cross-component integration and end-to-end tests.
@@ -18,11 +18,13 @@ This repository is a reusable blueprint for starting new software projects with:
 ## Design layout
 
 ```text
-.design/
+design/
   foundation/
     product.md
+    requirements.md
     tech.md
-    structure.md
+    design.md
+    traceability-matrix.md
   c4/
     README.md
     system/
@@ -39,12 +41,6 @@ This repository is a reusable blueprint for starting new software projects with:
             code.md
             code-diagrams/
   instructions/
-  specs/
-    <feature>/
-      requirements.md
-      design.md
-      tasks.md
-      diagrams/
 implementation/
   <component>/
 ```
