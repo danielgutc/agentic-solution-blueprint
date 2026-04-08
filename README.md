@@ -1,17 +1,19 @@
 # Project Blueprint
 
-This repository is a reusable blueprint for starting new software projects with:
+This repository is a reusable blueprint for starting new software projects.
 
-- shared project guidance under `design/foundation/`
-- enduring architecture under `design/c4/`
-- implementation instructions under `design/instructions/`
-- runtime components under `implementation/`
+The repository is organized around:
+
+- `design/foundation/` for enduring product, requirements, technical, design, and traceability documents
+- `design/c4/` for enduring architecture documentation
+- `design/instructions/` for artifact-specific guidance
+- `implementation/` for real application components
 
 ## Top-level layout
 
 - `.codex/` contains Codex-specific context only.
 - `design/` contains the blueprint.
-- `implementation/` contains the real application components once implementation begins.
+- `implementation/` contains the real application components.
 - `tools/` contains repo-local utilities and automation scripts.
 - `tests/` contains cross-component integration and end-to-end tests.
 
