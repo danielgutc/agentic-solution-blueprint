@@ -1,29 +1,21 @@
 # Containers
 
-`AGENTS.md` is the authoritative source for operational instructions. This file is a descriptive reference for the container subtree.
+This folder contains the container-level subtree of the C4 architecture.
 
-Create one folder per real container when the project architecture defines it.
-
-Each container folder should contain:
+## Container subtree
 
 - `container.md`
 - `diagrams/`
 - `components/`
 
-Each component folder should contain:
+## Component subtree
 
 - `component.md`
 - `diagrams/`
 - `code.md`
 - `code-diagrams/`
 
-Use:
-
-- `container.md` for container purpose, responsibilities, interfaces, dependencies, and contained components
-- `component.md` for component purpose, responsibilities, interfaces, dependencies, and constraints
-- `code.md` for the internal code structure of the component
-
-Example shape:
+## Folder shape
 
 ```text
 containers/

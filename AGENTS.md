@@ -6,20 +6,16 @@
 - Use this file as the primary source of behavioral instructions.
 - Treat README files as descriptive references unless this file explicitly tells you to follow them operationally.
 
-## Source of truth
+## Operating model
 
-- Use `design/foundation/product.md` for business and product direction.
-- Use `design/foundation/requirements.md` for enduring requirements.
-- Use `design/foundation/tech.md` for technical direction and constraints.
-- Use `design/foundation/design.md` for enduring design decisions.
-- Use `design/foundation/traceability-matrix.md` as the requirements-to-components traceability matrix.
-- Use `design/c4/` as the canonical architecture area.
-- Use `implementation/` for real built components only after the workflow reaches implementation.
-- Keep Codex-only support files under `.codex/`.
+- Drive the project through enduring artifacts in `design/foundation/` and `design/c4/`.
+- Keep implementation artifacts in `implementation/`.
+- Keep Codex-only support files in `.codex/`.
+- Do not create concrete implementation components or C4 containers/components until the project architecture justifies them.
 
-## Repository layout
+## Repository model
 
-- Expect the top-level repository layout to be:
+### Top-level layout
 
 ```text
 .codex/
@@ -29,7 +25,7 @@ tools/
 tests/
 ```
 
-- Expect the design layout to be:
+### Design layout
 
 ```text
 design/
@@ -58,24 +54,110 @@ design/
   instructions/
 ```
 
-- Keep C4 components nested under their owning container.
-- Keep one system description under `design/c4/system/`.
-- Add container folders under `design/c4/containers/` only when the project architecture defines them.
-- Add component folders only under an existing container.
-- Keep real runtime components under `implementation/<component>/`.
-- Do not create concrete implementation components, C4 containers, or C4 components preemptively in the blueprint.
+## Workflow
 
-## What to read
+### Rules
+
+- Clarify whether the next conversation step should focus on product, requirements, technical direction, design, traceability, C4 architecture, or implementation readiness.
+- If the correct next step is not explicit, ask the user which one to tackle and give a short recommendation.
+- Do not jump ahead to implementation before the relevant requirements and design are sufficiently defined.
+- Do not make or update enduring C4 architecture artifacts until `design/foundation/design.md` has been reviewed and approved for the relevant change.
+
+### Model 1: Requirements-first
+
+- Recommend this model when desired behavior is clearer than the implementation approach.
+- Follow this progression:
+
+```text
+product -> requirements -> tech -> design -> approval -> c4 -> traceability -> implementation
+```
+
+- Use this model when the project direction is driven primarily by business behavior, user outcomes, or functional expectations.
+
+### Model 2: Design-first
+
+- Recommend this model when technical constraints, architecture, feasibility, or existing design direction lead the work.
+- Follow this progression:
+
+```text
+product -> tech -> design -> approval -> requirements -> c4 -> traceability -> implementation
+```
+
+- Use this model when the project direction is driven primarily by runtime constraints, technical risk, integration boundaries, or architectural feasibility.
+
+### Steps
+
+#### Product
+
+- Use `design/foundation/product.md` to capture business context, target users or actors, goals, non-goals, and assumptions.
+- Establish the project problem and intended outcomes before defining enduring requirements or architecture.
+- Output from this step should provide enough context for the next selected workflow step.
+
+#### Requirements
+
+- Use `design/foundation/requirements.md` to define enduring functional and non-functional requirements, constraints, and assumptions.
+- Prefer structured, testable statements.
+- Use EARS where practical for functional requirements.
+- Use stable requirement IDs that can be referenced from the traceability matrix.
+- In the requirements-first model, derive requirements primarily from `product.md`.
+- In the design-first model, derive requirements from `product.md` and the approved `design.md`.
+
+#### Tech
+
+- Use `design/foundation/tech.md` to document technical direction, chosen platforms, runtime constraints, and key technical decisions.
+- Keep this artifact focused on enduring technical direction rather than task-level implementation detail.
+- In the requirements-first model, use approved product direction and current requirements as primary inputs.
+- In the design-first model, this step normally comes before design and helps frame the design constraints and choices.
+
+#### Design
+
+- Use `design/foundation/design.md` to document enduring design decisions, tradeoffs, and architecture explanation.
+- Keep this file aligned with the technical direction and the chosen workflow model.
+- In the requirements-first model, use `product.md`, `requirements.md`, and `tech.md` as primary inputs.
+- In the design-first model, use `product.md` and `tech.md` as primary inputs, then refine requirements after design approval.
+
+#### Approval
+
+- Use this step to review and approve the current `design/foundation/design.md` before creating or updating enduring C4 architecture artifacts.
+- Do not move to the C4 step until this approval gate is satisfied.
+
+#### C4
+
+- Use `design/c4/` to document enduring architecture after the relevant design direction is approved.
+- Keep the C4 artifacts aligned with `design/foundation/design.md`.
+- Use the approved `design.md` as the primary input for this step.
+
+#### Traceability
+
+- Use `design/foundation/traceability-matrix.md` to map requirement IDs to C4 elements and implementation components.
+- Update this artifact after requirements and architecture are sufficiently stable to trace meaningfully.
+- Use `requirements.md`, `design.md`, and the current C4 artifacts as the primary inputs for this step.
+
+#### Implementation
+
+- Use `implementation/` for real application components only after the relevant foundation and architecture artifacts justify implementation work.
+- Keep implementation aligned with the approved design and the traceability matrix.
+- Use the approved foundation artifacts, current C4 artifacts, and the traceability matrix as the primary inputs for this step.
+
+## Foundation
+
+### Purpose and model
+
+- Use `design/foundation/` for enduring business, requirements, technical, design, and traceability artifacts.
+- Treat these files as the main source of truth for what the project is, what it must do, how it is designed, and how requirements map to architecture and implementation.
+
+### General conventions
 
 - Read `design/foundation/product.md`, `design/foundation/requirements.md`, and `design/foundation/tech.md` before proposing feature direction.
-- Read `design/foundation/design.md` and `design/c4/` when architectural views or enduring boundaries matter.
+- Read `design/foundation/design.md` when enduring design direction or tradeoffs matter.
 - Read `design/foundation/traceability-matrix.md` when tracing requirements to architecture or implementation.
-- Read `design/instructions/<type>.md` when editing the corresponding artifact type.
+- Keep foundation artifacts aligned with each other as the project evolves.
 
-## Foundation templates
+### Artifacts
 
-### `design/foundation/product.md`
+#### `design/foundation/product.md`
 
+- Use this file for business-facing product direction.
 - Keep this file in the following structure:
 
 ```text
@@ -90,10 +172,12 @@ design/
 ## Assumptions
 ```
 
-- Keep the content business-facing rather than implementation-facing.
+#### `design/foundation/requirements.md`
 
-### `design/foundation/requirements.md`
-
+- Use this file for enduring requirements.
+- Prefer structured, testable statements.
+- Use EARS where practical for functional requirements.
+- Use stable requirement IDs.
 - Keep this file in the following structure:
 
 ```text
@@ -112,12 +196,9 @@ design/
 ### ASM-001
 ```
 
-- Use stable requirement IDs.
-- Prefer structured, testable statements.
-- Use EARS where practical for functional requirements.
+#### `design/foundation/tech.md`
 
-### `design/foundation/tech.md`
-
+- Use this file for technical direction and constraints, not detailed implementation steps.
 - Keep this file in the following structure:
 
 ```text
@@ -132,10 +213,10 @@ design/
 ## Key technical decisions
 ```
 
-- Use this file for technical direction and constraints, not detailed implementation steps.
+#### `design/foundation/design.md`
 
-### `design/foundation/design.md`
-
+- Use this file for enduring design decisions, tradeoffs, and architecture explanation.
+- Keep C4 references aligned with `design/c4/`.
 - Keep this file in the following structure:
 
 ```text
@@ -149,11 +230,10 @@ design/
 ## Open questions
 ```
 
-- Use this file for enduring design decisions and architecture explanation.
-- Keep C4 references aligned with `design/c4/`.
+#### `design/foundation/traceability-matrix.md`
 
-### `design/foundation/traceability-matrix.md`
-
+- Use this file to map requirement IDs to C4 elements and implementation components.
+- Keep the requirement IDs synchronized with `design/foundation/requirements.md`.
 - Keep this file in the following structure:
 
 ```text
@@ -165,66 +245,105 @@ design/
 | --- | --- | --- | --- | --- |
 ```
 
-- Use this file to map requirement IDs to C4 elements and implementation components.
-- Keep the requirement IDs synchronized with `design/foundation/requirements.md`.
+## C4
 
-## C4 templates
+### Purpose and model
 
-### `design/c4/system/system.md`
+- Use `design/c4/` as the canonical architecture area.
+- Treat `design/c4/` as enduring architecture, not temporary planning.
+- Keep `design/foundation/design.md` and `design/c4/` aligned.
+
+### General conventions
+
+- Use Markdown files as the narrative entry point for each C4 level.
+- Store one or more PlantUML diagrams beside the related Markdown file.
+- Keep long-lived architecture diagrams under `design/c4/`.
+- Allow multiple diagrams at the same abstraction level when they communicate different concerns clearly.
+- Keep one system description under `design/c4/system/`.
+- Keep C4 components nested under their owning container.
+- Add container folders under `design/c4/containers/` only when the project architecture defines them.
+- Add component folders only under an existing container.
+
+### Artifacts
+
+#### `design/c4/system/system.md`
 
 - Keep this file as the whole-system narrative entry point.
 - Use it to describe the system scope, actors, external systems, responsibilities, and boundaries.
+- Keep system-level diagrams in `design/c4/system/diagrams/`.
+- Start with a system context diagram.
+- Keep this file in the following structure:
 
-### `design/c4/containers/<container>/container.md`
+```text
+# System
+
+## Purpose
+## Recommended sections
+- Summary
+- Actors
+- External systems
+- Responsibilities
+- Boundaries
+- Open questions
+
+## Diagrams
+```
+
+#### `design/c4/containers/<container>/container.md`
 
 - Use this file to describe the container purpose, responsibilities, interfaces, dependencies, and contained components.
+- Keep each container folder shaped as:
 
-### `design/c4/containers/<container>/components/<component>/component.md`
+```text
+<container>/
+  container.md
+  diagrams/
+  components/
+```
+
+#### `design/c4/containers/<container>/components/<component>/component.md`
 
 - Use this file to describe the component purpose, responsibilities, interfaces, dependencies, and constraints.
 
-### `design/c4/containers/<container>/components/<component>/code.md`
+#### `design/c4/containers/<container>/components/<component>/code.md`
 
 - Use this file to describe the internal code structure of the component.
 - Focus on modules, key types, important flows, extension points, and testing notes.
+- Keep each component folder shaped as:
+
+```text
+<component>/
+  component.md
+  diagrams/
+  code.md
+  code-diagrams/
+```
+
+## Implementation
+
+### Purpose and model
+
+- Use `implementation/` for real built application components.
+- Treat `implementation/` as a flat top-level area of real application components unless the project design justifies a different structure.
+
+### General conventions
+
+- Keep implementation components aligned with the enduring requirements, design, and C4 architecture.
+- Do not create implementation components before the project is ready for implementation.
 
 ## File-type instructions
 
+- Read `design/instructions/<type>.md` when editing the corresponding artifact type.
 - Follow `design/instructions/csharp.md` when creating or modifying C# code.
 - Follow `design/instructions/docker.md` when creating or modifying Docker files.
 - Follow `design/instructions/plantuml.md` when creating or modifying PlantUML files.
 - Follow `design/instructions/markdown.md` when creating or modifying Markdown files.
 
-## Workflow
-
-- Drive the project through enduring requirements and design artifacts in `design/foundation/`.
-- Clarify whether the next conversation step should focus on product, requirements, technical direction, design, traceability, C4 architecture, or implementation readiness.
-- If the correct next step is not explicit, ask the user which one to tackle and give a short recommendation.
-- Recommend requirements-first when desired behavior is clearer than the implementation approach.
-- Recommend design-first when technical constraints, architecture, feasibility, or existing design direction lead the work.
-- Do not jump ahead to implementation before the relevant requirements and design are sufficiently defined.
-- When writing `design/foundation/requirements.md`, prefer structured, testable statements and use EARS where practical.
-- Use `design/foundation/design.md` for enduring design decisions, tradeoffs, and architecture explanation.
-- Use `design/foundation/traceability-matrix.md` to map requirements to C4 elements and implementation components.
-
-## C4 usage
-
-- Treat `design/c4/` as enduring architecture, not temporary planning.
-- Keep `design/foundation/design.md` and `design/c4/` aligned.
-- Keep long-lived architecture diagrams under `design/c4/`.
-- Use PlantUML for architecture and design diagrams.
-- Allow multiple diagrams at the same abstraction level when they communicate different concerns clearly.
-
-## Boundaries
-
-- Keep planning and architecture in `design/`.
-- Keep built application components in `implementation/`.
-- Keep repo-local scripts and developer automation in `tools/`.
-- Keep cross-component validation in `tests/`.
-
 ## Maintenance
 
 - Keep project design artifacts in `design/`.
+- Keep repo-local scripts and developer automation in `tools/`.
+- Keep cross-component validation in `tests/`.
 - Keep Codex-specific memory and skills in `.codex/`.
 - Update relevant foundation, architecture, or instruction files when structural conventions change.
 - Avoid duplicating behavioral instructions in business-facing files when `AGENTS.md` can express them more clearly.
