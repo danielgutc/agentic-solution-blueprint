@@ -296,8 +296,11 @@ system -> approval -> containers -> approval -> components -> approval -> code-l
 - Store one or more PlantUML diagrams beside the related Markdown file.
 - Keep long-lived architecture diagrams under `design/c4/`.
 - Allow multiple diagrams at the same abstraction level when they communicate different concerns clearly.
+- Give PlantUML elements and boundaries explicit names or aliases; avoid anonymous diagram nodes and boundaries that trigger warnings.
+- Keep `.puml` files as the authoritative diagram source, and when a diagram is part of the main reading flow, render it to `.svg` beside the source and embed that `.svg` in the corresponding Markdown entry point.
 - Keep one system description under `design/c4/system/`.
 - Keep C4 components nested under their owning container.
+- Use `_diagrams/` as the diagram folder name for enduring C4 views.
 - Add container folders under `design/c4/containers/` only when the project architecture defines them.
 - Add component folders only under an existing container.
 - Use `design/c4/` for enduring runtime topology, boundaries, responsibilities, major interaction mechanisms, and other architecture detail that is too specific for foundation artifacts but not yet code-level design.
@@ -309,7 +312,7 @@ system -> approval -> containers -> approval -> components -> approval -> code-l
 - Keep this file as the whole-system narrative entry point.
 - Use it to describe the system scope, actors, external systems, responsibilities, and boundaries.
 - Keep this file at software-system level; it should not enumerate container internals beyond what is needed to explain the overall system boundary and responsibilities.
-- Keep system-level diagrams in `design/c4/system/diagrams/`.
+- Keep system-level diagrams in `design/c4/system/_diagrams/`.
 - Start with a system context diagram.
 - Make the system context diagram focus on one software system in scope, the people who use it, the external software systems around it, and concise relationship labels between them.
 - Do not use the system context diagram to show containers, internal runtime boundaries, or component decomposition.
@@ -332,14 +335,19 @@ system -> approval -> containers -> approval -> components -> approval -> code-l
 
 #### `design/c4/containers/<container>/container.md`
 
-- Use this file to describe one runtime container or data store, including its purpose, responsibilities, interfaces, dependencies, boundaries, and contained components.
+- Use `design/c4/containers/system-containers.md` as the container-level entry point and overview.
+- Use each `container.md` file to describe one runtime container or data store as a black box, focusing on purpose, responsibilities, boundaries, contracts, dependencies, and contained components.
+- At container level, include the container technology and make contracts concrete enough to name the main protocol or transport and the broad payload or data style where that is already known.
 - Keep each container folder shaped as:
 
 ```text
-<container>/
-  container.md
-  diagrams/
-  components/
+containers/
+  system-containers.md
+  _diagrams/
+  <container>/
+    container.md
+    _diagrams/
+    components/
 ```
 
 #### `design/c4/containers/<container>/components/<component>/component.md`
@@ -355,9 +363,9 @@ system -> approval -> containers -> approval -> components -> approval -> code-l
 ```text
 <component>/
   component.md
-  diagrams/
+  _diagrams/
   code.md
-  code-diagrams/
+  _code-diagrams/
 ```
 
 ## Implementation
