@@ -298,6 +298,7 @@ system -> approval -> containers -> approval -> components -> approval -> code-l
 - Allow multiple diagrams at the same abstraction level when they communicate different concerns clearly.
 - Give PlantUML elements and boundaries explicit names or aliases; avoid anonymous diagram nodes and boundaries that trigger warnings.
 - Keep `.puml` files as the authoritative diagram source, and when a diagram is part of the main reading flow, render it to `.svg` beside the source and embed that `.svg` in the corresponding Markdown entry point.
+- When PlantUML rendering is needed, expect a local renderer jar to be placed under `tools/plantuml/`; treat that jar as a local tool dependency rather than repository content.
 - Keep one system description under `design/c4/system/`.
 - Keep C4 components nested under their owning container.
 - Use `_diagrams/` as the diagram folder name for enduring C4 views.
