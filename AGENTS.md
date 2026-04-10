@@ -311,6 +311,8 @@ system -> approval -> containers -> approval -> components -> approval -> code-l
 - Keep this file at software-system level; it should not enumerate container internals beyond what is needed to explain the overall system boundary and responsibilities.
 - Keep system-level diagrams in `design/c4/system/diagrams/`.
 - Start with a system context diagram.
+- Make the system context diagram focus on one software system in scope, the people who use it, the external software systems around it, and concise relationship labels between them.
+- Do not use the system context diagram to show containers, internal runtime boundaries, or component decomposition.
 - Keep this file in the following structure:
 
 ```text
