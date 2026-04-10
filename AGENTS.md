@@ -54,6 +54,23 @@ design/
   instructions/
 ```
 
+### Contribution model
+
+- Keep `origin` as the solution repository.
+- Use `agentic-solution-blueprint` as the secondary repository with the remote name `blueprint`.
+- If the `blueprint` remote is missing, add it with `git remote add blueprint https://github.com/danielgutc/agentic-solution-blueprint.git`.
+- Fetch the blueprint reference with `git fetch blueprint stable`.
+- Treat `AGENTS.md` as the only file that should be contributed back to `agentic-solution-blueprint` from this repository unless the user explicitly says otherwise.
+- Commit every `AGENTS.md` change in its own dedicated commit, separate from all other file changes, so the same change can be reused cleanly in both repositories.
+- Treat all other files in this repository as solution-specific by default.
+- Use the pull request title `Sync AGENTS.md from {solution repo name}` for blueprint updates coming from this repository.
+- When an `AGENTS.md` change is explicitly identified as blueprint-safe and intended to be upstreamed, commit and push that `AGENTS.md` change to the solution repository as usual, then immediately sync it to `agentic-solution-blueprint` against the `main` branch unless the user explicitly says not to.
+- For an upstreamable `AGENTS.md` change, the work is not complete until the corresponding blueprint pull request has been created or updated.
+- If a blueprint pull request titled `Sync AGENTS.md from {solution repo name}` is already open, push the new upstreamable `AGENTS.md` commit to that existing pull request branch instead of creating a new pull request.
+- If no blueprint pull request titled `Sync AGENTS.md from {solution repo name}` is open, create the corresponding branch in `agentic-solution-blueprint` and open a new pull request against `main`.
+- Do not stop after pushing only to `origin` when the `AGENTS.md` change is meant to be upstreamed to the blueprint repository.
+- Do not create blueprint pull requests against `stable`; use `main` as the target branch for blueprint collaboration.
+
 ## Workflow
 
 ### Rules
