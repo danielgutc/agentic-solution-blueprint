@@ -59,11 +59,13 @@ design/
 - Use `agentic-solution-blueprint` as the secondary repository with the remote name `blueprint`.
 - If the `blueprint` remote is missing, add it with `git remote add blueprint https://github.com/danielgutc/agentic-solution-blueprint.git`.
 - Fetch the blueprint reference with `git fetch blueprint stable`.
+- Fetch `blueprint main` before syncing an upstreamable `AGENTS.md` change.
 - Treat `AGENTS.md` as the only file that should be contributed back to `agentic-solution-blueprint` from this repository unless the user explicitly says otherwise.
 - Commit every `AGENTS.md` change in its own dedicated commit, separate from all other file changes, so the same change can be reused cleanly in both repositories.
 - Treat all other files in this repository as solution-specific by default.
 - Use the pull request title `Sync AGENTS.md from {solution repo name}` for blueprint updates coming from this repository.
 - When an `AGENTS.md` change is explicitly identified as blueprint-safe and intended to be upstreamed, commit and push that `AGENTS.md` change to the solution repository as usual, then immediately sync it to `agentic-solution-blueprint` against the `main` branch unless the user explicitly says not to.
+- Perform blueprint sync from the main repository using a dedicated local branch for the blueprint PR; do not require or keep a persistent local sync worktree folder for this purpose.
 - For an upstreamable `AGENTS.md` change, the work is not complete until the corresponding blueprint pull request has been created or updated.
 - If a blueprint pull request titled `Sync AGENTS.md from {solution repo name}` is already open, push the new upstreamable `AGENTS.md` commit to that existing pull request branch instead of creating a new pull request.
 - If no blueprint pull request titled `Sync AGENTS.md from {solution repo name}` is open, create the corresponding branch in `agentic-solution-blueprint` and open a new pull request against `main`.
