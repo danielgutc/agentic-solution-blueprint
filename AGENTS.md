@@ -11,7 +11,6 @@
 - Drive the project through enduring artifacts in `design/foundation/` and `design/c4/`.
 - Keep implementation artifacts in `implementation/`.
 - Keep Codex-only support files in `.codex/`.
-- Do not create concrete implementation components or C4 containers/components until the project architecture justifies them.
 
 ## Repository model
 
@@ -68,6 +67,7 @@ design/
 - For an upstreamable `AGENTS.md` change, the work is not complete until the corresponding blueprint pull request has been created or updated.
 - If a blueprint pull request titled `Sync AGENTS.md from {solution repo name}` is already open, push the new upstreamable `AGENTS.md` commit to that existing pull request branch instead of creating a new pull request.
 - If no blueprint pull request titled `Sync AGENTS.md from {solution repo name}` is open, create the corresponding branch in `agentic-solution-blueprint` and open a new pull request against `main`.
+- After syncing an upstreamable `AGENTS.md` change, verify whether the blueprint pull request was created or updated and report the resulting branch and pull request URL.
 - Do not stop after pushing only to `origin` when the `AGENTS.md` change is meant to be upstreamed to the blueprint repository.
 - Do not create blueprint pull requests against `stable`; use `main` as the target branch for blueprint collaboration.
 
@@ -77,8 +77,14 @@ design/
 
 - Clarify whether the next conversation step should focus on product, requirements, technical direction, design, traceability, C4 architecture, or implementation readiness.
 - If the correct next step is not explicit, ask the user which one to tackle and give a short recommendation.
+- Think and document in a pyramidal way: choose the highest appropriate level of abstraction first, and place details in the artifact type that matches the level of decision being made.
+- Use domain-driven design during each step in the pyramid.
+- Think in inputs, outputs, and contracts such as APIs when decomposing the problem and creating the relations and dependencies between them.
 - Do not jump ahead to implementation before the relevant requirements and design are sufficiently defined.
+- Treat abstraction level as an explicit decision. Confirm and complete the current abstraction level before moving to a more detailed one.
 - Do not make or update enduring C4 architecture artifacts until `design/foundation/design.md` has been reviewed and approved for the relevant change.
+- Do not create or update C4 container artifacts until the relevant system-level C4 artifacts have been reviewed and approved for the change.
+- Do not create or update C4 component or code-level artifacts until the relevant container-level C4 artifacts have been reviewed and approved for the change.
 
 ### Model 1: Requirements-first
 
@@ -143,6 +149,11 @@ product -> tech -> design -> approval -> requirements -> c4 -> traceability -> i
 - Use `design/c4/` to document enduring architecture after the relevant design direction is approved.
 - Keep the C4 artifacts aligned with `design/foundation/design.md`.
 - Use the approved `design.md` as the primary input for this step.
+- Progress through C4 pyramidally by abstraction level:
+
+```text
+system -> approval -> containers -> approval -> components -> approval -> code-level docs
+```
 
 #### Traceability
 
@@ -169,6 +180,7 @@ product -> tech -> design -> approval -> requirements -> c4 -> traceability -> i
 - Read `design/foundation/design.md` when enduring design direction or tradeoffs matter.
 - Read `design/foundation/traceability-matrix.md` when tracing requirements to architecture or implementation.
 - Keep foundation artifacts aligned with each other as the project evolves.
+- Do not put C4-style runtime topology, container boundaries, or lower-level interaction mechanics in foundation artifacts unless that detail is necessary to explain an enduring high-level design decision.
 
 ### Artifacts
 
@@ -280,6 +292,7 @@ product -> tech -> design -> approval -> requirements -> c4 -> traceability -> i
 - Keep C4 components nested under their owning container.
 - Add container folders under `design/c4/containers/` only when the project architecture defines them.
 - Add component folders only under an existing container.
+- Use `design/c4/` for enduring runtime topology, boundaries, responsibilities, major interaction mechanisms, and other architecture detail that is too specific for foundation artifacts but not yet code-level design.
 
 ### Artifacts
 
