@@ -245,7 +245,9 @@ system -> approval -> containers -> approval -> components -> approval -> code-l
 #### `design/foundation/design.md`
 
 - Use this file for enduring design decisions, tradeoffs, and architecture explanation.
-- Keep C4 references aligned with `design/c4/`.
+- Use this file to describe the high-level software-system context and responsibilities that the next approved C4 system level will elaborate.
+- Keep this file design-facing and architecture-facing rather than process-facing.
+- Keep this file above container decomposition; do not enumerate runtime containers, data stores, or component groupings here unless that detail is necessary to explain an enduring design decision.
 - Keep this file in the following structure:
 
 ```text
@@ -253,7 +255,7 @@ system -> approval -> containers -> approval -> components -> approval -> code-l
 
 ## System overview
 ## Architecture decisions
-## C4 references
+## System architecture focus
 ## Data and integration design
 ## Operational considerations
 ## Open questions
@@ -281,6 +283,10 @@ system -> approval -> containers -> approval -> components -> approval -> code-l
 - Use `design/c4/` as the canonical architecture area.
 - Treat `design/c4/` as enduring architecture, not temporary planning.
 - Keep `design/foundation/design.md` and `design/c4/` aligned.
+- Respect the C4 abstraction levels and do not mix them:
+  - software system: the highest-level system boundary, users, external systems, and major responsibilities
+  - container: an application or data store that must be running or available for the software system to work
+  - component: a grouping of related functionality behind a well-defined interface inside a container
 
 ### General conventions
 
@@ -300,6 +306,7 @@ system -> approval -> containers -> approval -> components -> approval -> code-l
 
 - Keep this file as the whole-system narrative entry point.
 - Use it to describe the system scope, actors, external systems, responsibilities, and boundaries.
+- Keep this file at software-system level; it should not enumerate container internals beyond what is needed to explain the overall system boundary and responsibilities.
 - Keep system-level diagrams in `design/c4/system/diagrams/`.
 - Start with a system context diagram.
 - Keep this file in the following structure:
@@ -321,7 +328,7 @@ system -> approval -> containers -> approval -> components -> approval -> code-l
 
 #### `design/c4/containers/<container>/container.md`
 
-- Use this file to describe the container purpose, responsibilities, interfaces, dependencies, and contained components.
+- Use this file to describe one runtime container or data store, including its purpose, responsibilities, interfaces, dependencies, boundaries, and contained components.
 - Keep each container folder shaped as:
 
 ```text
