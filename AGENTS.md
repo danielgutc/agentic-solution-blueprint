@@ -38,18 +38,20 @@ design/
     README.md
     system/
       system.md
-      diagrams/
+      _diagrams/
     containers/
       README.md
+      system-containers.md
+      _diagrams/
       <container>/
         container.md
-        diagrams/
+        _diagrams/
         components/
           <component>/
             component.md
-            diagrams/
+            _diagrams/
             code.md
-            code-diagrams/
+            _code-diagrams/
   instructions/
 ```
 
@@ -353,7 +355,24 @@ containers/
 
 #### `design/c4/containers/<container>/components/<component>/component.md`
 
-- Use this file to describe the component purpose, responsibilities, interfaces, dependencies, and constraints.
+- Use this file to describe the component purpose, responsibilities, ownership, interfaces, ports, dependencies, and constraints.
+- At component level, be explicit about whether the component is project-built or provided by a selected third-party stack.
+- Describe provided and required interfaces with the main protocol or transport family where known.
+- Prefer UML 2.0 component-diagram notation rather than generic rectangles when the richer notation helps communicate the architecture.
+- Component-level diagrams should make the following explicit when relevant:
+  - project-built versus third-party components
+  - provided and required interfaces
+  - protocols or transport families
+  - ports and component boundaries
+  - grouping boundaries such as packages, nodes, or runtime groupings
+- When helpful for readability, place the component name, technology or third-party software name, and a short responsibility summary directly inside each component box.
+- Prefer this in-box text style:
+  - bold component name
+  - italic technology or third-party software line
+  - responsibility summary capped at 8 words
+- Wrap long component text intentionally with line breaks to control diagram width and keep the rendered view readable.
+- Use groups such as packages, nodes, or runtime boundaries only when they clarify a real subdomain, deployment boundary, or ownership split; do not add them only for decoration.
+- Use `skinparam componentStyle uml2` for UML 2.0 component diagrams unless there is a strong reason not to.
 
 #### `design/c4/containers/<container>/components/<component>/code.md`
 
