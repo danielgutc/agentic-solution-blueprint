@@ -38,18 +38,20 @@ design/
     README.md
     system/
       system.md
-      diagrams/
+      _diagrams/
     containers/
       README.md
+      system-containers.md
+      _diagrams/
       <container>/
         container.md
-        diagrams/
+        _diagrams/
         components/
           <component>/
             component.md
-            diagrams/
+            _diagrams/
             code.md
-            code-diagrams/
+            _code-diagrams/
   instructions/
 ```
 
@@ -183,6 +185,8 @@ system -> approval -> containers -> approval -> components -> approval -> code-l
 - Read `design/foundation/traceability-matrix.md` when tracing requirements to architecture or implementation.
 - Keep foundation artifacts aligned with each other as the project evolves.
 - Do not put C4-style runtime topology, container boundaries, or lower-level interaction mechanics in foundation artifacts unless that detail is necessary to explain an enduring high-level design decision.
+- Use `In this section` only for sibling navigation at the same hierarchy level.
+- Add a `## Table of contents` section to foundation Markdown entry pages.
 
 ### Artifacts
 
@@ -296,11 +300,20 @@ system -> approval -> containers -> approval -> components -> approval -> code-l
 - Store one or more PlantUML diagrams beside the related Markdown file.
 - Keep long-lived architecture diagrams under `design/c4/`.
 - Allow multiple diagrams at the same abstraction level when they communicate different concerns clearly.
+- Give PlantUML elements and boundaries explicit names or aliases; avoid anonymous diagram nodes and boundaries that trigger warnings.
+- Keep `.puml` files as the authoritative diagram source, and when a diagram is part of the main reading flow, render it to `.svg` beside the source and embed that `.svg` in the corresponding Markdown entry point.
+- When PlantUML rendering is needed, expect a local renderer jar to be placed under `tools/plantuml/`; treat that jar as a local tool dependency rather than repository content.
 - Keep one system description under `design/c4/system/`.
 - Keep C4 components nested under their owning container.
+- Use `_diagrams/` as the diagram folder name for enduring C4 views.
 - Add container folders under `design/c4/containers/` only when the project architecture defines them.
 - Add component folders only under an existing container.
 - Use `design/c4/` for enduring runtime topology, boundaries, responsibilities, major interaction mechanisms, and other architecture detail that is too specific for foundation artifacts but not yet code-level design.
+- Use `In this section` only for sibling navigation at the same hierarchy level.
+- Use explicit child-navigation sections:
+  - `Contained containers` in `system-containers.md`
+  - `Contained components` in `container.md`
+- Add a `## Table of contents` section to C4 Markdown entry pages.
 
 ### Artifacts
 
@@ -308,9 +321,12 @@ system -> approval -> containers -> approval -> components -> approval -> code-l
 
 - Keep this file as the whole-system narrative entry point.
 - Use it to describe the system scope, actors, external systems, responsibilities, and boundaries.
+- Include a `Next level` link to `design/c4/containers/system-containers.md`.
 - Keep this file at software-system level; it should not enumerate container internals beyond what is needed to explain the overall system boundary and responsibilities.
-- Keep system-level diagrams in `design/c4/system/diagrams/`.
+- Keep system-level diagrams in `design/c4/system/_diagrams/`.
 - Start with a system context diagram.
+- Make the system context diagram focus on one software system in scope, the people who use it, the external software systems around it, and concise relationship labels between them.
+- Do not use the system context diagram to show containers, internal runtime boundaries, or component decomposition.
 - Keep this file in the following structure:
 
 ```text
@@ -330,19 +346,41 @@ system -> approval -> containers -> approval -> components -> approval -> code-l
 
 #### `design/c4/containers/<container>/container.md`
 
-- Use this file to describe one runtime container or data store, including its purpose, responsibilities, interfaces, dependencies, boundaries, and contained components.
+- Use `design/c4/containers/system-containers.md` as the container-level entry point and overview.
+- Use each `container.md` file to describe one runtime container or data store as a black box, focusing on purpose, responsibilities, boundaries, contracts, dependencies, and contained components.
+- At container level, include the container technology and make contracts concrete enough to name the main protocol or transport and the broad payload or data style where that is already known.
 - Keep each container folder shaped as:
 
 ```text
-<container>/
-  container.md
-  diagrams/
-  components/
+containers/
+  system-containers.md
+  _diagrams/
+  <container>/
+    container.md
+    _diagrams/
+    components/
 ```
 
 #### `design/c4/containers/<container>/components/<component>/component.md`
 
-- Use this file to describe the component purpose, responsibilities, interfaces, dependencies, and constraints.
+- Use this file to describe the component purpose, responsibilities, ownership, interfaces, ports, dependencies, and constraints.
+- At component level, be explicit about whether the component is project-built or provided by a selected third-party stack.
+- Describe provided and required interfaces with the main protocol or transport family where known.
+- Prefer UML 2.0 component-diagram notation rather than generic rectangles when the richer notation helps communicate the architecture.
+- Component-level diagrams should make the following explicit when relevant:
+  - project-built versus third-party components
+  - provided and required interfaces
+  - protocols or transport families
+  - ports and component boundaries
+  - grouping boundaries such as packages, nodes, or runtime groupings
+- When helpful for readability, place the component name, technology or third-party software name, and a short responsibility summary directly inside each component box.
+- Prefer this in-box text style:
+  - bold component name
+  - italic technology or third-party software line
+  - responsibility summary capped at 8 words
+- Wrap long component text intentionally with line breaks to control diagram width and keep the rendered view readable.
+- Use groups such as packages, nodes, or runtime boundaries only when they clarify a real subdomain, deployment boundary, or ownership split; do not add them only for decoration.
+- Use `skinparam componentStyle uml2` for UML 2.0 component diagrams unless there is a strong reason not to.
 
 #### `design/c4/containers/<container>/components/<component>/code.md`
 
@@ -353,9 +391,9 @@ system -> approval -> containers -> approval -> components -> approval -> code-l
 ```text
 <component>/
   component.md
-  diagrams/
+  _diagrams/
   code.md
-  code-diagrams/
+  _code-diagrams/
 ```
 
 ## Implementation
