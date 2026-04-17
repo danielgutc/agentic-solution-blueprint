@@ -185,6 +185,8 @@ system -> approval -> containers -> approval -> components -> approval -> code-l
 - Read `design/foundation/traceability-matrix.md` when tracing requirements to architecture or implementation.
 - Keep foundation artifacts aligned with each other as the project evolves.
 - Do not put C4-style runtime topology, container boundaries, or lower-level interaction mechanics in foundation artifacts unless that detail is necessary to explain an enduring high-level design decision.
+- Use `In this section` only for sibling navigation at the same hierarchy level.
+- Add a `## Table of contents` section to foundation Markdown entry pages.
 
 ### Artifacts
 
@@ -307,6 +309,11 @@ system -> approval -> containers -> approval -> components -> approval -> code-l
 - Add container folders under `design/c4/containers/` only when the project architecture defines them.
 - Add component folders only under an existing container.
 - Use `design/c4/` for enduring runtime topology, boundaries, responsibilities, major interaction mechanisms, and other architecture detail that is too specific for foundation artifacts but not yet code-level design.
+- Use `In this section` only for sibling navigation at the same hierarchy level.
+- Use explicit child-navigation sections:
+  - `Contained containers` in `system-containers.md`
+  - `Contained components` in `container.md`
+- Add a `## Table of contents` section to C4 Markdown entry pages.
 
 ### Artifacts
 
@@ -314,6 +321,7 @@ system -> approval -> containers -> approval -> components -> approval -> code-l
 
 - Keep this file as the whole-system narrative entry point.
 - Use it to describe the system scope, actors, external systems, responsibilities, and boundaries.
+- Include a `Next level` link to `design/c4/containers/system-containers.md`.
 - Keep this file at software-system level; it should not enumerate container internals beyond what is needed to explain the overall system boundary and responsibilities.
 - Keep system-level diagrams in `design/c4/system/_diagrams/`.
 - Start with a system context diagram.
