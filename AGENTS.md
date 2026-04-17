@@ -84,6 +84,9 @@ design/
 - Think and document in a pyramidal way: choose the highest appropriate level of abstraction first, and place details in the artifact type that matches the level of decision being made.
 - Use domain-driven design during each step in the pyramid.
 - Think in inputs, outputs, and contracts such as APIs when decomposing the problem and creating the relations and dependencies between them.
+- Keep runtime authority explicit at every abstraction level and avoid accidental authority splits across peer containers.
+- Prefer service contracts between runtime and backend concerns instead of direct runtime coupling to persistence internals.
+- Prefer containerized services and separated storage boundaries when responsibilities differ and the split improves clarity, evolution, or operability.
 - Do not jump ahead to implementation before the relevant requirements and design are sufficiently defined.
 - Treat abstraction level as an explicit decision. Confirm and complete the current abstraction level before moving to a more detailed one.
 - Do not make or update enduring C4 architecture artifacts until `design/foundation/design.md` has been reviewed and approved for the relevant change.
@@ -309,6 +312,8 @@ system -> approval -> containers -> approval -> components -> approval -> code-l
 - Add container folders under `design/c4/containers/` only when the project architecture defines them.
 - Add component folders only under an existing container.
 - Use `design/c4/` for enduring runtime topology, boundaries, responsibilities, major interaction mechanisms, and other architecture detail that is too specific for foundation artifacts but not yet code-level design.
+- Decompose containers by enduring responsibility boundaries (for example API, domain workflow, integration, and storage) rather than by implementation convenience.
+- For container relationships, record the protocol or transport family and the payload or data style when known.
 - Use `In this section` only for sibling navigation at the same hierarchy level.
 - Use explicit child-navigation sections:
   - `Contained containers` in `system-containers.md`
@@ -348,6 +353,7 @@ system -> approval -> containers -> approval -> components -> approval -> code-l
 
 - Use `design/c4/containers/system-containers.md` as the container-level entry point and overview.
 - Use each `container.md` file to describe one runtime container or data store as a black box, focusing on purpose, responsibilities, boundaries, contracts, dependencies, and contained components.
+- State each container type explicitly (for example application, service, relational data store, or file/object store) and keep the black-box boundary clear.
 - At container level, include the container technology and make contracts concrete enough to name the main protocol or transport and the broad payload or data style where that is already known.
 - Keep each container folder shaped as:
 
