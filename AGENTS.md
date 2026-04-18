@@ -329,6 +329,8 @@ system -> approval -> containers -> approval -> components -> approval -> code-l
 - Use explicit child-navigation sections:
   - `Contained containers` in `system-containers.md`
   - `Contained components` in `container.md`
+- End `system-containers.md` with a tree-style decomposition section that maps `system -> containers -> designed components` at the current approved abstraction level.
+- In that system-containers tree section, include links to already-designed child artifacts and show persistence ownership per service boundary (for example owned schema names), while keeping shared database engines represented as infrastructure support.
 - Add a `## Table of contents` section to C4 Markdown entry pages.
 
 ### Artifacts
