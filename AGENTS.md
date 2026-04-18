@@ -87,10 +87,13 @@ design/
 - If the correct next step is not explicit, ask the user which one to tackle and give a short recommendation.
 - Think and document in a pyramidal way: choose the highest appropriate level of abstraction first, and place details in the artifact type that matches the level of decision being made.
 - Use domain-driven design during each step in the pyramid.
+- Prefer bounded contexts as the basis for service boundaries when defining C4 containers for backend runtime concerns.
 - Think in inputs, outputs, and contracts such as APIs when decomposing the problem and creating the relations and dependencies between them.
 - Keep runtime authority explicit at every abstraction level and avoid accidental authority splits across peer containers.
 - Prefer service contracts between runtime and backend concerns instead of direct runtime coupling to persistence internals.
 - Prefer containerized services and separated storage boundaries when responsibilities differ and the split improves clarity, evolution, or operability.
+- In microservice-oriented designs, keep persistence ownership per service boundary; shared database engines are allowed, shared schema ownership is not.
+- Keep cross-service integration on service contracts (APIs/events) rather than direct cross-schema reads or writes.
 - Do not jump ahead to implementation before the relevant requirements and design are sufficiently defined.
 - Treat abstraction level as an explicit decision. Confirm and complete the current abstraction level before moving to a more detailed one.
 - Do not make or update enduring C4 architecture artifacts until `design/foundation/design.md` has been reviewed and approved for the relevant change.
@@ -303,6 +306,7 @@ system -> approval -> containers -> approval -> components -> approval -> code-l
 
 ### General conventions
 
+- Treat C4 container as a runtime boundary (application, service, data store, file/object store, broker), not as a Docker artifact.
 - Use Markdown files as the narrative entry point for each C4 level.
 - Store one or more PlantUML diagrams beside the related Markdown file.
 - Keep long-lived architecture diagrams under `design/c4/`.
@@ -316,8 +320,11 @@ system -> approval -> containers -> approval -> components -> approval -> code-l
 - Add container folders under `design/c4/containers/` only when the project architecture defines them.
 - Add component folders only under an existing container.
 - Use `design/c4/` for enduring runtime topology, boundaries, responsibilities, major interaction mechanisms, and other architecture detail that is too specific for foundation artifacts but not yet code-level design.
+- For backend services, prefer a near 1:1 relationship between C4 service containers and deployable microservices when ownership and operability boundaries are clear.
 - Decompose containers by enduring responsibility boundaries (for example API, domain workflow, integration, and storage) rather than by implementation convenience.
+- When a shared relational engine is used, model it as infrastructure support rather than shared domain authority, and keep schema ownership under the owning service containers.
 - For container relationships, record the protocol or transport family and the payload or data style when known.
+- Keep deployment-topology details (replication, node placement, orchestrator topology) in deployment architecture artifacts rather than container-level C4 decomposition.
 - Use `In this section` only for sibling navigation at the same hierarchy level.
 - Use explicit child-navigation sections:
   - `Contained containers` in `system-containers.md`
@@ -359,6 +366,8 @@ system -> approval -> containers -> approval -> components -> approval -> code-l
 - Use each `container.md` file to describe one runtime container or data store as a black box, focusing on purpose, responsibilities, boundaries, contracts, dependencies, and contained components.
 - State each container type explicitly (for example application, service, relational data store, or file/object store) and keep the black-box boundary clear.
 - At container level, include the container technology and make contracts concrete enough to name the main protocol or transport and the broad payload or data style where that is already known.
+- Document architecture decisions at the nearest effective level of abstraction (for example, keep service-split or consolidation decisions in the affected container doc when they are container-specific).
+- When persistence is relational and service-oriented, state schema ownership explicitly in the owning service container and avoid defining shared cross-service schema contracts.
 - Keep each container folder shaped as:
 
 ```text
