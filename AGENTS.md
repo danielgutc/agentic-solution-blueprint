@@ -63,6 +63,10 @@ design/
 - Fetch the blueprint reference with `git fetch blueprint stable`.
 - Fetch `blueprint main` before syncing an upstreamable `AGENTS.md` change.
 - Treat `AGENTS.md` as the only file that should be contributed back to `agentic-solution-blueprint` from this repository unless the user explicitly says otherwise.
+- For every `AGENTS.md` change, make an explicit upstreamability decision before committing:
+  - `upstreamable` (default)
+  - `solution-specific` (only when the user explicitly says not to upstream)
+- If the user does not explicitly mark the change as `solution-specific`, treat it as `upstreamable` and sync it to `agentic-solution-blueprint`.
 - Commit every `AGENTS.md` change in its own dedicated commit, separate from all other file changes, so the same change can be reused cleanly in both repositories.
 - Treat all other files in this repository as solution-specific by default.
 - Use the pull request title `Sync AGENTS.md from {solution repo name}` for blueprint updates coming from this repository.
