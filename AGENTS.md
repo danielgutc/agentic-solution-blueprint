@@ -323,14 +323,23 @@ system -> approval -> containers -> approval -> components -> approval -> code-l
 - For backend services, prefer a near 1:1 relationship between C4 service containers and deployable microservices when ownership and operability boundaries are clear.
 - Decompose containers by enduring responsibility boundaries (for example API, domain workflow, integration, and storage) rather than by implementation convenience.
 - When a shared relational engine is used, model it as infrastructure support rather than shared domain authority, and keep schema ownership under the owning service containers.
+- Model relational databases and file/object stores as C4 data-store containers (for example cylinder notation), not as service containers.
+- In component-level diagrams, represent databases and file/object stores with data-store notation (for example `database`), and represent schemas or namespaces as storage structure elements rather than regular service/component rectangles.
+- For component-level storage interactions, prefer direct arrows from consuming components to data-store nodes (for example `Component --> DataStore`) with protocol/payload labels; do not introduce interface elements for schemas or file/object storage endpoints unless the storage API is modeled as a separate service.
+- Do not model schema access or file/object store access as interface contracts inside component diagrams; model those relations directly to data-store nodes.
+- For service/API contracts (non-storage), use a strict provider/consumer interface pattern:
+  - provider exposes interface with association style (for example `Provider - IContract`)
+  - consumer depends on interface with explicit `requires` dependency (for example `Consumer ..> IContract : requires`)
+- If an API boundary is needed in front of a data store, model that API as a separate service container rather than as an internal pseudo-component of the data store.
 - For container relationships, record the protocol or transport family and the payload or data style when known.
 - Keep deployment-topology details (replication, node placement, orchestrator topology) in deployment architecture artifacts rather than container-level C4 decomposition.
 - Use `In this section` only for sibling navigation at the same hierarchy level.
 - Use explicit child-navigation sections:
   - `Contained containers` in `system-containers.md`
   - `Contained components` in `container.md`
-- End `system-containers.md` with a tree-style decomposition section that maps `system -> containers -> designed components` at the current approved abstraction level.
+- End `system-containers.md` with a tree-style decomposition section that maps `system -> containers -> designed children` at the current approved abstraction level.
 - In that system-containers tree section, include links to already-designed child artifacts and show persistence ownership per service boundary (for example owned schema names), while keeping shared database engines represented as infrastructure support.
+- For data-store containers in that tree, prefer schema/namespace/folder structure entries rather than service-style component lists.
 - Add a `## Table of contents` section to C4 Markdown entry pages.
 
 ### Artifacts
@@ -370,6 +379,7 @@ system -> approval -> containers -> approval -> components -> approval -> code-l
 - At container level, include the container technology and make contracts concrete enough to name the main protocol or transport and the broad payload or data style where that is already known.
 - Document architecture decisions at the nearest effective level of abstraction (for example, keep service-split or consolidation decisions in the affected container doc when they are container-specific).
 - When persistence is relational and service-oriented, state schema ownership explicitly in the owning service container and avoid defining shared cross-service schema contracts.
+- For data-store containers, describe internal structure through schema/namespace/folder boundaries; avoid forcing application-style component decomposition unless there is a strong architectural reason.
 - Keep each container folder shaped as:
 
 ```text
@@ -394,6 +404,13 @@ containers/
   - protocols or transport families
   - ports and component boundaries
   - grouping boundaries such as packages, nodes, or runtime groupings
+- In component-level interaction lines, orient dependencies from consumers to required interfaces (for example `..> : requires`), and model providers as exposing interfaces directly (for example `component - interface`) so storage or external systems are not shown as invoking service logic.
+- Before finalizing a component diagram, run this validation checklist:
+  - each `requires` relation starts at the consumer component or caller service
+  - storage interactions are drawn directly to data-store nodes (no storage/schema interfaces unless modeled as a separate API service)
+  - service/API providers expose interfaces rather than invoking them
+  - databases, file/object stores, schemas, and namespaces are not drawn as regular service/component rectangles
+  - when this storage-notation rule changes, align sibling component diagrams in the same repository pass to keep notation consistent across containers
 - When helpful for readability, place the component name, technology or third-party software name, and a short responsibility summary directly inside each component box.
 - Prefer this in-box text style:
   - bold component name
