@@ -321,6 +321,11 @@ system -> approval -> containers -> approval -> components -> approval -> code-l
 - Add component folders only under an existing container.
 - Use `design/c4/` for enduring runtime topology, boundaries, responsibilities, major interaction mechanisms, and other architecture detail that is too specific for foundation artifacts but not yet code-level design.
 - For backend services, prefer a near 1:1 relationship between C4 service containers and deployable microservices when ownership and operability boundaries are clear.
+- Treat deviation from near 1:1 service-container-to-microservice mapping as an explicit architecture decision that must be documented.
+- For each service container that maps to a microservice, model one externally consumed facade component/interface as the single inbound API boundary.
+- Keep external callers bound to that facade interface; do not model peer containers calling internal components directly.
+- Model the facade as consuming internal component APIs (for example command, workflow, integration, and persistence APIs) so internal collaboration remains explicit.
+- If multiple external facade APIs are intentionally exposed by one microservice, record the rationale and split triggers in the container `Architecture decisions` section.
 - Decompose containers by enduring responsibility boundaries (for example API, domain workflow, integration, and storage) rather than by implementation convenience.
 - When a shared relational engine is used, model it as infrastructure support rather than shared domain authority, and keep schema ownership under the owning service containers.
 - Model relational databases and file/object stores as C4 data-store containers (for example cylinder notation), not as service containers.
@@ -405,6 +410,7 @@ containers/
   - ports and component boundaries
   - grouping boundaries such as packages, nodes, or runtime groupings
 - In component-level interaction lines, orient dependencies from consumers to required interfaces (for example `..> : requires`), and model providers as exposing interfaces directly (for example `component - interface`) so storage or external systems are not shown as invoking service logic.
+- For microservice component diagrams, place the facade component at the boundary as the provider of the externally consumed service API, and model all other components as internal collaborators behind that facade.
 - Before finalizing a component diagram, run this validation checklist:
   - each `requires` relation starts at the consumer component or caller service
   - storage interactions are drawn directly to data-store nodes (no storage/schema interfaces unless modeled as a separate API service)
