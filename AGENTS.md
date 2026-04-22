@@ -326,6 +326,13 @@ system -> approval -> containers -> approval -> components -> approval -> code-l
 - Keep external callers bound to that facade interface; do not model peer containers calling internal components directly.
 - Model the facade as consuming internal component APIs (for example command, workflow, integration, and persistence APIs) so internal collaboration remains explicit.
 - If multiple external facade APIs are intentionally exposed by one microservice, record the rationale and split triggers in the container `Architecture decisions` section.
+- For microservice component decomposition, use this default layering unless there is a documented reason not to:
+  - facade API layer for external service contracts
+  - orchestration or handler layer for use-case and domain flow logic
+  - persistence and integration adapter layer for storage and external dependencies
+- Keep domain and use-case logic in orchestration or handler components, not in facade API components.
+- Keep data-store and external-system access in adapter components rather than in facade or orchestration components when a dedicated adapter boundary is practical.
+- Reuse consistent role terminology across service containers (`facade API`, `orchestrator` or `handler`, `persistence adapter`, `integration adapter`) when components serve similar responsibilities.
 - Decompose containers by enduring responsibility boundaries (for example API, domain workflow, integration, and storage) rather than by implementation convenience.
 - When a shared relational engine is used, model it as infrastructure support rather than shared domain authority, and keep schema ownership under the owning service containers.
 - Model relational databases and file/object stores as C4 data-store containers (for example cylinder notation), not as service containers.
@@ -400,6 +407,7 @@ containers/
 #### `design/c4/containers/<container>/components/<component>/component.md`
 
 - Use this file to describe the component purpose, responsibilities, ownership, interfaces, ports, dependencies, and constraints.
+- State the component's layering role explicitly in the purpose or responsibilities (for example facade API, orchestrator or handler, persistence adapter, integration adapter).
 - At component level, be explicit about whether the component is project-built or provided by a selected third-party stack.
 - Describe provided and required interfaces with the main protocol or transport family where known.
 - Prefer UML 2.0 component-diagram notation rather than generic rectangles when the richer notation helps communicate the architecture.
@@ -462,9 +470,6 @@ containers/
 
 ## Maintenance
 
-- Keep project design artifacts in `design/`.
-- Keep repo-local scripts and developer automation in `tools/`.
-- Keep cross-component validation in `tests/`.
-- Keep Codex-specific memory and skills in `.codex/`.
+- Keep this section focused on maintenance hygiene rather than repeating repository layout rules.
 - Update relevant foundation, architecture, or instruction files when structural conventions change.
 - Avoid duplicating behavioral instructions in business-facing files when `AGENTS.md` can express them more clearly.
