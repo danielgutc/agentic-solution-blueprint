@@ -334,6 +334,14 @@ system -> approval -> containers -> approval -> components -> approval -> code-l
 - Keep data-store and external-system access in adapter components rather than in facade or orchestration components when a dedicated adapter boundary is practical.
 - Reuse consistent role terminology across service containers (`facade API`, `orchestrator` or `handler`, `persistence adapter`, `integration adapter`) when components serve similar responsibilities.
 - Decompose containers by enduring responsibility boundaries (for example API, domain workflow, integration, and storage) rather than by implementation convenience.
+- For code-level C4 work, execute in two approval-gated phases per container:
+  - Phase 1 (contracts first): define implemented and consumed interfaces, method signatures, and required request or response objects needed to fulfill container responsibilities; keep class internals abstract.
+  - Phase 2 (internal implementation): design internal modules, classes, and flows that implement the approved contracts.
+- Do not start Phase 2 for a container until Phase 1 contracts for that container are reviewed and approved.
+- In Phase 1, distinguish external service contracts from internal component-to-component contracts explicitly.
+- For relational persistence in code-level design, model owned schema structure with ER diagrams.
+- For file or object storage in code-level design, model folder or namespace structure and access contracts.
+- Prefer contract-first reviews container by container to keep approval boundaries clear and reduce cross-container drift.
 - When a shared relational engine is used, model it as infrastructure support rather than shared domain authority, and keep schema ownership under the owning service containers.
 - Model relational databases and file/object stores as C4 data-store containers (for example cylinder notation), not as service containers.
 - In component-level diagrams, represent databases and file/object stores with data-store notation (for example `database`), and represent schemas or namespaces as storage structure elements rather than regular service/component rectangles.
@@ -437,6 +445,9 @@ containers/
 #### `design/c4/containers/<container>/components/<component>/code.md`
 
 - Use this file to describe the internal code structure of the component.
+- In container code-design Phase 1, use this file to make contracts explicit first: provided and consumed interfaces, method-level signatures, and required request or response objects.
+- In container code-design Phase 2, use this file to describe internal implementation details that satisfy approved contracts.
+- Keep contract changes explicit; if internal design requires contract changes, return to Phase 1 and re-approve before proceeding.
 - Focus on modules, key types, important flows, extension points, and testing notes.
 - Keep each component folder shaped as:
 
