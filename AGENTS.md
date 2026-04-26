@@ -63,6 +63,10 @@ design/
 - Fetch the blueprint reference with `git fetch blueprint stable`.
 - Fetch `blueprint main` before syncing an upstreamable `AGENTS.md` change.
 - Treat `AGENTS.md` as the only file that should be contributed back to `agentic-solution-blueprint` from this repository unless the user explicitly says otherwise.
+- For every `AGENTS.md` change, make an explicit upstreamability decision before committing:
+  - `upstreamable` (default)
+  - `solution-specific` (only when the user explicitly says not to upstream)
+- If the user does not explicitly mark the change as `solution-specific`, treat it as `upstreamable` and sync it to `agentic-solution-blueprint`.
 - Commit every `AGENTS.md` change in its own dedicated commit, separate from all other file changes, so the same change can be reused cleanly in both repositories.
 - Treat all other files in this repository as solution-specific by default.
 - Use the pull request title `Sync AGENTS.md from {solution repo name}` for blueprint updates coming from this repository.
@@ -83,7 +87,13 @@ design/
 - If the correct next step is not explicit, ask the user which one to tackle and give a short recommendation.
 - Think and document in a pyramidal way: choose the highest appropriate level of abstraction first, and place details in the artifact type that matches the level of decision being made.
 - Use domain-driven design during each step in the pyramid.
+- Prefer bounded contexts as the basis for service boundaries when defining C4 containers for backend runtime concerns.
 - Think in inputs, outputs, and contracts such as APIs when decomposing the problem and creating the relations and dependencies between them.
+- Keep runtime authority explicit at every abstraction level and avoid accidental authority splits across peer containers.
+- Prefer service contracts between runtime and backend concerns instead of direct runtime coupling to persistence internals.
+- Prefer containerized services and separated storage boundaries when responsibilities differ and the split improves clarity, evolution, or operability.
+- In microservice-oriented designs, keep persistence ownership per service boundary; shared database engines are allowed, shared schema ownership is not.
+- Keep cross-service integration on service contracts (APIs/events) rather than direct cross-schema reads or writes.
 - Do not jump ahead to implementation before the relevant requirements and design are sufficiently defined.
 - Treat abstraction level as an explicit decision. Confirm and complete the current abstraction level before moving to a more detailed one.
 - Do not make or update enduring C4 architecture artifacts until `design/foundation/design.md` has been reviewed and approved for the relevant change.
@@ -296,6 +306,7 @@ system -> approval -> containers -> approval -> components -> approval -> code-l
 
 ### General conventions
 
+- Treat C4 container as a runtime boundary (application, service, data store, file/object store, broker), not as a Docker artifact.
 - Use Markdown files as the narrative entry point for each C4 level.
 - Store one or more PlantUML diagrams beside the related Markdown file.
 - Keep long-lived architecture diagrams under `design/c4/`.
@@ -309,11 +320,62 @@ system -> approval -> containers -> approval -> components -> approval -> code-l
 - Add container folders under `design/c4/containers/` only when the project architecture defines them.
 - Add component folders only under an existing container.
 - Use `design/c4/` for enduring runtime topology, boundaries, responsibilities, major interaction mechanisms, and other architecture detail that is too specific for foundation artifacts but not yet code-level design.
+- For backend services, prefer a near 1:1 relationship between C4 service containers and deployable microservices when ownership and operability boundaries are clear.
+- Treat deviation from near 1:1 service-container-to-microservice mapping as an explicit architecture decision that must be documented.
+- For each service container that maps to a microservice, model one externally consumed facade component/interface as the single inbound API boundary.
+- Keep external callers bound to that facade interface; do not model peer containers calling internal components directly.
+- Model the facade as consuming internal component APIs (for example command, workflow, integration, and persistence APIs) so internal collaboration remains explicit.
+- If multiple external facade APIs are intentionally exposed by one microservice, record the rationale and split triggers in the container `Architecture decisions` section.
+- For microservice component decomposition, use this default layering unless there is a documented reason not to:
+  - facade API layer for external service contracts
+  - orchestration or handler layer for use-case and domain flow logic
+  - persistence and integration adapter layer for storage and external dependencies
+- Keep domain and use-case logic in orchestration or handler components, not in facade API components.
+- Keep data-store and external-system access in adapter components rather than in facade or orchestration components when a dedicated adapter boundary is practical.
+- Reuse consistent role terminology across service containers (`facade API`, `orchestrator` or `handler`, `persistence adapter`, `integration adapter`) when components serve similar responsibilities.
+- Decompose containers by enduring responsibility boundaries (for example API, domain workflow, integration, and storage) rather than by implementation convenience.
+- For code-level C4 work, execute in two approval-gated phases per container:
+  - Phase 1 (contracts first): define implemented and consumed interfaces, method signatures, and required request or response objects needed to fulfill container responsibilities; keep class internals abstract.
+  - Phase 2 (internal implementation): design internal modules, classes, and flows that implement the approved contracts.
+- Do not start Phase 2 for a container until Phase 1 contracts for that container are reviewed and approved.
+- In Phase 1, distinguish external service contracts from internal component-to-component contracts explicitly.
+- For relational persistence in code-level design, model owned schema structure with ER diagrams.
+- For file or object storage in code-level design, model folder or namespace structure and access contracts.
+- Prefer contract-first reviews container by container to keep approval boundaries clear and reduce cross-container drift.
+- When a shared relational engine is used, model it as infrastructure support rather than shared domain authority, and keep schema ownership under the owning service containers.
+- Model relational databases and file/object stores as C4 data-store containers (for example cylinder notation), not as service containers.
+- In component-level diagrams, represent databases and file/object stores with data-store notation (for example `database`), and represent schemas or namespaces as storage structure elements rather than regular service/component rectangles.
+- For component-level storage interactions, prefer direct arrows from consuming components to data-store nodes (for example `Component --> DataStore`) with protocol/payload labels; do not introduce interface elements for schemas or file/object storage endpoints unless the storage API is modeled as a separate service.
+- Do not model schema access or file/object store access as interface contracts inside component diagrams; model those relations directly to data-store nodes.
+- For service/API contracts (non-storage), use a strict provider/consumer interface pattern:
+  - provider exposes interface with association style (for example `Provider - IContract`)
+  - consumer depends on interface with explicit `requires` dependency (for example `Consumer ..> IContract : requires`)
+- If an API boundary is needed in front of a data store, model that API as a separate service container rather than as an internal pseudo-component of the data store.
+- For container relationships, record the protocol or transport family and the payload or data style when known.
+- Keep deployment-topology details (replication, node placement, orchestrator topology) in deployment architecture artifacts rather than container-level C4 decomposition.
 - Use `In this section` only for sibling navigation at the same hierarchy level.
 - Use explicit child-navigation sections:
   - `Contained containers` in `system-containers.md`
   - `Contained components` in `container.md`
+- End `system-containers.md` with a tree-style decomposition section that maps `system -> containers -> designed children` at the current approved abstraction level.
+- In that system-containers tree section, include links to already-designed child artifacts and show persistence ownership per service boundary (for example owned schema names), while keeping shared database engines represented as infrastructure support.
+- For data-store containers in that tree, prefer schema/namespace/folder structure entries rather than service-style component lists.
 - Add a `## Table of contents` section to C4 Markdown entry pages.
+- Validate diagram updates before finalizing:
+  - each changed `.drawio` has a refreshed sibling `.svg`
+  - exported SVG regeneration is confirmed by timestamp/hash/content check
+  - diagram links resolve to expected targets (`.svg`, `.drawio`, or approved `component.md#diagrams` drill-down links)
+  - for diagrams that require navigation, exported `.svg` files contain the expected clickable link entries (for example `<a ... xlink:href=\"...\">`) for the intended nodes; do not verify links only in `.drawio`
+  - if links are present in `.drawio` but missing from exported `.svg`, treat the export as failed and regenerate or fix before finalizing
+
+### Naming conventions
+
+- Name containers with a system-qualified pattern: `<system>-<responsibility>` (for example `<system>-geospatial-service`).
+- Keep container folder names identical to their canonical container names.
+- Do not include the system name in component names; component identity is scoped by its owning container.
+- Name externally exposed service interfaces with an `-api` suffix (for example `geospatial-service-api` or `geospatial-service-management-api`).
+- Name internal persistence and integration adapters with explicit role suffixes such as `-data-access`.
+- Keep component folder names identical to their canonical component names.
 
 ### Artifacts
 
@@ -348,7 +410,11 @@ system -> approval -> containers -> approval -> components -> approval -> code-l
 
 - Use `design/c4/containers/system-containers.md` as the container-level entry point and overview.
 - Use each `container.md` file to describe one runtime container or data store as a black box, focusing on purpose, responsibilities, boundaries, contracts, dependencies, and contained components.
+- State each container type explicitly (for example application, service, relational data store, or file/object store) and keep the black-box boundary clear.
 - At container level, include the container technology and make contracts concrete enough to name the main protocol or transport and the broad payload or data style where that is already known.
+- Document architecture decisions at the nearest effective level of abstraction (for example, keep service-split or consolidation decisions in the affected container doc when they are container-specific).
+- When persistence is relational and service-oriented, state schema ownership explicitly in the owning service container and avoid defining shared cross-service schema contracts.
+- For data-store containers, describe internal structure through schema/namespace/folder boundaries; avoid forcing application-style component decomposition unless there is a strong architectural reason.
 - Keep each container folder shaped as:
 
 ```text
@@ -364,6 +430,7 @@ containers/
 #### `design/c4/containers/<container>/components/<component>/component.md`
 
 - Use this file to describe the component purpose, responsibilities, ownership, interfaces, ports, dependencies, and constraints.
+- State the component's layering role explicitly in the purpose or responsibilities (for example facade API, orchestrator or handler, persistence adapter, integration adapter).
 - At component level, be explicit about whether the component is project-built or provided by a selected third-party stack.
 - Describe provided and required interfaces with the main protocol or transport family where known.
 - Prefer UML 2.0 component-diagram notation rather than generic rectangles when the richer notation helps communicate the architecture.
@@ -373,6 +440,14 @@ containers/
   - protocols or transport families
   - ports and component boundaries
   - grouping boundaries such as packages, nodes, or runtime groupings
+- In component-level interaction lines, orient dependencies from consumers to required interfaces (for example `..> : requires`), and model providers as exposing interfaces directly (for example `component - interface`) so storage or external systems are not shown as invoking service logic.
+- For microservice component diagrams, place the facade component at the boundary as the provider of the externally consumed service API, and model all other components as internal collaborators behind that facade.
+- Before finalizing a component diagram, run this validation checklist:
+  - each `requires` relation starts at the consumer component or caller service
+  - storage interactions are drawn directly to data-store nodes (no storage/schema interfaces unless modeled as a separate API service)
+  - service/API providers expose interfaces rather than invoking them
+  - databases, file/object stores, schemas, and namespaces are not drawn as regular service/component rectangles
+  - when this storage-notation rule changes, align sibling component diagrams in the same repository pass to keep notation consistent across containers
 - When helpful for readability, place the component name, technology or third-party software name, and a short responsibility summary directly inside each component box.
 - Prefer this in-box text style:
   - bold component name
@@ -385,6 +460,9 @@ containers/
 #### `design/c4/containers/<container>/components/<component>/code.md`
 
 - Use this file to describe the internal code structure of the component.
+- In container code-design Phase 1, use this file to make contracts explicit first: provided and consumed interfaces, method-level signatures, and required request or response objects.
+- In container code-design Phase 2, use this file to describe internal implementation details that satisfy approved contracts.
+- Keep contract changes explicit; if internal design requires contract changes, return to Phase 1 and re-approve before proceeding.
 - Focus on modules, key types, important flows, extension points, and testing notes.
 - Keep each component folder shaped as:
 
@@ -418,9 +496,6 @@ containers/
 
 ## Maintenance
 
-- Keep project design artifacts in `design/`.
-- Keep repo-local scripts and developer automation in `tools/`.
-- Keep cross-component validation in `tests/`.
-- Keep Codex-specific memory and skills in `.codex/`.
+- Keep this section focused on maintenance hygiene rather than repeating repository layout rules.
 - Update relevant foundation, architecture, or instruction files when structural conventions change.
 - Avoid duplicating behavioral instructions in business-facing files when `AGENTS.md` can express them more clearly.
