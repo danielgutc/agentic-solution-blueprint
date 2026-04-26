@@ -361,6 +361,21 @@ system -> approval -> containers -> approval -> components -> approval -> code-l
 - In that system-containers tree section, include links to already-designed child artifacts and show persistence ownership per service boundary (for example owned schema names), while keeping shared database engines represented as infrastructure support.
 - For data-store containers in that tree, prefer schema/namespace/folder structure entries rather than service-style component lists.
 - Add a `## Table of contents` section to C4 Markdown entry pages.
+- Validate diagram updates before finalizing:
+  - each changed `.drawio` has a refreshed sibling `.svg`
+  - exported SVG regeneration is confirmed by timestamp/hash/content check
+  - diagram links resolve to expected targets (`.svg`, `.drawio`, or approved `component.md#diagrams` drill-down links)
+  - for diagrams that require navigation, exported `.svg` files contain the expected clickable link entries (for example `<a ... xlink:href=\"...\">`) for the intended nodes; do not verify links only in `.drawio`
+  - if links are present in `.drawio` but missing from exported `.svg`, treat the export as failed and regenerate or fix before finalizing
+
+### Naming conventions
+
+- Name containers with a system-qualified pattern: `<system>-<responsibility>` (for example `<system>-geospatial-service`).
+- Keep container folder names identical to their canonical container names.
+- Do not include the system name in component names; component identity is scoped by its owning container.
+- Name externally exposed service interfaces with an `-api` suffix (for example `geospatial-service-api` or `geospatial-service-management-api`).
+- Name internal persistence and integration adapters with explicit role suffixes such as `-data-access`.
+- Keep component folder names identical to their canonical component names.
 
 ### Artifacts
 
