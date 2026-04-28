@@ -239,10 +239,28 @@ system -> approval -> containers -> approval -> components -> approval -> code-l
 # Task Tracker
 
 ## Snapshot
+Status legend: `Not started`, `In progress`, `Designed`, `Approved`, `Implemented`.
+| Area | Status | Coverage | Notes | Next action |
+| --- | --- | --- | --- | --- |
+
 ## Architecture progress (system to containers to components)
+### Container maturity matrix
+| Container | Container design | Components design | Interfaces diagram | Code phase 1 (contracts) | Code phase 2 (class or domain design) | Implementation | Notes |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+### Component depth matrix
+| Container | Components total | Components with phase 1 contract detail | Components with phase 2 code design section | Components with phase 2 class diagrams | Component docs |
+| --- | --- | --- | --- | --- | --- |
+
 ## Active TODO
+`TASK-001` (`Todo`) <description>.
+`TASK-002` (`Todo`) Code phase 1: <description>.
+`TASK-003` (`Todo`) Code phase 2: <description>.
+
 ## Parking lot
+- <deferred item>
+
 ## Done recently
+- <recently completed item>
 ```
 #### `design/foundation/requirements.md`
 
