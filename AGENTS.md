@@ -217,6 +217,33 @@ system -> approval -> containers -> approval -> components -> approval -> code-l
 ## Assumptions
 ```
 
+#### `design/foundation/task.md`
+
+- Use this file as the active project task dashboard across design and implementation phases.
+- Keep it concise and glanceable, and update it when scope, status, or priorities change.
+- Use a `Snapshot` table with fixed columns: `Area | Status | Coverage | Notes | Next action`.
+- Include a status legend and use only: `Not started`, `In progress`, `Designed`, `Approved`, `Implemented`.
+- In `Architecture progress (system to containers to components)`, include both matrices:
+  - `Container maturity matrix` with fixed columns: `Container | Container design | Components design | Interfaces diagram | Code phase 1 (contracts) | Code phase 2 (class or domain design) | Implementation | Notes`
+  - `Component depth matrix` with fixed columns: `Container | Components total | Components with phase 1 contract detail | Components with phase 2 code design section | Components with phase 2 class diagrams | Component docs`
+- Track code work explicitly in two phases:
+  - Code phase 1 covers contracts and interfaces.
+  - Code phase 2 covers internal design, class diagrams, and domain design.
+- For storage-only containers, use `N/A` in component-specific code-phase columns.
+- In `Active TODO`, use IDs in `TASK-xxx` format, include status in parentheses, and list work in phase-first order (close phase 1 items before phase 2 expansion when both exist).
+- Keep `Parking lot` and `Done recently` as concise bullet lists.
+- Keep this artifact project-agnostic; avoid temporary implementation notes that are not useful as enduring blueprint guidance.
+- Keep this file in the following structure:
+
+```text
+# Task Tracker
+
+## Snapshot
+## Architecture progress (system to containers to components)
+## Active TODO
+## Parking lot
+## Done recently
+```
 #### `design/foundation/requirements.md`
 
 - Use this file for enduring requirements.
