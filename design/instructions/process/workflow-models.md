@@ -1,0 +1,26 @@
+# Workflow Models
+
+Use one of these models per change set, and keep the selected model explicit in the related design conversation.
+
+## Model 1: Requirements-first
+
+Choose this model when desired behavior and user outcomes are clearer than technical implementation.
+
+```text
+product -> requirements -> tech -> design -> approval -> c4 -> traceability -> implementation
+```
+
+## Model 2: Design-first
+
+Choose this model when constraints, integrations, or architecture feasibility drive decisions first.
+
+```text
+product -> tech -> design -> approval -> requirements -> c4 -> traceability -> implementation
+```
+
+## Pyramidal decomposition rule
+
+- Start at the highest relevant abstraction level.
+- Confirm and complete the current level before drilling down.
+- Keep details in the artifact type matching the decision level.
+- Use domain-driven boundaries while decomposing each level.
