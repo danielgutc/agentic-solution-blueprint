@@ -72,22 +72,28 @@ design/
 - Use `agentic-solution-blueprint` as the secondary repository with the remote name `blueprint`.
 - If the `blueprint` remote is missing, add it with `git remote add blueprint https://github.com/danielgutc/agentic-solution-blueprint.git`.
 - Fetch the blueprint reference with `git fetch blueprint stable`.
-- Fetch `blueprint main` before syncing an upstreamable `AGENTS.md` change.
-- Treat `AGENTS.md` as the only file that should be contributed back to `agentic-solution-blueprint` from this repository unless the user explicitly says otherwise.
-- For every `AGENTS.md` change, make an explicit upstreamability decision before committing:
+- Fetch `blueprint main` before syncing an upstreamable blueprint-governance change.
+- Treat the following as the default blueprint governance scope for contributions back to `agentic-solution-blueprint`:
+  - `AGENTS.md`
+  - `design/instructions/**`
+  - `design/templates/**`
+  - `design/samples/**`
+  - `.codex/skills/**`
+  - `tasks.md`
+- For every change in that blueprint governance scope, make an explicit upstreamability decision before committing:
   - `upstreamable` (default)
   - `solution-specific` (only when the user explicitly says not to upstream)
 - If the user does not explicitly mark the change as `solution-specific`, treat it as `upstreamable` and sync it to `agentic-solution-blueprint`.
-- Commit every `AGENTS.md` change in its own dedicated commit, separate from all other file changes, so the same change can be reused cleanly in both repositories.
-- Treat all other files in this repository as solution-specific by default.
-- Use the pull request title `Sync AGENTS.md from {solution repo name}` for blueprint updates coming from this repository.
-- When an `AGENTS.md` change is explicitly identified as blueprint-safe and intended to be upstreamed, commit and push that `AGENTS.md` change to the solution repository as usual, then immediately sync it to `agentic-solution-blueprint` against the `main` branch unless the user explicitly says not to.
+- Commit every upstreamable blueprint-governance change in its own dedicated commit, separate from solution-specific file changes, so the same change can be reused cleanly in both repositories.
+- Treat all files outside the blueprint governance scope as solution-specific by default.
+- Use the pull request title `Sync blueprint governance from {solution repo name}` for blueprint updates coming from this repository.
+- When a blueprint-governance change is explicitly identified as blueprint-safe and intended to be upstreamed, commit and push that change to the solution repository as usual, then immediately sync it to `agentic-solution-blueprint` against the `main` branch unless the user explicitly says not to.
 - Perform blueprint sync from the main repository using a dedicated local branch for the blueprint PR; do not require or keep a persistent local sync worktree folder for this purpose.
-- For an upstreamable `AGENTS.md` change, the work is not complete until the corresponding blueprint pull request has been created or updated.
-- If a blueprint pull request titled `Sync AGENTS.md from {solution repo name}` is already open, push the new upstreamable `AGENTS.md` commit to that existing pull request branch instead of creating a new pull request.
-- If no blueprint pull request titled `Sync AGENTS.md from {solution repo name}` is open, create the corresponding branch in `agentic-solution-blueprint` and open a new pull request against `main`.
-- After syncing an upstreamable `AGENTS.md` change, verify whether the blueprint pull request was created or updated and report the resulting branch and pull request URL.
-- Do not stop after pushing only to `origin` when the `AGENTS.md` change is meant to be upstreamed to the blueprint repository.
+- For an upstreamable blueprint-governance change, the work is not complete until the corresponding blueprint pull request has been created or updated.
+- If a blueprint pull request titled `Sync blueprint governance from {solution repo name}` is already open, push new upstreamable blueprint-governance commits to that existing pull request branch instead of creating a new pull request.
+- If no blueprint pull request titled `Sync blueprint governance from {solution repo name}` is open, create the corresponding branch in `agentic-solution-blueprint` and open a new pull request against `main`.
+- After syncing an upstreamable blueprint-governance change, verify whether the blueprint pull request was created or updated and report the resulting branch and pull request URL.
+- Do not stop after pushing only to `origin` when an upstreamable blueprint-governance change is meant to be upstreamed to the blueprint repository.
 - Do not create blueprint pull requests against `stable`; use `main` as the target branch for blueprint collaboration.
 
 ## Workflow
