@@ -5,27 +5,27 @@ This folder contains the container-level subtree of the C4 architecture.
 ## Container subtree
 
 - `container.md`
-- `diagrams/`
+- `_diagrams/`
 - `components/`
 
 ## Component subtree
 
 - `component.md`
-- `diagrams/`
-- `code.md`
-- `code-diagrams/`
+- `_diagrams/`
+- `_code-diagrams/`
 
 ## Folder shape
 
 ```text
 containers/
+  system-containers.md
+  _diagrams/
   <container>/
     container.md
-    diagrams/
+    _diagrams/
     components/
       <component>/
         component.md
-        diagrams/
-        code.md
-        code-diagrams/
+        _diagrams/
+        _code-diagrams/
 ```
