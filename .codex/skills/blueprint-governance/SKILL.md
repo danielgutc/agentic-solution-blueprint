@@ -11,13 +11,14 @@ Use this skill when the task is to evolve the reusable blueprint rather than onl
 
 ## Workflow
 
-1. Identify whether the requested change is behavioral (`AGENTS.md`) or format/schema (`design/instructions`, `design/templates`, `design/samples`).
+1. Identify whether the requested change is inside blueprint-governance scope using `design/instructions/process/blueprint-sync.md`.
 2. Apply changes in the smallest coherent package.
 3. Validate consistency:
    - instruction precedence is clear
    - template and sample structure matches artifact rules
    - no contradictory duplicate rule across files
-4. For upstreamable changes, sync through a branch based on `blueprint/main`.
+4. For C4-specific behavior changes, update level-specific C4 skills.
+5. For upstreamable changes, run blueprint sync via `.codex/skills/blueprint-sync-pr/SKILL.md`.
 
 ## Output checklist
 

@@ -17,6 +17,7 @@ Provide a glanceable dashboard of:
 ```text
 # Task Tracker
 
+## Table of contents
 ## Snapshot
 ## Architecture progress (system to containers to components)
 ## Active TODO

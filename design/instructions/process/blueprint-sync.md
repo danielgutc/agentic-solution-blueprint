@@ -20,7 +20,7 @@ Use this process when an upstreamable blueprint change is made.
 2. Commit upstreamable blueprint-governance files in a dedicated commit.
 3. For blueprint sync, create or reset a local sync branch from `blueprint/main`.
 4. Cherry-pick the upstreamable commit(s) onto that branch.
-5. Push to `blueprint/codex/sync-agents-war-strategy-game`.
+5. Push to a blueprint sync branch (for example `blueprint/codex/sync-blueprint-governance-{solution-repo}`).
 6. Create or update PR titled:
    - `Sync blueprint governance from {solution repo name}`
 7. Report branch name and PR URL.

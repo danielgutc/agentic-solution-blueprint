@@ -11,7 +11,8 @@ This folder contains the canonical architecture description for the project crea
 ## Documentation model
 
 - Markdown files provide the narrative description for each C4 level.
-- PlantUML diagrams provide the diagrammatic views that support those narratives.
+- Draw.io source diagrams (`.drawio`) provide the editable diagrammatic views.
+- Rendered `.svg` files provide embeddable views for Markdown pages.
 
 ## Folder shape
 
@@ -20,16 +21,17 @@ c4/
   README.md
   system/
     system.md
-    diagrams/
+    _diagrams/
   containers/
+    system-containers.md
+    _diagrams/
     README.md
     <container>/
       container.md
-      diagrams/
+      _diagrams/
       components/
         <component>/
           component.md
-          diagrams/
-          code.md
-          code-diagrams/
+          _diagrams/
+          _code-diagrams/
 ```

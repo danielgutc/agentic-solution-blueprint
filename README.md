@@ -10,6 +10,7 @@ Use this blueprint to structure work from product intent to implementation with 
 
 - [Foundation product](./design/foundation/product.md)
 - [Foundation task tracker](./design/foundation/task.md)
+- [Foundation agent topology (optional)](./design/foundation/agent-topology.md)
 - [Foundation design](./design/foundation/design.md)
 - [C4 system](./design/c4/system/system.md)
 - [C4 system containers](./design/c4/containers/system-containers.md)
@@ -35,6 +36,7 @@ Use [design/foundation/](./design/foundation/) for enduring project definitions:
 - design
 - task tracker
 - traceability matrix
+- optional agent topology
 
 ### C4 architecture
 
@@ -59,6 +61,10 @@ Use [design/templates/](./design/templates/) for solution-agnostic target struct
 ### Samples
 
 Use [design/samples/](./design/samples/) for reference-quality examples.
+
+### Skills
+
+Use [.codex/skills/](./.codex/skills/) for on-demand, task-specific reusable workflows.
 
 ## Top-level layout
 

@@ -1,6 +1,7 @@
 # Templates
 
 Use these files as solution-agnostic starting points for enduring artifacts.
+Treat them as canonical section shapes for corresponding artifacts.
 
 ## Foundation templates
 
@@ -10,6 +11,7 @@ Use these files as solution-agnostic starting points for enduring artifacts.
 - `foundation/design.template.md`
 - `foundation/task.template.md`
 - `foundation/traceability-matrix.template.md`
+- `foundation/agent-topology.template.md` (optional)
 
 ## C4 templates
 

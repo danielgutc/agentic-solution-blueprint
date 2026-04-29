@@ -30,4 +30,4 @@ Capture unresolved system-level questions, assumptions, or follow-up decisions.
 
 ## Diagrams
 
-Reference the system-level diagrams stored in the adjacent `diagrams/` folder.
+Reference the system-level diagrams stored in the adjacent `_diagrams/` folder.
