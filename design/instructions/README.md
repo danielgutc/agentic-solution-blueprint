@@ -8,7 +8,8 @@ Use this folder as the modular authoring guide for enduring documentation work.
 2. `process/*.md` defines workflow sequence and approval gates.
 3. `artifacts/*.md` defines canonical section schemas and artifact formats.
 4. `standards/*.md` defines reusable cross-artifact conventions.
-5. `templates/` and `samples/` provide canonical artifact shapes and examples.
+5. `file-types/*.md` defines file-specific coding and writing rules.
+6. `templates/` and `samples/` provide canonical artifact shapes and examples.
 
 If two instructions conflict, prefer the higher item in this precedence list and update lower-level files to remove drift.
 
@@ -19,15 +20,19 @@ If two instructions conflict, prefer the higher item in this precedence list and
   - abstraction and approval gates
   - shared C4 authoring playbook
   - blueprint sync process
+  - runtime testing process guidance
   - pre-merge refinement workflow
   - AGENTS cleanup candidates
 - `artifacts/`
   - artifact-specific rules and quality checklists
   - canonical section-shape routing to templates
+  - implementation track instructions after C4 approvals
 - `standards/`
   - status taxonomy
   - naming and navigation conventions
   - diagram tooling conventions
+- `file-types/`
+  - language and file-specific implementation/writing rules
 
 ## Authoring rule
 
