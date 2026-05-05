@@ -1,3 +1,8 @@
+---
+name: blueprint-sync-pr
+description: Sync upstreamable blueprint-governance changes to the blueprint repository and create or update the required pull request. Use when governance changes fall under the blueprint sync scope.
+---
+
 # Blueprint Sync PR Skill
 
 Use this skill when upstreamable blueprint-governance changes must be synced to the blueprint repository.

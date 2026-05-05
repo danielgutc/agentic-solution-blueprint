@@ -1,3 +1,8 @@
+---
+name: c4-system-authoring
+description: Author or revise software-system-level C4 artifacts, including actors, external systems, system boundary, responsibilities, and context diagrams. Use when working at the C4 system level.
+---
+
 # C4 System Authoring Skill
 
 Use this skill when creating or revising software-system-level C4 artifacts.

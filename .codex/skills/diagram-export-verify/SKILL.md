@@ -1,3 +1,8 @@
+---
+name: diagram-export-verify
+description: Regenerate and validate diagram exports and navigation links for Draw.io sources. Use when .drawio files change or diagram export, SVG, or navigation issues are reported.
+---
+
 # Diagram Export Verify Skill
 
 Use this skill when diagram source files are changed and exports/navigation must be validated.

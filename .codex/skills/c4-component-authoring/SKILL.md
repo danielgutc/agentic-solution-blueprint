@@ -1,3 +1,8 @@
+---
+name: c4-component-authoring
+description: Author or revise component-level C4 artifacts for a container, including component responsibilities, interfaces, collaboration, and code-phase gates. Use when working on container component decomposition.
+---
+
 # C4 Component Authoring Skill
 
 Use this skill when creating or revising component-level C4 artifacts in a container.

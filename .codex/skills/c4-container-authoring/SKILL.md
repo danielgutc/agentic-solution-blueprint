@@ -1,3 +1,8 @@
+---
+name: c4-container-authoring
+description: Author or revise a single-container C4 artifact, including responsibilities, boundaries, contracts, dependencies, and persistence ownership. Use when working on one container's architecture.
+---
+
 # C4 Container Authoring Skill
 
 Use this skill when creating or revising a single container C4 artifact.
