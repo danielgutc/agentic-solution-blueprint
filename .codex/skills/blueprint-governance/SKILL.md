@@ -1,3 +1,8 @@
+---
+name: blueprint-governance
+description: Refactor and maintain reusable blueprint governance artifacts, including AGENTS.md, design instructions, templates, samples, and project skills. Use when evolving blueprint-level rules or keeping governance artifacts aligned.
+---
+
 # Blueprint Governance Skill
 
 Use this skill when the task is to evolve the reusable blueprint rather than only solve a solution-specific design problem.
