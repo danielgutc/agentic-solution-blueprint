@@ -44,6 +44,7 @@ design/
     process/
     artifacts/
     standards/
+    file-types/
   templates/
     foundation/
     c4/
@@ -69,6 +70,10 @@ design/
 - Use domain-driven design across all decomposition steps.
 - Use the workflow models in `design/instructions/process/workflow-models.md`.
 - Enforce approval gates in `design/instructions/process/approval-gates.md`.
+- Keep C4 code phases and runtime implementation as separate tracks:
+  - C4 code phase 1 and 2 are architecture artifacts.
+  - runtime implementation starts only after C4 code phase 2 approval.
+  - runtime implementation flow follows `design/instructions/process/implementation-interface-test-first.md`.
 
 ## Architecture defaults
 
@@ -94,8 +99,10 @@ design/
 - For workflow sequencing and approvals: `design/instructions/process/*.md`.
 - For artifact-specific rules and section requirements: `design/instructions/artifacts/*.md`.
 - For cross-cutting conventions (naming, status, navigation, diagrams): `design/instructions/standards/*.md`.
+- For file-specific coding/writing rules: `design/instructions/file-types/*.md`.
 - For concrete artifact shapes: `design/templates/foundation/*.template.md` and `design/templates/c4/*.template.md`.
 - For task dashboard format: `design/instructions/artifacts/task-tracker.md`.
+- For runtime testing process and boundaries: `design/instructions/process/dotnet-testing.md`.
 
 ## Skills model
 
@@ -103,6 +110,7 @@ design/
 - Use `blueprint-governance` for instruction/template/sample refactors.
 - Use C4 skills for level-specific architecture authoring:
   - `c4-system-authoring`
+  - `c4-system-containers-authoring`
   - `c4-container-authoring`
   - `c4-component-authoring`
   - `diagram-export-verify`
