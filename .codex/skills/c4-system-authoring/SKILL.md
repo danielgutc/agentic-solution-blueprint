@@ -22,7 +22,7 @@ Use this skill when creating or revising software-system-level C4 artifacts.
 ## Failure handling
 
 - Apply shared escalation rules from `design/instructions/process/c4-authoring-playbook.md`.
-- If the request requires container decomposition, hand off to `c4-container-authoring`.
+- If the request requires system-level container decomposition, hand off to `c4-system-containers-authoring`.
 
 ## Validation checklist
 

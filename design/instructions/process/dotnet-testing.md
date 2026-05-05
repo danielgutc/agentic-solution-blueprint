@@ -45,4 +45,4 @@ Define testing guidance for runtime implementation using a test-first, interface
 
 - Follow implementation gates from:
   - `design/instructions/process/approval-gates.md`
-  - `design/instructions/artifacts/implementation-interface-test-first.md`
+  - `design/instructions/process/implementation-interface-test-first.md`

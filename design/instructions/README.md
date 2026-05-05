@@ -21,6 +21,7 @@ If two instructions conflict, prefer the higher item in this precedence list and
   - shared C4 authoring playbook
   - blueprint sync process
   - runtime testing process guidance
+  - implementation interface-driven test-first workflow
   - pre-merge refinement workflow
   - AGENTS cleanup candidates
 - `artifacts/`

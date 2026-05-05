@@ -1,36 +1,32 @@
 # C4 Container Authoring Skill
 
-Use this skill when creating or revising container-level C4 artifacts.
+Use this skill when creating or revising a single container C4 artifact.
 
 ## Trigger conditions
 
-- The task targets `design/c4/containers/system-containers.md` or `container.md` files.
-- The task defines container boundaries, contracts, or service decomposition.
+- The task targets `design/c4/containers/<container>/container.md`.
+- The task defines one container's responsibilities, boundaries, contracts, and dependencies.
 
 ## Prechecks
 
 - Apply shared prechecks from `design/instructions/process/c4-authoring-playbook.md`.
-- Confirm the task is at container level, not system or component level.
+- Confirm the task is at single-container level, not system-containers or component level.
 
 ## Workflow
 
-1. Apply:
-   - `design/instructions/artifacts/c4-system-containers.md`
-   - `design/instructions/artifacts/c4-container.md`
-2. Use:
-   - `design/templates/c4/system-containers.template.md`
-   - `design/templates/c4/container.template.md`
+1. Apply `design/instructions/artifacts/c4-container.md`.
+2. Use `design/templates/c4/container.template.md`.
 3. Decompose by bounded contexts and explicit contracts.
 4. Record protocol/payload style for container interactions when known.
-5. Keep decomposition tree current and navigable.
 
 ## Failure handling
 
 - Apply shared escalation rules from `design/instructions/process/c4-authoring-playbook.md`.
+- If the request is container inventory/overview for the whole system, hand off to `c4-system-containers-authoring`.
 
 ## Validation checklist
 
 - Apply shared validation baseline from `design/instructions/process/c4-authoring-playbook.md`.
-- Container boundaries are coherent.
+- Single-container boundaries are coherent.
 - Schema/namespace/folder ownership is explicit.
 - Data stores are modeled as data-store containers.

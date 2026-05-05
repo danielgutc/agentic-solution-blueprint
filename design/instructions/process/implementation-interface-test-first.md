@@ -1,4 +1,4 @@
-# Implementation Artifact: interface-driven, test-first flow
+# Implementation process: interface-driven, test-first flow
 
 ## Purpose
 

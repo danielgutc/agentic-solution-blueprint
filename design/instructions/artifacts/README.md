@@ -19,4 +19,3 @@ Use these files for artifact-specific authoring rules and quality checks.
 - `c4-container.md`
 - `c4-component.md`
 - `c4-code-phase.md`
-- `implementation-interface-test-first.md`

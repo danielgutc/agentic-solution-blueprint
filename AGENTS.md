@@ -73,7 +73,7 @@ design/
 - Keep C4 code phases and runtime implementation as separate tracks:
   - C4 code phase 1 and 2 are architecture artifacts.
   - runtime implementation starts only after C4 code phase 2 approval.
-  - runtime implementation flow follows `design/instructions/artifacts/implementation-interface-test-first.md`.
+  - runtime implementation flow follows `design/instructions/process/implementation-interface-test-first.md`.
 
 ## Architecture defaults
 
@@ -110,6 +110,7 @@ design/
 - Use `blueprint-governance` for instruction/template/sample refactors.
 - Use C4 skills for level-specific architecture authoring:
   - `c4-system-authoring`
+  - `c4-system-containers-authoring`
   - `c4-container-authoring`
   - `c4-component-authoring`
   - `diagram-export-verify`
