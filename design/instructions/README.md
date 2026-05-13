@@ -21,7 +21,7 @@ If two instructions conflict, prefer the higher item in this precedence list and
   - shared C4 authoring playbook
   - blueprint sync process
   - runtime testing process guidance
-  - implementation interface-driven test-first workflow
+  - implementation interface-driven test-driven workflow
   - pre-merge refinement workflow
   - AGENTS cleanup candidates
 - `artifacts/`
@@ -29,6 +29,7 @@ If two instructions conflict, prefer the higher item in this precedence list and
   - canonical section-shape routing to templates
   - implementation track instructions after C4 approvals
 - `standards/`
+  - design by contract conventions
   - status taxonomy
   - naming and navigation conventions
   - diagram tooling conventions

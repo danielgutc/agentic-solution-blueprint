@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Define the runtime implementation flow after C4 code phase 2 approval using a test-first, interface-driven style.
+Define the runtime implementation flow after C4 code phase 2 approval using a test-first, interface-driven, Design by Contract style.
 
 ## Prerequisite
 
@@ -15,10 +15,11 @@ Define the runtime implementation flow after C4 code phase 2 approval using a te
   - create component and class skeletons
   - wire dependency boundaries from approved APIs/dependencies
   - document implementation extensions needed because C4 abstraction was higher
+  - follow `design/instructions/standards/design-by-contract.md`
 - Phase 2: Tests first
-  - define and implement unit tests against behavior contracts
+  - define and implement unit tests against contract preconditions, postconditions, invariants, and failure semantics
   - define and implement component tests with external systems mocked
-  - keep tests as executable behavior specifications before internals
+  - keep tests as executable contract specifications before internals
 - Phase 3: Internal implementation
   - implement internals to satisfy approved tests and contracts
   - preserve dependency boundaries and explicit contracts

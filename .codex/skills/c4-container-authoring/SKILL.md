@@ -20,9 +20,10 @@ Use this skill when creating or revising a single container C4 artifact.
 ## Workflow
 
 1. Apply `design/instructions/artifacts/c4-container.md`.
-2. Use `design/templates/c4/container.template.md`.
-3. Decompose by bounded contexts and explicit contracts.
-4. Record protocol/payload style for container interactions when known.
+2. Apply `design/instructions/standards/design-by-contract.md` to inbound/outbound contracts.
+3. Use `design/templates/c4/container.template.md`.
+4. Decompose by bounded contexts and explicit contracts.
+5. Record protocol/payload style for container interactions when known.
 
 ## Failure handling
 
@@ -33,5 +34,6 @@ Use this skill when creating or revising a single container C4 artifact.
 
 - Apply shared validation baseline from `design/instructions/process/c4-authoring-playbook.md`.
 - Single-container boundaries are coherent.
+- Inbound/outbound contract obligations are explicit.
 - Schema/namespace/folder ownership is explicit.
 - Data stores are modeled as data-store containers.

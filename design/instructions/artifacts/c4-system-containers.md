@@ -11,6 +11,7 @@ Define container boundaries and contracts at the next abstraction level below sy
 ## Authoring rules
 
 - Keep each container as a black box with explicit responsibilities and boundaries.
+- Apply `design/instructions/standards/design-by-contract.md` to container interactions and handoffs.
 - Record key protocols/transports and payload styles for container interactions when known.
 - Keep a tree-style decomposition section at the end:
   - `system -> containers -> designed children`
@@ -21,4 +22,5 @@ Define container boundaries and contracts at the next abstraction level below sy
 
 - Container boundaries align with bounded contexts.
 - Contracts are concrete enough for component decomposition.
+- Consumer/provider obligations are visible at the container boundary.
 - Decomposition tree is navigable and current.
