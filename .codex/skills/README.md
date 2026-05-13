@@ -10,3 +10,4 @@ Current skills:
 - `c4-component-authoring`: author container-internal component decomposition and contracts.
 - `diagram-export-verify`: regenerate and validate diagram exports and navigation links.
 - `blueprint-sync-pr`: sync upstreamable governance changes to blueprint PRs.
+- `aspnet-project-generation`: scaffold ASP.NET Core implementation projects with repository-aligned layout and generated output routing.
