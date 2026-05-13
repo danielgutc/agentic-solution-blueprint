@@ -6,7 +6,7 @@ Map requirement IDs to architecture and implementation elements.
 
 ## Canonical structure
 
-- Use `design/templates/foundation/traceability-matrix.template.md`.
+- Use `.blueprint/templates/foundation/traceability-matrix.template.md`.
 
 ## Authoring rules
 

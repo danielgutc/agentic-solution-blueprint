@@ -6,7 +6,7 @@ Describe the software system boundary, actors, external systems, and major respo
 
 ## Canonical structure
 
-- Use `design/templates/c4/system.template.md`.
+- Use `.blueprint/templates/c4/system.template.md`.
 
 ## Authoring rules
 

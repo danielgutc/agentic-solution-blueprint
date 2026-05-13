@@ -7,9 +7,9 @@ Use this process when an upstreamable blueprint change is made.
 - Treat blueprint-governance changes as upstreamable by default.
 - Blueprint governance scope:
   - `AGENTS.md`
-  - `design/instructions/**`
-  - `design/templates/**`
-  - `design/samples/**`
+  - `.blueprint/instructions/**`
+  - `.blueprint/templates/**`
+  - `.blueprint/samples/**`
   - `.codex/skills/**`
   - `tasks.md`
 - Treat files outside this scope as solution-specific unless explicitly requested for blueprint sync.

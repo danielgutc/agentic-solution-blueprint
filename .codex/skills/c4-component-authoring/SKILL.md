@@ -14,27 +14,27 @@ Use this skill when creating or revising component-level C4 artifacts in a conta
 
 ## Prechecks
 
-- Apply shared prechecks from `design/instructions/process/c4-authoring-playbook.md`.
+- Apply shared prechecks from `.blueprint/instructions/process/c4-authoring-playbook.md`.
 - Confirm targeted container contracts are stable enough for decomposition.
 
 ## Workflow
 
-1. Apply `design/instructions/artifacts/c4-component.md`.
-2. Apply `design/instructions/standards/design-by-contract.md` to component APIs and handoffs.
-3. Use `design/templates/c4/component.template.md`.
+1. Apply `.blueprint/instructions/artifacts/c4-component.md`.
+2. Apply `.blueprint/instructions/standards/design-by-contract.md` to component APIs and handoffs.
+3. Use `.blueprint/templates/c4/component.template.md`.
 4. Model one external facade boundary per microservice by default.
 5. Model internal APIs among orchestration, integration, and persistence components.
-6. Use code-phase gating from `design/instructions/artifacts/c4-code-phase.md`.
+6. Use code-phase gating from `.blueprint/instructions/artifacts/c4-code-phase.md`.
 
 ## Failure handling
 
-- Apply shared escalation rules from `design/instructions/process/c4-authoring-playbook.md`.
+- Apply shared escalation rules from `.blueprint/instructions/process/c4-authoring-playbook.md`.
 - If component changes require container contract changes, return to container level first.
 - If storage/API notation is inconsistent with siblings, align diagrams in the same pass.
 
 ## Validation checklist
 
-- Apply shared validation baseline from `design/instructions/process/c4-authoring-playbook.md`.
+- Apply shared validation baseline from `.blueprint/instructions/process/c4-authoring-playbook.md`.
 - Provider/consumer dependency direction is correct.
 - Component API obligations are explicit and testable.
 - Storage access is modeled directly to data-store nodes.

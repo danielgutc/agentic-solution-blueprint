@@ -9,7 +9,7 @@ Use this folder as the modular authoring guide for enduring documentation work.
 3. `artifacts/*.md` defines canonical section schemas and artifact formats.
 4. `standards/*.md` defines reusable cross-artifact conventions.
 5. `file-types/*.md` defines file-specific coding and writing rules.
-6. `templates/` and `samples/` provide canonical artifact shapes and examples.
+6. `.blueprint/templates/` and `.blueprint/samples/` provide canonical artifact shapes and examples.
 
 If two instructions conflict, prefer the higher item in this precedence list and update lower-level files to remove drift.
 
@@ -40,4 +40,4 @@ If two instructions conflict, prefer the higher item in this precedence list and
 
 Keep `AGENTS.md` concise. Put detailed, repeatable schemas and checklists in modular instruction files and templates.
 For C4 architecture work, use the level-specific C4 skills under `.codex/skills/`.
-Keep governance policy and normative rules in `design/instructions/`; skills should reference those rules and focus on execution playbooks.
+Keep governance policy and normative rules in `.blueprint/instructions/`; skills should reference those rules and focus on execution playbooks.

@@ -6,7 +6,7 @@ Capture enduring functional and non-functional requirements, constraints, and as
 
 ## Canonical structure
 
-- Use `design/templates/foundation/requirements.template.md`.
+- Use `.blueprint/templates/foundation/requirements.template.md`.
 
 ## Authoring rules
 

@@ -6,7 +6,7 @@ Capture enduring architecture decisions and tradeoffs at system level before C4 
 
 ## Canonical structure
 
-- Use `design/templates/foundation/design.template.md`.
+- Use `.blueprint/templates/foundation/design.template.md`.
 
 ## Authoring rules
 

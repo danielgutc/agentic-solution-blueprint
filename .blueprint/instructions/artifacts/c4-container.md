@@ -6,13 +6,13 @@ Describe one runtime container or data-store container as a black box.
 
 ## Canonical structure
 
-- Use `design/templates/c4/container.template.md`.
+- Use `.blueprint/templates/c4/container.template.md`.
 
 ## Authoring rules
 
 - State container type explicitly (service, application, relational store, file/object store, broker).
 - Keep responsibilities, boundaries, and contracts explicit.
-- Apply `design/instructions/standards/design-by-contract.md` to inbound/outbound contracts.
+- Apply `.blueprint/instructions/standards/design-by-contract.md` to inbound/outbound contracts.
 - For service containers, document owned schemas/namespaces and integration boundaries.
 - For data-store containers, prefer internal storage structure over application-style decomposition.
 - Record container-specific architecture decisions and split triggers when deviations exist.

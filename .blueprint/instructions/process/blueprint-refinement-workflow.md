@@ -15,7 +15,7 @@ Use this process to refine blueprint changes before merging to the blueprint rep
 ## Review checklist
 
 - Is `AGENTS.md` shorter and still authoritative?
-- Are detailed schemas in `design/instructions/artifacts/` instead of duplicated?
+- Are detailed schemas in `.blueprint/instructions/artifacts/` instead of duplicated?
 - Do templates and samples match artifact instructions?
 - Do workflow and approval gates still enforce pyramidal progression?
 - Are any rules contradictory across `AGENTS.md` and modular instructions?

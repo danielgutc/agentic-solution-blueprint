@@ -6,7 +6,7 @@ Record enduring technical direction, constraints, and key platform choices.
 
 ## Canonical structure
 
-- Use `design/templates/foundation/tech.template.md`.
+- Use `.blueprint/templates/foundation/tech.template.md`.
 
 ## Authoring rules
 

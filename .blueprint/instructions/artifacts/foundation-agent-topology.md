@@ -6,13 +6,13 @@ Define how agent roles collaborate on complex tasks without embedding workflow m
 
 ## Canonical structure
 
-- Use `design/templates/foundation/agent-topology.template.md` when this artifact is needed.
+- Use `.blueprint/templates/foundation/agent-topology.template.md` when this artifact is needed.
 
 ## Authoring rules
 
 - Keep roles responsibility-focused, not person-specific.
 - Define ownership boundaries and handoff contracts.
-- Apply `design/instructions/standards/design-by-contract.md` to handoff contracts.
+- Apply `.blueprint/instructions/standards/design-by-contract.md` to handoff contracts.
 - Keep escalation paths explicit for approval gates and blocked work.
 - Keep this artifact optional and lightweight; use only when multi-agent coordination adds value.
 

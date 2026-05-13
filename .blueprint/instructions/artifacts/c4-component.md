@@ -6,13 +6,13 @@ Describe component-level decomposition and contracts inside one container.
 
 ## Canonical structure
 
-- Use `design/templates/c4/component.template.md`.
+- Use `.blueprint/templates/c4/component.template.md`.
 
 ## Authoring rules
 
 - Keep one externally consumed facade boundary per microservice by default.
 - Model internal collaboration through explicit component APIs.
-- Apply `design/instructions/standards/design-by-contract.md` to component APIs and handoffs.
+- Apply `.blueprint/instructions/standards/design-by-contract.md` to component APIs and handoffs.
 - For service contracts, use provider/consumer interface directionality.
 - For storage, draw direct component-to-data-store relations; do not model schema/file access as interfaces.
 - Mark component ownership (`project-built` vs selected third-party stack).

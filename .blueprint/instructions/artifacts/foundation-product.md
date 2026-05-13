@@ -6,7 +6,7 @@ Define enduring business context and intended outcomes before technical decompos
 
 ## Canonical structure
 
-- Use `design/templates/foundation/product.template.md`.
+- Use `.blueprint/templates/foundation/product.template.md`.
 
 ## Authoring rules
 

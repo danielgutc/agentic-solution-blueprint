@@ -1,6 +1,6 @@
 ---
 name: blueprint-governance
-description: Refactor and maintain reusable blueprint governance artifacts, including AGENTS.md, design instructions, templates, samples, and project skills. Use when evolving blueprint-level rules or keeping governance artifacts aligned.
+description: Refactor and maintain reusable blueprint governance artifacts, including AGENTS.md, .blueprint instructions, templates, samples, and project skills. Use when evolving blueprint-level rules or keeping governance artifacts aligned.
 ---
 
 # Blueprint Governance Skill
@@ -10,13 +10,13 @@ Use this skill when the task is to evolve the reusable blueprint rather than onl
 ## Goals
 
 - Keep `AGENTS.md` concise and stable.
-- Move detailed schemas into modular instruction files.
+- Move detailed schemas into modular `.blueprint/instructions/` files.
 - Keep templates and samples solution-agnostic.
 - Preserve approval-gated workflow and C4 abstraction discipline.
 
 ## Workflow
 
-1. Identify whether the requested change is inside blueprint-governance scope using `design/instructions/process/blueprint-sync.md`.
+1. Identify whether the requested change is inside blueprint-governance scope using `.blueprint/instructions/process/blueprint-sync.md`.
 2. Apply changes in the smallest coherent package.
 3. Validate consistency:
    - instruction precedence is clear
