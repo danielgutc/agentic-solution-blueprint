@@ -12,6 +12,7 @@ Define how agent roles collaborate on complex tasks without embedding workflow m
 
 - Keep roles responsibility-focused, not person-specific.
 - Define ownership boundaries and handoff contracts.
+- Apply `design/instructions/standards/design-by-contract.md` to handoff contracts.
 - Keep escalation paths explicit for approval gates and blocked work.
 - Keep this artifact optional and lightweight; use only when multi-agent coordination adds value.
 
@@ -19,4 +20,5 @@ Define how agent roles collaborate on complex tasks without embedding workflow m
 
 - Each role has clear scope and outputs.
 - Handoffs are contract-based and testable.
+- Handoff preconditions, outputs, and failure/escalation semantics are explicit.
 - Escalation and authority boundaries are explicit.

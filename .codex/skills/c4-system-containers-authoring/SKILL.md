@@ -15,10 +15,11 @@ Use this skill when creating or revising the system-containers C4 artifact.
 ## Workflow
 
 1. Apply `design/instructions/artifacts/c4-system-containers.md`.
-2. Use `design/templates/c4/system-containers.template.md`.
-3. Decompose by bounded contexts and explicit contracts.
-4. Record protocol/payload style for container interactions when known.
-5. Keep decomposition tree current and navigable.
+2. Apply `design/instructions/standards/design-by-contract.md` to container interactions.
+3. Use `design/templates/c4/system-containers.template.md`.
+4. Decompose by bounded contexts and explicit contracts.
+5. Record protocol/payload style for container interactions when known.
+6. Keep decomposition tree current and navigable.
 
 ## Failure handling
 
@@ -29,5 +30,5 @@ Use this skill when creating or revising the system-containers C4 artifact.
 
 - Apply shared validation baseline from `design/instructions/process/c4-authoring-playbook.md`.
 - Container inventory and boundaries are coherent.
-- System-level container contracts are explicit.
+- System-level container contracts expose provider/consumer obligations.
 - Persistence ownership is represented at container boundary level.

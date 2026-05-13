@@ -12,6 +12,7 @@ Describe one runtime container or data-store container as a black box.
 
 - State container type explicitly (service, application, relational store, file/object store, broker).
 - Keep responsibilities, boundaries, and contracts explicit.
+- Apply `design/instructions/standards/design-by-contract.md` to inbound/outbound contracts.
 - For service containers, document owned schemas/namespaces and integration boundaries.
 - For data-store containers, prefer internal storage structure over application-style decomposition.
 - Record container-specific architecture decisions and split triggers when deviations exist.
@@ -20,4 +21,5 @@ Describe one runtime container or data-store container as a black box.
 
 - Container scope is coherent and non-overlapping.
 - Inbound/outbound contracts are clear.
+- Contract obligations are explicit enough for component decomposition.
 - Persistence ownership is explicit.

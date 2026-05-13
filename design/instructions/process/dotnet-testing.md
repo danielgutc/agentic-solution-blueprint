@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Define testing guidance for runtime implementation using a test-first, interface-driven style.
+Define testing guidance for runtime implementation using a test-driven, interface-driven style.
 
 ## Authoritative references
 
@@ -14,11 +14,12 @@ Define testing guidance for runtime implementation using a test-first, interface
 ## Core rules
 
 - Write tests before internal implementation for new behavior.
+- Derive tests from approved contract obligations before private implementation details.
 - Keep unit tests isolated, fast, repeatable, and self-checking.
 - Avoid infrastructure dependencies in unit tests.
 - Use component tests for cross-component behavior with external systems mocked.
 - Keep test names explicit about method, scenario, and expected behavior.
-- Test behavior contracts, not private implementation details.
+- Test contract behavior, not private implementation details.
 - Avoid control-flow-heavy logic inside tests; keep test logic simple and explicit.
 - Prefer Arrange/Act/Assert structure for readability and consistency.
 - Keep unit and component tests in separate projects or folders when practical to preserve test intent.

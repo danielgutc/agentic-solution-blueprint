@@ -64,10 +64,12 @@ design/
 
 ## Workflow model
 
-- Select the next step explicitly: product, requirements, tech, design, C4, traceability, or implementation readiness.
+- Select and state the workflow model first: requirements-first or design-first; then name the current artifact step within that model.
 - For structural or process changes, propose intended edits first and proceed only after explicit user approval.
 - Think pyramidal: complete the current abstraction level before drilling down.
 - Use domain-driven design across all decomposition steps.
+- Use Design by Contract for service, component, persistence, and agent handoff boundaries.
+- Use test-driven development to prove approved contracts during runtime implementation.
 - Use the workflow models in `design/instructions/process/workflow-models.md`.
 - Enforce approval gates in `design/instructions/process/approval-gates.md`.
 - Keep C4 code phases and runtime implementation as separate tracks:
@@ -98,7 +100,7 @@ design/
 
 - For workflow sequencing and approvals: `design/instructions/process/*.md`.
 - For artifact-specific rules and section requirements: `design/instructions/artifacts/*.md`.
-- For cross-cutting conventions (naming, status, navigation, diagrams): `design/instructions/standards/*.md`.
+- For cross-cutting conventions (design by contract, naming, status, navigation, diagrams): `design/instructions/standards/*.md`.
 - For file-specific coding/writing rules: `design/instructions/file-types/*.md`.
 - For concrete artifact shapes: `design/templates/foundation/*.template.md` and `design/templates/c4/*.template.md`.
 - For task dashboard format: `design/instructions/artifacts/task-tracker.md`.

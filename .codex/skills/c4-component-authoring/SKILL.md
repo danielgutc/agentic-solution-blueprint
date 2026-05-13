@@ -20,10 +20,11 @@ Use this skill when creating or revising component-level C4 artifacts in a conta
 ## Workflow
 
 1. Apply `design/instructions/artifacts/c4-component.md`.
-2. Use `design/templates/c4/component.template.md`.
-3. Model one external facade boundary per microservice by default.
-4. Model internal APIs among orchestration, integration, and persistence components.
-5. Use code-phase gating from `design/instructions/artifacts/c4-code-phase.md`.
+2. Apply `design/instructions/standards/design-by-contract.md` to component APIs and handoffs.
+3. Use `design/templates/c4/component.template.md`.
+4. Model one external facade boundary per microservice by default.
+5. Model internal APIs among orchestration, integration, and persistence components.
+6. Use code-phase gating from `design/instructions/artifacts/c4-code-phase.md`.
 
 ## Failure handling
 
@@ -35,5 +36,6 @@ Use this skill when creating or revising component-level C4 artifacts in a conta
 
 - Apply shared validation baseline from `design/instructions/process/c4-authoring-playbook.md`.
 - Provider/consumer dependency direction is correct.
+- Component API obligations are explicit and testable.
 - Storage access is modeled directly to data-store nodes.
 - Project-built vs third-party ownership is explicit.
