@@ -17,6 +17,6 @@ Use this playbook as the shared execution baseline for C4 authoring skills.
 ## Shared validation baseline
 
 - Narrative and diagrams are aligned at the target abstraction level.
-- Contract boundaries follow `design/instructions/standards/design-by-contract.md`.
+- Contract boundaries follow `.blueprint/instructions/standards/design-by-contract.md`.
 - Links and references resolve to expected artifacts.
 - No lower-level decomposition is added before required approvals.

@@ -45,5 +45,5 @@ Define testing guidance for runtime implementation using a test-driven, interfac
 ## Implementation gate alignment
 
 - Follow implementation gates from:
-  - `design/instructions/process/approval-gates.md`
-  - `design/instructions/process/implementation-interface-test-first.md`
+  - `.blueprint/instructions/process/approval-gates.md`
+  - `.blueprint/instructions/process/implementation-interface-test-first.md`

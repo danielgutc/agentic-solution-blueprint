@@ -14,12 +14,13 @@ Use this blueprint to structure work from product intent to implementation with 
 - [Foundation design](./design/foundation/design.md)
 - [C4 system](./design/c4/system/system.md)
 - [C4 system containers](./design/c4/containers/system-containers.md)
-- [Instruction index](./design/instructions/README.md)
+- [Instruction index](./.blueprint/instructions/README.md)
 
 ## Repository structure
 
+- `.blueprint/` contains reusable governance, instructions, templates, and samples.
 - `.codex/` contains Codex-specific skills and memory.
-- `design/` contains enduring foundation, architecture, instructions, templates, and samples.
+- `design/` contains enduring foundation and architecture artifacts.
 - `implementation/` contains real application components.
 - `tools/` contains repo-local utilities and automation scripts.
 - `tests/` contains cross-component integration and end-to-end tests.
@@ -48,7 +49,7 @@ Use [design/c4/](./design/c4/) for enduring architecture artifacts:
 
 ### Instructions
 
-Use [design/instructions/](./design/instructions/) for modular authoring rules:
+Use [.blueprint/instructions/](./.blueprint/instructions/) for modular authoring rules:
 
 - process workflows and gates
 - artifact schemas
@@ -56,11 +57,11 @@ Use [design/instructions/](./design/instructions/) for modular authoring rules:
 
 ### Templates
 
-Use [design/templates/](./design/templates/) for solution-agnostic target structures.
+Use [.blueprint/templates/](./.blueprint/templates/) for solution-agnostic target structures.
 
 ### Samples
 
-Use [design/samples/](./design/samples/) for reference-quality examples.
+Use [.blueprint/samples/](./.blueprint/samples/) for reference-quality examples.
 
 ### Skills
 
@@ -69,6 +70,7 @@ Use [.codex/skills/](./.codex/skills/) for on-demand, task-specific reusable wor
 ## Top-level layout
 
 ```text
+.blueprint/
 .codex/
 design/
 implementation/

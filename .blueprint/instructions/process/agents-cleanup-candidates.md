@@ -19,9 +19,9 @@ Use this list when slimming `AGENTS.md` in future passes.
 
 - verify no duplicated normative rule appears with different wording across:
   - `AGENTS.md`
-  - `design/instructions/process/*`
-  - `design/instructions/artifacts/*`
-  - `design/instructions/standards/*`
+  - `.blueprint/instructions/process/*`
+  - `.blueprint/instructions/artifacts/*`
+  - `.blueprint/instructions/standards/*`
 
 ## Merge readiness signal
 

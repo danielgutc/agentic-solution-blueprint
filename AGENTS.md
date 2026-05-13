@@ -4,20 +4,21 @@
 
 - Treat this repository as a reusable blueprint for starting new projects.
 - Keep `AGENTS.md` concise: always-on behavior, governance, and routing only.
-- Keep detailed authoring rules in `design/instructions/`, not in this file.
+- Keep detailed authoring rules in `.blueprint/instructions/`, not in this file.
 
 ## Operating model
 
 - Drive work through enduring artifacts in `design/foundation/` and `design/c4/`.
 - Keep implementation assets in `implementation/`.
 - Keep Codex-only helpers in `.codex/`.
-- Use `design/templates/` as canonical artifact structures and `design/samples/` as quality references.
+- Use `.blueprint/templates/` as canonical artifact structures and `.blueprint/samples/` as quality references.
 
 ## Repository model
 
 ### Top-level layout
 
 ```text
+.blueprint/
 .codex/
 design/
 implementation/
@@ -40,6 +41,12 @@ design/
   c4/
     system/
     containers/
+```
+
+### Blueprint layout
+
+```text
+.blueprint/
   instructions/
     process/
     artifacts/
@@ -55,7 +62,7 @@ design/
 
 - Keep `origin` as the solution repository.
 - Use `blueprint` remote for `agentic-solution-blueprint`.
-- Treat `design/instructions/process/blueprint-sync.md` as the single source of truth for:
+- Treat `.blueprint/instructions/process/blueprint-sync.md` as the single source of truth for:
   - upstreamable governance scope
   - commit isolation requirements
   - sync branch policy
@@ -70,12 +77,12 @@ design/
 - Use domain-driven design across all decomposition steps.
 - Use Design by Contract for service, component, persistence, and agent handoff boundaries.
 - Use test-driven development to prove approved contracts during runtime implementation.
-- Use the workflow models in `design/instructions/process/workflow-models.md`.
-- Enforce approval gates in `design/instructions/process/approval-gates.md`.
+- Use the workflow models in `.blueprint/instructions/process/workflow-models.md`.
+- Enforce approval gates in `.blueprint/instructions/process/approval-gates.md`.
 - Keep C4 code phases and runtime implementation as separate tracks:
   - C4 code phase 1 and 2 are architecture artifacts.
   - runtime implementation starts only after C4 code phase 2 approval.
-  - runtime implementation flow follows `design/instructions/process/implementation-interface-test-first.md`.
+  - runtime implementation flow follows `.blueprint/instructions/process/implementation-interface-test-first.md`.
 
 ## Architecture defaults
 
@@ -94,17 +101,17 @@ design/
 - Keep sibling `.svg` exports for embedded documentation.
 - Validate exports and required links after diagram changes.
 - Keep diagram navigation focused on diagram-to-diagram drill-down.
-- Follow shared rules in `design/instructions/standards/diagram-tooling.md` and `design/instructions/standards/navigation.md`.
+- Follow shared rules in `.blueprint/instructions/standards/diagram-tooling.md` and `.blueprint/instructions/standards/navigation.md`.
 
 ## Artifact routing
 
-- For workflow sequencing and approvals: `design/instructions/process/*.md`.
-- For artifact-specific rules and section requirements: `design/instructions/artifacts/*.md`.
-- For cross-cutting conventions (design by contract, naming, status, navigation, diagrams): `design/instructions/standards/*.md`.
-- For file-specific coding/writing rules: `design/instructions/file-types/*.md`.
-- For concrete artifact shapes: `design/templates/foundation/*.template.md` and `design/templates/c4/*.template.md`.
-- For task dashboard format: `design/instructions/artifacts/task-tracker.md`.
-- For runtime testing process and boundaries: `design/instructions/process/dotnet-testing.md`.
+- For workflow sequencing and approvals: `.blueprint/instructions/process/*.md`.
+- For artifact-specific rules and section requirements: `.blueprint/instructions/artifacts/*.md`.
+- For cross-cutting conventions (design by contract, naming, status, navigation, diagrams): `.blueprint/instructions/standards/*.md`.
+- For file-specific coding/writing rules: `.blueprint/instructions/file-types/*.md`.
+- For concrete artifact shapes: `.blueprint/templates/foundation/*.template.md` and `.blueprint/templates/c4/*.template.md`.
+- For task dashboard format: `.blueprint/instructions/artifacts/task-tracker.md`.
+- For runtime testing process and boundaries: `.blueprint/instructions/process/dotnet-testing.md`.
 
 ## Skills model
 
@@ -121,5 +128,5 @@ design/
 ## Maintenance
 
 - Keep this file short and stable.
-- When a rule becomes detailed or procedural, move it to `design/instructions/` or a skill.
+- When a rule becomes detailed or procedural, move it to `.blueprint/instructions/` or a skill.
 - Keep templates, instructions, and samples aligned in the same change set.
