@@ -63,6 +63,22 @@ Table schema:
 - Code phase 2 tracks internal class and domain design.
 - For storage-only containers, use `N/A` for component-specific code-phase columns.
 
+## Gate status authority
+
+- `design/foundation/task.md` is the authoritative source for recorded gate status.
+- Conversation approvals become durable gate status only when reflected in this tracker.
+- If another artifact suggests a different status, resolve the mismatch in this tracker before proceeding deeper.
+
+## Matrix consistency rule
+
+- Container maturity status must respect the approval gate sequence from left to right.
+- A later phase must not be marked `Approved` unless prerequisite phases for the same container are also marked `Approved`.
+- Invalid example: `Designed | Designed | Designed | Approved`.
+- Valid corrections:
+  - mark prerequisite phases `Approved` when they were explicitly approved
+  - or keep the later phase `Designed` until prerequisite approval is recorded
+- Approved phases may be revised later, but revisions that affect downstream contracts or design should mark downstream phases for re-review.
+
 ## `Active TODO` convention
 
 - Use IDs in `TASK-xxx` format.
