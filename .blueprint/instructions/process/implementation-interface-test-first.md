@@ -15,10 +15,13 @@ Define the runtime implementation flow after C4 code phase 2 approval using a te
   - create component and class skeletons
   - wire dependency boundaries from approved APIs/dependencies
   - document implementation extensions needed because C4 abstraction was higher
+  - for executable HTTP APIs, allocate a stable local development URL and record it in `implementation/local-development.md`
+  - for executable HTTP APIs, expose the generated OpenAPI document and interactive Swagger UI in the `Development` environment only
   - follow `.blueprint/instructions/standards/design-by-contract.md`
 - Phase 2: Tests first
   - define and implement unit tests against contract preconditions, postconditions, invariants, and failure semantics
   - define and implement component tests with external systems mocked
+  - for executable HTTP APIs, verify health and Development-only OpenAPI/Swagger UI availability through integration tests
   - keep tests as executable contract specifications before internals
 - Phase 3: Internal implementation
   - implement internals to satisfy approved tests and contracts

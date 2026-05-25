@@ -41,3 +41,4 @@ If two instructions conflict, prefer the higher item in this precedence list and
 Keep `AGENTS.md` concise. Put detailed, repeatable schemas and checklists in modular instruction files and templates.
 For C4 architecture work, use the level-specific C4 skills under `.codex/skills/`.
 Keep governance policy and normative rules in `.blueprint/instructions/`; skills should reference those rules and focus on execution playbooks.
+Use `.blueprint/templates/implementation/local-development.template.md` when creating the implementation-level local endpoint registry required for executable services.
