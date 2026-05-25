@@ -4,9 +4,9 @@ This document is the registry for stable local service bindings used during deve
 
 ## Service endpoints
 
-| Service | Development URL | Health | API exploration | Notes |
-| --- | --- | --- | --- | --- |
-| `<service-name>` | `http://localhost:<port>` | `GET /health` | `GET /swagger`; `GET /openapi/v1.json` in Development only. | `<operational note>` |
+| Service | Development URL | Kubernetes access | Health | API exploration | Notes |
+| --- | --- | --- | --- | --- | --- |
+| `<service-name>` | `http://localhost:<port>` | `kubectl -n <namespace> port-forward service/<service-name> <port>:80` | `GET /health` | `GET /swagger`; `GET /openapi/v1.json` in Development only. | `<operational note>` |
 
 ## Conventions
 
@@ -14,3 +14,4 @@ This document is the registry for stable local service bindings used during deve
 - Keep health endpoints available at `/health` unless a documented operational constraint requires otherwise.
 - For HTTP APIs, expose interactive Swagger UI and the OpenAPI document in `Development` only.
 - Keep runtime service URLs in `Properties/launchSettings.json` aligned with this registry.
+- Keep local Kubernetes `Service` port-forward mappings aligned with this registry.

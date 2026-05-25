@@ -1,0 +1,20 @@
+FROM mcr.microsoft.com/dotnet/sdk:<dotnet-version> AS build
+WORKDIR /source
+
+COPY Directory.Build.props ./
+COPY src/<ProjectName>/<ProjectName>.csproj src/<ProjectName>/
+RUN dotnet restore src/<ProjectName>/<ProjectName>.csproj
+
+COPY src/<ProjectName>/ src/<ProjectName>/
+RUN dotnet publish src/<ProjectName>/<ProjectName>.csproj \
+    --configuration Release \
+    --no-restore \
+    --output /app/publish \
+    /p:UseAppHost=false
+
+FROM mcr.microsoft.com/dotnet/aspnet:<dotnet-version> AS final
+WORKDIR /app
+EXPOSE 8080
+ENV ASPNETCORE_HTTP_PORTS=8080
+COPY --from=build /app/publish .
+ENTRYPOINT ["dotnet", "<ProjectName>.dll"]

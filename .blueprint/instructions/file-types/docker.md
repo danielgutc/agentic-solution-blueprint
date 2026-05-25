@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Use Docker files to provide reproducible local development and automation environments.
+Use Docker files to build reproducible OCI-compatible images consumed by Kubernetes-based local development and deployment environments.
 
 ## Rules
 
@@ -11,10 +11,12 @@ Use Docker files to provide reproducible local development and automation enviro
 - Minimize image size by avoiding unnecessary packages and build steps.
 - Use multi-stage builds when compile-time tooling is not needed at runtime.
 - Keep secrets and machine-specific values out of Docker files.
+- Keep container ports, health endpoints, and runtime environment expectations aligned with the Kubernetes manifests and `implementation/local-development.md`.
 
 ## Conventions
 
-- Name files according to purpose, such as `Dockerfile`, `Dockerfile.dev`, or `docker-compose.yml` when we introduce them.
+- Name image build files according to purpose, such as `Dockerfile` or `Dockerfile.dev`.
+- Treat Kubernetes manifests as the default service orchestration artifacts; introduce Docker Compose only as an explicitly documented deviation or auxiliary workflow.
 - Group related environment setup commands to keep layer caching effective.
 - Add brief comments only when a step is non-obvious or has an important tradeoff.
 
@@ -22,3 +24,4 @@ Use Docker files to provide reproducible local development and automation enviro
 
 - Build definitions should be easy to run locally.
 - Changes to Docker files should be reflected in the relevant foundation, design, or implementation artifacts when they affect developer workflow.
+- Validate images against the matching Kubernetes deployment manifest when a service is deployable.
