@@ -20,6 +20,8 @@ Use this skill when creating a new ASP.NET Core runtime project in `implementati
 2. Confirm the target implementation component root, for example `implementation/<component>/`.
 3. Confirm the app model: controller-based Web API, Minimal API, gRPC, worker, or another ASP.NET Core template.
 4. Confirm the target framework from repository context; default to the latest stable .NET only when not pinned.
+5. For executable HTTP APIs, select an unused stable local development URL and check `deployment/local-development.md` for conflicts.
+6. For deployable executable services, confirm the Kubernetes local-development manifest location and image tag convention.
 
 ## Required layout
 
@@ -31,6 +33,26 @@ implementation/<component>/
     <Component>.<App>/
       <Component>.<App>.csproj
 ```
+
+For executable local services, maintain the shared endpoint registry at:
+
+```text
+deployment/local-development.md
+```
+
+Use `.blueprint/templates/deployment/local-development.template.md` when the registry does not exist yet.
+
+## HTTP API development defaults
+
+For ASP.NET Core HTTP APIs:
+
+- add health checks with `/health`
+- expose an OpenAPI document in `Development` only
+- expose interactive Swagger UI in `Development` only, referencing the OpenAPI document
+- configure the development launch profile to open the Swagger UI when launched interactively
+- record local URLs, health endpoints, and API exploration routes in `deployment/local-development.md`
+- add a service image `Dockerfile` under the implementation component root and a Kubernetes `Deployment`/`Service` manifest under `deployment/k8s/local/`
+- start from `.blueprint/templates/implementation/Dockerfile.template`, `.blueprint/templates/implementation/.dockerignore.template`, and `.blueprint/templates/deployment/k8s/local/service.template.yaml` where applicable
 
 ## Generated output routing
 
@@ -70,3 +92,5 @@ Never leave generated `bin/` or `obj/` folders under `implementation/<component>
 - `bin/` and `obj/` exist only at the implementation component root.
 - User-specific files such as `*.csproj.user` are not tracked.
 - `.gitignore` covers generated outputs and user-specific files.
+- Executable HTTP APIs have Development-only OpenAPI and Swagger UI endpoints plus an entry in `deployment/local-development.md`.
+- Deployable executable services have a Docker/OCI image definition and Kubernetes local-development manifest with health probes.

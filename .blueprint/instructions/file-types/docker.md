@@ -11,6 +11,7 @@ Use Docker files to provide reproducible local development and automation enviro
 - Minimize image size by avoiding unnecessary packages and build steps.
 - Use multi-stage builds when compile-time tooling is not needed at runtime.
 - Keep secrets and machine-specific values out of Docker files.
+- Keep container ports, health endpoints, and runtime environment expectations aligned with the Kubernetes manifests and `deployment/local-development.md`.
 
 ## Conventions
 

@@ -9,7 +9,8 @@
 ## Operating model
 
 - Drive work through enduring artifacts in `design/foundation/` and `design/c4/`.
-- Keep implementation assets in `implementation/`.
+- Keep runtime source and service-local build assets in `implementation/`.
+- Keep deployment and environment orchestration assets in `deployment/`.
 - Keep Codex-only helpers in `.codex/`.
 - Use `.blueprint/templates/` as canonical artifact structures and `.blueprint/samples/` as quality references.
 
@@ -20,6 +21,7 @@
 ```text
 .blueprint/
 .codex/
+deployment/
 design/
 implementation/
 tools/
