@@ -22,6 +22,7 @@ Treat them as canonical section shapes for corresponding artifacts.
 
 ## Implementation templates
 
+- `implementation/Directory.Build.props.template`
 - `implementation/Dockerfile.template`
 - `implementation/.dockerignore.template`
 

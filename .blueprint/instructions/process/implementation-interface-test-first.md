@@ -18,6 +18,7 @@ Define the runtime implementation flow after C4 code phase 2 approval using a te
   - for executable HTTP APIs, allocate a stable local development URL and record it in `deployment/local-development.md`
   - for executable HTTP APIs, expose the generated OpenAPI document and interactive Swagger UI in the `Development` environment only
   - for executable backend services, add Docker/OCI image build assets and Kubernetes local-development manifests unless an approved technical decision records another deployment model
+  - for .NET implementation components, add generated output routing before the first restore/build so `bin/` and `obj/` are created at the implementation component root, not under `src/` or `tests/`
   - follow `.blueprint/instructions/standards/design-by-contract.md`
 - Phase 2: Tests first
   - define and implement unit tests against contract preconditions, postconditions, invariants, and failure semantics
@@ -37,3 +38,9 @@ Define the runtime implementation flow after C4 code phase 2 approval using a te
 ## Change-control rule
 
 - If runtime implementation introduces architecture drift, update relevant C4 artifacts and re-approve before continuing implementation.
+
+## Generated output rule
+
+- Runtime build artifacts must stay outside source and test trees.
+- For .NET implementation components, start from `.blueprint/templates/implementation/Directory.Build.props.template` unless an approved technical decision records another output-routing mechanism.
+- Validate after restore/build/test that generated `bin/` and `obj/` directories exist only at the implementation component root.

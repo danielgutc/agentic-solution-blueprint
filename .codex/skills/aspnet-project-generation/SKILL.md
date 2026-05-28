@@ -58,17 +58,7 @@ For ASP.NET Core HTTP APIs:
 
 ## Generated output routing
 
-Add `Directory.Build.props` at the implementation component root before build or restore:
-
-```xml
-<Project>
-  <PropertyGroup>
-    <BaseOutputPath>$(MSBuildThisFileDirectory)bin\$(MSBuildProjectName)\</BaseOutputPath>
-    <BaseIntermediateOutputPath>$(MSBuildThisFileDirectory)obj\$(MSBuildProjectName)\</BaseIntermediateOutputPath>
-    <MSBuildProjectExtensionsPath>$(BaseIntermediateOutputPath)</MSBuildProjectExtensionsPath>
-  </PropertyGroup>
-</Project>
-```
+Add `Directory.Build.props` at the implementation component root before build or restore, starting from `.blueprint/templates/implementation/Directory.Build.props.template`.
 
 This keeps generated `bin/` and `obj/` folders at:
 
@@ -87,7 +77,7 @@ Never leave generated `bin/` or `obj/` folders under `implementation/<component>
 6. For executable HTTP APIs, add the development API documentation surface and update the local endpoint registry.
 7. For deployable executable services, add container image and Kubernetes local-development assets.
 8. Run format/build and deployment-manifest validation.
-9. Verify no generated `bin/` or `obj/` directory exists under `src/`.
+9. Verify no generated `bin/` or `obj/` directory exists under `src/` or `tests/`.
 
 ## Validation checklist
 
