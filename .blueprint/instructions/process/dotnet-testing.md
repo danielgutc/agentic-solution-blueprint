@@ -21,6 +21,7 @@ Define testing guidance for runtime implementation using a test-driven, interfac
 - Keep test names explicit about method, scenario, and expected behavior.
 - Test contract behavior, not private implementation details.
 - For executable ASP.NET Core APIs, integration-test `/health` and Development-only OpenAPI/Swagger UI endpoints when those development surfaces are part of the scaffold convention.
+- For .NET implementation components, fail validation if generated `bin/` or `obj/` directories exist under `src/` or `tests/`; generated build output is allowed only at the implementation component root.
 - Avoid control-flow-heavy logic inside tests; keep test logic simple and explicit.
 - Prefer Arrange/Act/Assert structure for readability and consistency.
 - Keep unit and component tests in separate projects or folders when practical to preserve test intent.
