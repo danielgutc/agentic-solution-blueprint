@@ -13,7 +13,9 @@ Status legend: `Not started`, `In progress`, `Designed`, `Approved`, `Implemente
 | C4 Containers | Not started | | Awaiting system approval. | Draft container boundaries. |
 | Code phase 1 (contracts) | Not started | | Blocked by C4 approvals. | Start after container approval. |
 | Code phase 2 (internal design) | Not started | | Blocked by phase 1. | Start after phase 1 approval. |
-| Implementation | Not started | `implementation/` | No runtime code yet. | Scaffold after design gates. |
+| Implementation phase 1 (interfaces) | Not started | `implementation/` | No interface-driven runtime skeletons yet. | Scaffold after C4 code phase 2 approval. |
+| Implementation phase 2 (tests) | Not started | `implementation/` | No executable contract tests yet. | Start after implementation interfaces are approved. |
+| Implementation phase 3 (internals) | Not started | `implementation/` | No internal runtime behavior yet. | Start after implementation tests are approved. |
 
 ## Architecture progress (system to containers to components)
 
@@ -22,10 +24,10 @@ Status legend: `Not started`, `In progress`, `Designed`, `Approved`, `Implemente
 
 ### Container maturity matrix
 
-| Container | Container design | Components design | Interfaces diagram | Code phase 1 (contracts) | Code phase 2 (class or domain design) | Implementation | Notes |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| `example-service` | Not started | Not started | Not started | Not started | Not started | Not started | Pending system approval. |
-| `example-data-storage` | Not started | N/A (data store) | Not started | Not started | N/A (data store) | Not started | Infrastructure container. |
+| Container | Container design | Components design | Interfaces diagram | Code phase 1 (contracts) | Code phase 2 (class or domain design) | Implementation phase 1 (interfaces) | Implementation phase 2 (tests) | Implementation phase 3 (internals) | Notes |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| `example-service` | Not started | Not started | Not started | Not started | Not started | Not started | Not started | Not started | Pending system approval. |
+| `example-data-storage` | Not started | N/A (data store) | Not started | Not started | N/A (data store) | Not started | Not started | Not started | Infrastructure container. |
 
 ### Component depth matrix
 
@@ -39,6 +41,7 @@ Status legend: `Not started`, `In progress`, `Designed`, `Approved`, `Implemente
 - `TASK-001` (`In progress`) Complete FR baseline and IDs.
 - `TASK-002` (`Todo`) Code phase 1: define service interface contracts for `example-service`.
 - `TASK-003` (`Todo`) Code phase 2: add class and domain design for approved components.
+- `TASK-004` (`Todo`) Implementation phase 1: scaffold approved service interfaces after C4 code phase 2 approval.
 
 ## Parking lot
 
