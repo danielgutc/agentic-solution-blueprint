@@ -11,7 +11,7 @@ Use Docker files to build reproducible OCI-compatible images consumed by Kuberne
 - Minimize image size by avoiding unnecessary packages and build steps.
 - Use multi-stage builds when compile-time tooling is not needed at runtime.
 - Keep secrets and machine-specific values out of Docker files.
-- Keep container ports, health endpoints, and runtime environment expectations aligned with the Kubernetes manifests and `implementation/local-development.md`.
+- Keep container ports, health endpoints, and runtime environment expectations aligned with the Kubernetes manifests and `deployment/local-development.md`.
 
 ## Conventions
 

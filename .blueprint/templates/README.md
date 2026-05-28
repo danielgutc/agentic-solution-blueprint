@@ -19,3 +19,15 @@ Treat them as canonical section shapes for corresponding artifacts.
 - `c4/system-containers.template.md`
 - `c4/container.template.md`
 - `c4/component.template.md`
+
+## Implementation templates
+
+- `implementation/Dockerfile.template`
+- `implementation/.dockerignore.template`
+
+## Deployment templates
+
+- `deployment/local-development.template.md`
+- `deployment/k8s/local/kustomization.template.yaml`
+- `deployment/k8s/local/namespace.template.yaml`
+- `deployment/k8s/local/service.template.yaml`

@@ -15,7 +15,7 @@ Define the runtime implementation flow after C4 code phase 2 approval using a te
   - create component and class skeletons
   - wire dependency boundaries from approved APIs/dependencies
   - document implementation extensions needed because C4 abstraction was higher
-  - for executable HTTP APIs, allocate a stable local development URL and record it in `implementation/local-development.md`
+  - for executable HTTP APIs, allocate a stable local development URL and record it in `deployment/local-development.md`
   - for executable HTTP APIs, expose the generated OpenAPI document and interactive Swagger UI in the `Development` environment only
   - for executable backend services, add Docker/OCI image build assets and Kubernetes local-development manifests unless an approved technical decision records another deployment model
   - follow `.blueprint/instructions/standards/design-by-contract.md`
