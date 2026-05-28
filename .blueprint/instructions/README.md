@@ -35,6 +35,7 @@ If two instructions conflict, prefer the higher item in this precedence list and
   - diagram tooling conventions
 - `file-types/`
   - language and file-specific implementation/writing rules
+  - Kubernetes deployment-manifest and container-image rules
 
 ## Authoring rule
 

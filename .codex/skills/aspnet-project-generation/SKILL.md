@@ -13,6 +13,8 @@ Use this skill when creating a new ASP.NET Core runtime project in `implementati
 - Keep generated build outputs outside `src/`.
 - Preserve repository workflow gates before runtime implementation starts.
 - Produce a buildable skeleton before adding behavior.
+- Make executable HTTP APIs discoverable in local development without exposing API documentation surfaces in production by default.
+- Default executable backend service deployments to Docker/OCI images and Kubernetes local-development manifests.
 
 ## Prechecks
 
@@ -82,8 +84,10 @@ Never leave generated `bin/` or `obj/` folders under `implementation/<component>
 3. Generate the solution and project under `src/`.
 4. Remove template sample code that does not map to approved design contracts.
 5. Add only the skeleton allowed by the current implementation gate.
-6. Run format/build validation.
-7. Verify no generated `bin/` or `obj/` directory exists under `src/`.
+6. For executable HTTP APIs, add the development API documentation surface and update the local endpoint registry.
+7. For deployable executable services, add container image and Kubernetes local-development assets.
+8. Run format/build and deployment-manifest validation.
+9. Verify no generated `bin/` or `obj/` directory exists under `src/`.
 
 ## Validation checklist
 

@@ -22,6 +22,7 @@ Define the runtime implementation flow after C4 code phase 2 approval using a te
 - Phase 2: Tests first
   - define and implement unit tests against contract preconditions, postconditions, invariants, and failure semantics
   - define and implement component tests with external systems mocked
+  - for executable HTTP APIs, verify health and Development-only OpenAPI/Swagger UI availability through integration tests
   - keep tests as executable contract specifications before internals
 - Phase 3: Internal implementation
   - implement internals to satisfy approved tests and contracts
