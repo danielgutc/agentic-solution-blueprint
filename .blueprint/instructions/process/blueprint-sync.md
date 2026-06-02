@@ -10,6 +10,7 @@ Use this process when an upstreamable blueprint change is made.
   - `.blueprint/instructions/**`
   - `.blueprint/templates/**`
   - `.blueprint/samples/**`
+  - `.blueprint/tools/**`
   - `.codex/skills/**`
   - `tasks.md`
 - Treat files outside this scope as solution-specific unless explicitly requested for blueprint sync.
