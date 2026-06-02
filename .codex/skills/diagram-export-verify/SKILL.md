@@ -19,7 +19,7 @@ Use this skill when diagram source files are changed and exports/navigation must
 
 ## Workflow
 
-1. Regenerate `.svg` for each changed `.drawio`.
+1. Regenerate `.svg` for each changed `.drawio`; prefer `.blueprint/tools/diagrams/export-drawio-svg.ps1`, falling back to `tools/diagrams/export-drawio-svg.ps1` only when the blueprint tool is unavailable, so source links are preserved in the export.
 2. Verify export changed (timestamp/hash/content).
 3. Verify required links exist in exported SVG when navigation is needed.
 4. Verify embedded Markdown references point to current SVG paths.
