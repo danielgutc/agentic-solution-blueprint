@@ -69,10 +69,12 @@ Status legend: `Not started`, `In progress`, `Designed`, `Approved`, `Implemente
 
 - `Executable phase 1`: interface-driven implementation skeletons and dependency-boundary wiring.
 - `Executable phase 2`: tests-first executable contract specifications.
-- `Executable phase 3`: internal runtime implementation that satisfies approved tests and contracts.
+- `Executable phase 3`: internal runtime implementation that satisfies approved tests and contracts, including the approved core business/runtime behavior.
 - `Infrastructure phase 1`: deployment baseline assets.
 - `Infrastructure phase 2`: infrastructure verification.
 - `Infrastructure phase 3`: operational readiness, including runbooks, backup/restore, observability, or cleanup tasks when relevant.
+
+For partial executable implementation slices, name completed capabilities and missing core capabilities explicitly in the Snapshot, Container maturity matrix notes, and Active TODOs. Do not mark phase 3 `Approved` when core behavior is still deferred behind scaffolding, persistence wiring, deterministic placeholders, or adapter stubs.
 
 ## Active TODO
 

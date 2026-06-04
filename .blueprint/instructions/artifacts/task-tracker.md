@@ -80,7 +80,7 @@ The guide must explain implementation tracks:
 The guide must explain implementation phase meanings:
 - `Executable phase 1`: interface-driven implementation skeletons and dependency-boundary wiring.
 - `Executable phase 2`: tests-first executable contract specifications.
-- `Executable phase 3`: internal runtime implementation that satisfies approved tests and contracts.
+- `Executable phase 3`: internal runtime implementation that satisfies approved tests and contracts, including the approved core business/runtime behavior.
 - `Infrastructure phase 1`: deployment baseline assets.
 - `Infrastructure phase 2`: infrastructure verification.
 - `Infrastructure phase 3`: operational readiness, including runbooks, backup/restore, observability, or cleanup tasks when relevant.
@@ -107,7 +107,9 @@ The guide must explain implementation phase meanings:
 - For pure infrastructure/data-store containers, record component-specific code phase 2 and executable implementation phases as `N/A` when there are no project-built runtime internals.
 - Executable implementation phase 1 tracks interface-driven implementation skeletons and dependency-boundary wiring.
 - Executable implementation phase 2 tracks tests-first executable contract specifications.
-- Executable implementation phase 3 tracks internal runtime implementation that satisfies approved tests and contracts.
+- Executable implementation phase 3 tracks internal runtime implementation that satisfies approved tests and contracts, including approved core behavior.
+- Do not mark executable implementation phase 3 `Approved` when only scaffolding, orchestration, persistence wiring, deterministic placeholders, or adapter stubs are complete and core behavior is still deferred.
+- For partial implementation slices, name the completed capability and the missing core capability explicitly in `Notes`, `Next action`, and relevant TODOs. Prefer concrete slice names such as `pipeline/state/publication groundwork`, `normalized-source terrain semantics bake`, or `raw provider ingestion pending` over vague labels like `internals implemented`.
 - Infrastructure phase 1 tracks deployment baseline assets.
 - Infrastructure phase 2 tracks infrastructure verification.
 - Infrastructure phase 3 tracks operational readiness.
