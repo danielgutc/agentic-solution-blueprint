@@ -20,7 +20,7 @@ spec:
       containers:
         - name: api
           image: <image-name>:dev
-          imagePullPolicy: Never
+          imagePullPolicy: IfNotPresent
           env:
             - name: ASPNETCORE_ENVIRONMENT
               value: Development

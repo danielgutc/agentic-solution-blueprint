@@ -4,3 +4,7 @@ namespace: <namespace>
 resources:
   - namespace.yaml
   - <service-name>.yaml
+images:
+  - name: <image-name>
+    newName: <cluster-reachable-registry>/<image-name>
+    newTag: dev
