@@ -24,6 +24,8 @@ Define the runtime implementation flow after C4 code phase 2 approval using a te
   - define and implement unit tests against contract preconditions, postconditions, invariants, and failure semantics
   - define and implement component tests with external systems mocked
   - for executable HTTP APIs, verify health and Development-only OpenAPI/Swagger UI availability through integration tests
+  - define functional coverage expectations using `.blueprint/instructions/process/functional-testing-strategy.md`
+  - use native test frameworks for unit/component tests and Robot Framework for framework-agnostic black-box acceptance, cross-service, smoke, or end-to-end functional suites when those levels apply
   - keep tests as executable contract specifications before internals
 - Phase 3: Internal implementation
   - implement the approved core business/runtime behavior, not only scaffolding, orchestration, persistence, adapters, or deterministic placeholders

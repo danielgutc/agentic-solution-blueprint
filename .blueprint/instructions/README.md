@@ -21,6 +21,7 @@ If two instructions conflict, prefer the higher item in this precedence list and
   - shared C4 authoring playbook
   - blueprint sync process
   - runtime testing process guidance
+  - functional testing strategy across native and framework-agnostic test levels
   - implementation interface-driven test-driven workflow
   - pre-merge refinement workflow
   - AGENTS cleanup candidates
