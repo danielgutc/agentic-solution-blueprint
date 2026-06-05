@@ -25,6 +25,13 @@ product -> tech -> design -> approval -> requirements -> c4 -> traceability -> i
 - Keep details in the artifact type matching the decision level.
 - Use domain-driven boundaries while decomposing each level.
 
+## Delivery governance track
+
+- Treat delivery governance as a parallel foundation track rather than an additional C4 decomposition level.
+- Author and approve `design/foundation/delivery.md` before implementing repository enforcement, trusted artifact publication, automated deployment, or environment promotion.
+- Delivery-governance design does not block unrelated C4 or runtime implementation unless the project records that dependency in `design/foundation/task.md`.
+- Record selected delivery technologies in `design/foundation/tech.md` and reusable stage, gate, evidence, adapter-capability, and exception semantics in `design/foundation/delivery.md`.
+
 ## Execution principles
 
 Use these principles together across C4 and implementation work:

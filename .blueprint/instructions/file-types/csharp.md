@@ -27,9 +27,19 @@ Use these rules when writing or reviewing C# code in this repository.
 - Keep one primary type per file unless tight cohesion clearly justifies grouping.
 - Prefer nullable reference types when the selected stack supports them.
 - Keep public APIs intentional and minimal.
-- Add comments only when the intent is not obvious from the code itself.
+- Add comments only when the intent, boundary, invariant, or non-obvious runtime behavior is not clear from the code itself.
 - Write tests for behavior, not implementation details.
 
+## Documentation
+
+- Document public contracts, interfaces, records, enums, and controller actions when they define a service, component, persistence, integration, or user-facing boundary.
+- XML documentation should explain the contract purpose, caller expectations, ownership boundary, and important failure or lifecycle semantics when those are not obvious from the member name.
+- Document implementation classes when they enforce boundary decisions, invariants, ordering rules, idempotency rules, retry semantics, persistence ownership, or adapter responsibilities.
+- For in-memory, simulated, fake, or provisional implementations, explicitly document what behavior is intentionally executable and what real integration is deferred.
+- Do not mention workflow phases, approval status, task IDs, maturity labels, or temporary planning language in source XML documentation or code comments.
+- When an implementation is partial, describe the concrete runtime behavior and deferred capability in business- or technology-facing terms, not process labels such as "phase 3" or "approved".
+- Keep documentation business-case agnostic in reusable instructions and shared templates; describe the engineering rule, not a specific project domain.
+- Avoid noisy comments that restate syntax, repeat member names, or narrate obvious assignments.
 ## Enforcement guidance
 
 - Prefer enforcing conventions via `.editorconfig`, Roslyn analyzers, and `dotnet format` in CI or local validation.

@@ -14,6 +14,8 @@ Control code-level C4 design through explicit two-phase approvals per container 
   - keep class internals abstract
 - Phase 2: internal implementation
   - define architecture-level classes/modules that realize approved contracts
+  - identify the core business/runtime behavior that runtime implementation phase 3 must deliver for approval
+  - map the selected technology stack's native framework facilities to code-level modules where they affect lifecycle, boundaries, persistence, integration, or cross-cutting behavior
   - define internal flows and extension points at architecture level
   - add domain model and persistence structure views where relevant
   - do not implement runtime internals in this phase

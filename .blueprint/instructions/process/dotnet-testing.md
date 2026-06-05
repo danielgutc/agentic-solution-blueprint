@@ -4,6 +4,8 @@
 
 Define testing guidance for runtime implementation using a test-driven, interface-driven style.
 
+Use this file for .NET-native unit, component, and ASP.NET Core API functional tests. For cross-stack functional levels, Robot Framework usage, and coverage expectations, follow `.blueprint/instructions/process/functional-testing-strategy.md`.
+
 ## Authoritative references
 
 - Unit testing best practices (.NET):
@@ -43,6 +45,7 @@ Define testing guidance for runtime implementation using a test-driven, interfac
 - Enforce test execution in CI with deterministic ordering assumptions removed.
 - Keep flaky-test budget at zero for unit and component test suites.
 - Use coverage as a signal, not as a sole quality gate.
+- Track contract, requirement, boundary, workflow, and deployment coverage using the functional testing strategy, not only code/branch coverage.
 
 ## Implementation gate alignment
 

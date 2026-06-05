@@ -20,13 +20,16 @@ If two instructions conflict, prefer the higher item in this precedence list and
   - abstraction and approval gates
   - shared C4 authoring playbook
   - blueprint sync process
+  - delivery-governance and pipeline-stage process guidance
   - runtime testing process guidance
+  - functional testing strategy across native and framework-agnostic test levels
   - implementation interface-driven test-driven workflow
   - pre-merge refinement workflow
   - AGENTS cleanup candidates
 - `artifacts/`
   - artifact-specific rules and quality checklists
   - canonical section-shape routing to templates
+  - foundation delivery-governance ownership and evidence rules
   - implementation track instructions after C4 approvals
 - `standards/`
   - design by contract conventions

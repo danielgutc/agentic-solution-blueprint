@@ -8,6 +8,7 @@ Use these files for artifact-specific authoring rules and quality checks.
 - `foundation-requirements.md`
 - `foundation-tech.md`
 - `foundation-design.md`
+- `foundation-delivery.md`
 - `foundation-traceability-matrix.md`
 - `foundation-agent-topology.md` (optional)
 - `task-tracker.md`

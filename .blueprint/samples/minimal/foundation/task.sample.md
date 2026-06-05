@@ -60,7 +60,7 @@ Status legend: `Not started`, `In progress`, `Designed`, `Approved`, `Implemente
 
 - `Executable phase 1`: interface skeletons.
 - `Executable phase 2`: tests-first contract specifications.
-- `Executable phase 3`: internals.
+- `Executable phase 3`: internals, including approved core runtime behavior.
 - `Infrastructure phase 1`: deployment baseline.
 - `Infrastructure phase 2`: verification.
 - `Infrastructure phase 3`: operational readiness.
