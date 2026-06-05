@@ -19,6 +19,7 @@ Status legend: `Not started`, `In progress`, `Designed`, `Approved`, `Implemente
 | Requirements | Not started | | | |
 | Tech | Not started | | | |
 | Design | Not started | | | |
+| Delivery governance | Not started | | | |
 | C4 System | Not started | | | |
 | C4 Containers | Not started | | | |
 | C4 Components | Not started | | | |

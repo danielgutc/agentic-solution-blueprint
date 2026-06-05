@@ -10,6 +10,7 @@ Provide a glanceable dashboard of:
 - abstraction-level maturity
 - container and component progress
 - executable implementation and deployable infrastructure gate progress
+- delivery-governance design and rollout progress
 - active work queue
 - deferred backlog
 

@@ -70,9 +70,30 @@ This strategy focuses on functional correctness. Performance, security, chaos, a
 - Implementation phase 3 must satisfy the approved native tests and preserve or add Robot tests for externally visible behavior that becomes executable.
 - A phase cannot be considered complete when the relevant functional coverage is missing, unless the gap is explicitly tracked in `design/foundation/task.md`.
 
+## Default delivery execution timing
+
+Use this matrix as the reusable baseline when authoring `design/foundation/delivery.md`. Projects may adjust it when runtime cost, deployment topology, or risk requires a different timing, but deviations must preserve the intended coverage and be recorded explicitly.
+
+| Test level | Pre-commit | Pre-push | Pull request | Merge queue | Trusted main | Deployed development | Promotion | Scheduled assurance |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Unit functional | Fast affected subset | All affected | Required | Required or same-commit evidence | Optional rerun | No | No | Full regression |
+| Component functional | No | Affected | Required | Required | Optional rerun | No | No | Full regression |
+| API functional through native host | No | Affected APIs | Required | Required | Packaged API verification | Critical paths | Critical paths | Full regression |
+| Service integration with real dependencies | No | Optional when practical | Required for affected services | Required | Verify built artifact | Required | Relevant integrations | Full regression |
+| Framework-agnostic API acceptance | No | Optional targeted suite | Required when affected | Critical suite | Packaged artifact acceptance | Required | Required | Full regression |
+| Framework-agnostic cross-service functional | No | Optional targeted suite | Required when an ephemeral affected stack is practical | Critical suite | No | Required | Required | Full regression |
+| End-to-end functional | No | No | Critical affected workflows only | Critical workflows when practical | No | Critical workflows | Required before sensitive promotion | Full suite |
+| Deployment smoke | No | No | Manifest and policy simulation only | No | Image startup smoke | Required | Required | Scheduled drift and readiness checks |
+
+- Native unit and component tests publish code and branch coverage during pull-request validation.
+- Pull-request validation publishes requirement, contract, and boundary coverage for the affected scope.
+- Framework-agnostic and deployed functional tests publish workflow and deployment coverage after deployment.
+- Missing applicable coverage blocks the corresponding gate unless an approved, owned, and expiring exception records compensating verification.
+
 ## Artifact guidance
 
 - Record project-specific framework choices in `design/foundation/tech.md`.
+- Record stage timing, gate behavior, evidence, and justified deviations in `design/foundation/delivery.md`.
 - Record deferred functional coverage gaps in `design/foundation/task.md`.
 - Keep test cases close to the implementation or deployment surface they validate:
   - native tests under the relevant implementation test project/folder

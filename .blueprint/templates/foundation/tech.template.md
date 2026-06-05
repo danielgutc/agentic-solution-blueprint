@@ -6,6 +6,16 @@
 
 ## Build and package tools
 
+## Delivery technology selections
+
+- Orchestration:
+- Local developer automation entry point:
+- Selected capability adapters and versions:
+- Artifact registry and evidence formats:
+- Deployment and promotion tooling:
+- Repository enforcement tooling:
+- Approved deviations and rationale:
+
 ## Testing approach
 
 - Functional test levels:
@@ -33,6 +43,7 @@
   - Workflow coverage:
   - Deployment smoke coverage:
   - Code/branch coverage signal:
+- Delivery timing reference: `design/foundation/delivery.md`
 
 ## Deployment model
 

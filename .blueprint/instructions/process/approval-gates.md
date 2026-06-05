@@ -43,6 +43,12 @@ foundation design approved
   - internal runtime implementation satisfies approved contracts and tests.
   - implementation drift requiring architecture change is reflected in C4 artifacts and re-approved before continuation.
 
+## Delivery governance gate
+
+- `design/foundation/delivery.md` must be reviewed and approved before implementing repository enforcement, trusted artifact publication, automated deployment, or environment promotion.
+- This is a parallel foundation gate and does not block unrelated C4 or runtime implementation unless `design/foundation/task.md` records that dependency.
+- Solution-specific orchestration and adapters may be designed with the artifact, but executable workflows and enforcement wait for approval.
+
 ## Gate status authority
 
 - `design/foundation/task.md` is the authoritative dashboard for recorded gate status.

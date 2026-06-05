@@ -37,6 +37,7 @@ design/
     requirements.md
     tech.md
     design.md
+    delivery.md (before delivery automation)
     traceability-matrix.md
     task.md
     agent-topology.md (optional)
@@ -113,6 +114,7 @@ design/
 - For file-specific coding/writing rules: `.blueprint/instructions/file-types/*.md`.
 - For concrete artifact shapes: `.blueprint/templates/foundation/*.template.md` and `.blueprint/templates/c4/*.template.md`.
 - For task dashboard format: `.blueprint/instructions/artifacts/task-tracker.md`.
+- For delivery-governance contracts and solution ownership: `.blueprint/instructions/artifacts/foundation-delivery.md`.
 - For runtime testing process and boundaries: `.blueprint/instructions/process/dotnet-testing.md`.
 
 ## Skills model
