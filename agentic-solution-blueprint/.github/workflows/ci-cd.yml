@@ -1,0 +1,153 @@
+name: PetShop CI/CD
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME_API: ${{ github.repository }}/petshop-api
+  IMAGE_NAME_WEB: ${{ github.repository }}/petshop-web
+
+jobs:
+  build-api:
+    name: Build & Test API
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore dependencies
+        run: dotnet restore implementation/petshop-api/petshop-api.sln
+
+      - name: Build
+        run: dotnet build implementation/petshop-api/petshop-api.sln --no-restore
+
+      - name: Test
+        run: dotnet test implementation/petshop-api/petshop-api.sln --no-build --verbosity normal
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: api-test-results
+          path: '**/TestResults/**'
+
+  build-web:
+    name: Build & Test Web
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: implementation/petshop-web/package-lock.json
+
+      - name: Install dependencies
+        working-directory: implementation/petshop-web
+        run: npm ci
+
+      - name: Build
+        working-directory: implementation/petshop-web
+        run: npm run build
+
+      - name: Test
+        working-directory: implementation/petshop-web
+        run: npm test
+
+  docker-api:
+    name: Docker API
+    needs: build-api
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Login to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME_API }}
+
+      - name: Build and push
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: implementation/petshop-api/docker/Dockerfile
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+
+  docker-web:
+    name: Docker Web
+    needs: build-web
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Login to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME_WEB }}
+
+      - name: Build and push
+        uses: docker/build-push-action@v5
+        with:
+          context: implementation/petshop-web
+          file: implementation/petshop-web/docker/Dockerfile
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+
+  deploy:
+    name: Deploy to Kubernetes
+    needs: [docker-api, docker-web]
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install kubectl
+        uses: azure/setup-kubectl@v3
+
+      - name: Configure kubectl
+        run: |
+          echo "${{ secrets.KUBE_CONFIG }}" | base64 -d > kubeconfig.yaml
+          kubectl --kubeconfig=kubeconfig.yaml config set-context --current --namespace=petshop
+
+      - name: Deploy
+        run: |
+          kubectl --kubeconfig=kubeconfig.yaml apply -f deployment/k8s/
+          kubectl --kubeconfig=kubeconfig.yaml rollout status deployment/petshop-api --timeout=300s
+          kubectl --kubeconfig=kubeconfig.yaml rollout status deployment/petshop-web --timeout=300s
