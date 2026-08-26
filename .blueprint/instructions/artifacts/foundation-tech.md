@@ -13,6 +13,7 @@ Record enduring technical direction, constraints, and key platform choices.
 - Focus on lasting technical choices, not sprint-level tasks.
 - Capture rationale for major technology decisions.
 - Keep constraints explicit when they shape architecture boundaries.
+- Favor established, actively maintained libraries over custom logic when they satisfy the approved requirements, constraints, and architecture boundaries.
 - Record selected framework facilities that should shape code-level design, such as dependency injection, request handling, validation, configuration/options, background work, persistence, messaging, integration clients, observability, and testing conventions.
 - In testing guidance, record the functional testing levels, native test frameworks, Robot Framework usage for framework-agnostic black-box suites, real-dependency strategy, and functional coverage expectations.
 - Record selected delivery orchestration, adapters, tool versions, registry, and deployment/promotion technology as solution-specific technical decisions; keep reusable stage and gate semantics in `design/foundation/delivery.md`.

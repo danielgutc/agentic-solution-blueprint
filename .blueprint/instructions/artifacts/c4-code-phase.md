@@ -26,6 +26,7 @@ Control code-level C4 design through explicit two-phase approvals per container 
 - Treat C4 code phases as architecture track artifacts independent from runtime implementation.
 - Runtime implementation starts only after C4 code phase 2 is explicitly approved.
 - If implementation design changes contracts or architecture boundaries, update C4 artifacts first and re-approve before continuing.
+- Record explicit rationale when custom logic replaces a suitable established, actively maintained library.
 - Follow `.blueprint/instructions/standards/design-by-contract.md`.
 - For relational persistence, model owned schema with ER-style diagrams.
 - For file/object storage, model folder/namespace structures and access paths.
