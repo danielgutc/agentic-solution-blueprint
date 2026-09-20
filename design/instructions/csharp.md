@@ -17,6 +17,8 @@ Use these rules when writing or reviewing C# code in this repository.
 - Follow standard .NET naming conventions.
 - Prefer nullable reference types when the selected stack supports them.
 - Keep public APIs intentional and minimal.
+- Use XML documentation for public contracts when behavior, errors, compatibility, side effects, or invariants are not evident from the signature.
+- Generate the selected API reference and compact code projections through the repository documentation command.
 - Add comments only when the intent is not obvious from the code itself.
 - Write tests for behavior, not implementation details.
 

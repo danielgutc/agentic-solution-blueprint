@@ -10,6 +10,7 @@ Use Markdown for clear, maintainable text documents in this repository.
 - Prefer short sections with clear headings.
 - Write for fast scanning and future maintenance.
 - Keep examples close to the rule or decision they explain.
+- Never manually edit a generated `code.md`; change its source or generator and regenerate it.
 
 ## Conventions
 
@@ -17,3 +18,4 @@ Use Markdown for clear, maintainable text documents in this repository.
 - Prefer bullet lists for decisions, constraints, and tasks.
 - Keep task lists actionable and easy to verify.
 - Use relative paths when referencing repository files from Markdown.
+- Begin generated Markdown with a warning, source scope, generator identity, and reproduction command.

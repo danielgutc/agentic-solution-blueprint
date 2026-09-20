@@ -10,8 +10,10 @@ This folder contains the canonical architecture description for the project crea
 
 ## Documentation model
 
-- Markdown files provide the narrative description for each C4 level.
-- PlantUML diagrams provide the diagrammatic views that support those narratives.
+- Human-authored Markdown and PlantUML describe system, container, and component intent.
+- Source interfaces, API comments, and executable tests define code contracts.
+- The documentation toolchain generates compact code-level Markdown and code-diagram sources.
+- Full API reference and rendered diagrams are CI artifacts by default.
 
 ## Folder shape
 
@@ -30,6 +32,6 @@ c4/
         <component>/
           component.md
           diagrams/
-          code.md
-          code-diagrams/
+          code.md          # generated
+          code-diagrams/   # generated sources
 ```

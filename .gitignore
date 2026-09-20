@@ -4,6 +4,9 @@ Thumbs.db
 *.tmp
 *.log
 
+# Generated API sites and rendered documentation artifacts
+/artifacts/
+
 # IDE files
 .idea/
 .vs/

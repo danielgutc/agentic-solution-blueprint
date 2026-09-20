@@ -10,10 +10,10 @@ This folder contains the container-level subtree of the C4 architecture.
 
 ## Component subtree
 
-- `component.md`
-- `diagrams/`
-- `code.md`
-- `code-diagrams/`
+- `component.md`: human-authored component responsibilities, boundaries, and design intent
+- `diagrams/`: human-authored architecture diagram sources
+- `code.md`: generated compact projection of source interfaces and important types
+- `code-diagrams/`: generated code-structure diagram sources
 
 ## Folder shape
 
@@ -26,6 +26,6 @@ containers/
       <component>/
         component.md
         diagrams/
-        code.md
-        code-diagrams/
+        code.md          # generated
+        code-diagrams/   # generated sources
 ```

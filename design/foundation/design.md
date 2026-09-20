@@ -10,4 +10,6 @@
 
 ## Operational considerations
 
+## Delivery and documentation strategy
+
 ## Open questions
