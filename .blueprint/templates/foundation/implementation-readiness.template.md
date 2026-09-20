@@ -2,8 +2,6 @@
 
 ## Scope
 
-Describe the containers, components, or implementation slice covered by this gate.
-
 ## Status
 
 - State: Not assessed
@@ -11,7 +9,7 @@ Describe the containers, components, or implementation slice covered by this gat
 - Reviewed by:
 - Review date:
 
-## Required Evidence
+## Required evidence
 
 | ID | Capability | Command or artifact | Status | Evidence or notes |
 | --- | --- | --- | --- | --- |
@@ -25,14 +23,12 @@ Describe the containers, components, or implementation slice covered by this gat
 | IR-008 | Generated `code.md` and code-diagram sources are current | Documentation verification command | Not assessed | |
 | IR-009 | Formatting and static analysis pass | Project quality commands | Not assessed | |
 | IR-010 | A versioned artifact is produced | Project package command | Not assessed | |
-| IR-011 | The walking skeleton follows a non-production delivery path | Development deployment or package-publishing evidence | Not assessed | |
-| IR-012 | CI executes the required readiness checks successfully | Pipeline run | Not assessed | |
+| IR-011 | The walking skeleton follows a non-production delivery path | Delivery evidence | Not assessed | |
+| IR-012 | CI executes required readiness checks successfully | Pipeline run | Not assessed | |
 
-## Deferred Items and Accepted Exceptions
+## Deferred items and accepted exceptions
 
 | ID | Rationale | Owner | Compensating evidence | Expiry or trigger |
 | --- | --- | --- | --- | --- |
 
 ## Approval
-
-Record the decision to enter full development, including accepted risks and follow-up actions.

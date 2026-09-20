@@ -2,6 +2,8 @@
 
 This folder contains the container-level subtree of the C4 architecture.
 
+Use `system-containers.md` and `diagrams/` for the authoritative system-wide container view. Add one folder per approved container only after that landscape is reviewed.
+
 ## Container subtree
 
 - `container.md`
@@ -19,6 +21,8 @@ This folder contains the container-level subtree of the C4 architecture.
 
 ```text
 containers/
+  system-containers.md
+  diagrams/
   <container>/
     container.md
     diagrams/

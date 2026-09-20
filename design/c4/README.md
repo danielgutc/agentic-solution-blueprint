@@ -5,7 +5,8 @@ This folder contains the canonical architecture description for the project crea
 ## Layout
 
 - `system/` contains the software system view.
-- `containers/` contains one folder per container in the system.
+- `containers/system-containers.md` contains the authoritative container landscape.
+- `containers/` contains one folder per approved container in the system.
 - Each container owns its components under `components/`.
 
 ## Documentation model
@@ -25,6 +26,8 @@ c4/
     diagrams/
   containers/
     README.md
+    system-containers.md
+    diagrams/
     <container>/
       container.md
       diagrams/

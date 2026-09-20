@@ -1,26 +1,38 @@
 schema_version = 1
-blueprint_version = "1.7"
+blueprint_version = "2.0"
 profile = "full-software-development"
 supported_workflows = ["requirements-first", "design-first"]
 # Keep unset only in the reusable template. A consuming project must select one.
 selected_workflow = "unset"
 
 [paths]
+instructions = ".blueprint/instructions"
+templates = ".blueprint/templates"
 product = "design/foundation/product.md"
 requirements = "design/foundation/requirements.md"
 technology = "design/foundation/tech.md"
 design = "design/foundation/design.md"
+delivery = "design/foundation/delivery.md"
+task_tracker = "design/foundation/task.md"
 traceability = "design/foundation/traceability-matrix.md"
 implementation_readiness = "design/foundation/implementation-readiness.md"
 c4 = "design/c4"
+c4_system = "design/c4/system/system.md"
+c4_system_containers = "design/c4/containers/system-containers.md"
 implementation = "implementation"
 integration_tests = "tests/integration"
 end_to_end_tests = "tests/e2e"
 tools = "tools"
 project_skills = ".agents/skills"
 
+[coordination]
+role_catalog = "user-level-agentic-engineering-toolkit"
+status_standard = ".blueprint/instructions/standards/status-taxonomy.md"
+handoff_fields = ["scope", "inputs", "decisions", "evidence", "risks", "next_owner"]
+
 [documentation]
-policy = "design/instructions/api-documentation.md"
+policy = ".blueprint/instructions/file-types/api-documentation.md"
+diagram_source = "plantuml"
 code_contract_source = "implementation-source-comments-and-tests"
 component_narrative = "human-authored"
 code_summary = "generated-and-committed"
@@ -42,6 +54,7 @@ evidence = "design/foundation/implementation-readiness.md"
 requires = [
   "approved-system-and-container-architecture",
   "traced-component-design",
+  "delivery-governance-recorded",
   "walking-skeleton",
   "reproducible-clean-build",
   "initial-unit-component-and-contract-tests",
