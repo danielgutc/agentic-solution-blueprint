@@ -1,30 +1,16 @@
 # Integrated Verification
 
-## Test levels
+## Timing and ownership
 
-- Unit: isolated domain behavior, validation, mapping, and deterministic algorithms using the stack's native framework.
-- Component: one component through its public port with external systems substituted.
-- Contract/API: public requests, responses, validation, authorization, idempotency, compatibility, and failure semantics.
-- Service integration: one service with real owned dependencies where practical, preferably disposable or isolated.
-- Cross-service: public-contract workflows across running services.
-- End-to-end: complete user or system workflows through the real entry point.
-- Deployment smoke: health, readiness, API discovery, a minimal functional operation, and mandatory dependency checks.
+The test engineer may design integrated scenarios once contracts and acceptance intent are stable, in parallel with authorized implementation. The integrated-verification phase closes only when assembled behavior has executable evidence. Native unit, component, and initial contract tests already run before implementation readiness.
 
-## Framework split
+## Blueprint obligations
 
-- Keep developer-close unit and component tests in the stack's native framework.
-- Use Robot Framework or an approved equivalent for framework-agnostic black-box acceptance, cross-service, smoke, and end-to-end suites.
-- Use Playwright, Robot Browser, Selenium, or an approved equivalent for browser flows.
-- Do not replace fast native tests with slower black-box suites.
+- Map approved functional requirements and public contracts to test evidence in `design/foundation/traceability-matrix.md`, or record an owned gap.
+- Verify important cross-component and external boundaries, primary workflows, and deployment health at the lowest level that exercises the real risk.
+- Record where each applicable test level runs in `design/foundation/delivery.md`: local feedback, pull request, trusted main, deployed development, promotion, or scheduled assurance.
+- Keep developer-close unit and component tests in the selected stack's native framework; do not replace them with slower black-box suites.
+- Choose Robot Framework, browser tooling, or an equivalent only when project-approved and useful for the relevant black-box or UI scenarios. No framework is mandated by this blueprint.
+- Missing applicable coverage blocks the corresponding gate unless an approved, expiring exception names compensating verification.
 
-## Coverage model
-
-- Every approved functional requirement maps to automated evidence or an explicit owned gap.
-- Every public contract covers success, validation failure, and important failure modes.
-- Every important persistence, messaging, file, process, and external-service boundary has verification at the appropriate level.
-- Every primary workflow has a happy path and representative negative paths.
-- Treat numeric code coverage as a signal, not a substitute for requirement, contract, boundary, and workflow coverage.
-
-## Delivery alignment
-
-Record where each applicable level runs in `design/foundation/delivery.md`: local feedback, pull request, trusted main, deployed development, promotion, or scheduled assurance. Missing applicable coverage blocks the corresponding gate unless an approved, expiring exception names compensating verification.
+Use the toolkit's `integration-e2e-testing` skill when available for scenario design, execution, diagnosis, and reporting. This file records the repository's timing and evidence obligations.

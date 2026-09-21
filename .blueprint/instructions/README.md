@@ -27,3 +27,5 @@ When instructions conflict, follow the higher-precedence source and remove the l
 ## Authoring rule
 
 Keep policy in instructions, reusable shapes in templates, project decisions in `design/`, and executable behavior in `implementation/`, `tests/`, or `tools/`. Do not duplicate a detailed rule in `AGENTS.md`.
+
+The reusable engineering toolkit supplies role-specific methods through agents and skills when installed. Blueprint instructions remain usable without that toolkit and state only this repository's additional paths, approval gates, and evidence obligations.

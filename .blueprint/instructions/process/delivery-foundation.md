@@ -4,26 +4,15 @@
 
 Establish minimum viable CI/CD before full development so the walking skeleton receives executable feedback for build, contracts, documentation, packaging, and delivery assumptions.
 
-## Required capabilities
+## Blueprint obligations
 
-- Repository-owned commands work from a clean checkout.
-- The walking skeleton builds reproducibly.
-- Initial unit, component, and contract tests pass.
-- Formatting and static analysis pass.
-- API reference and compact code projections generate and validate.
-- Committed generated projections are proven current.
-- One immutable, versioned artifact is packaged.
-- An appropriate non-production delivery path is exercised.
-- CI preserves actionable evidence for every required gate.
+- Implement the capabilities under `gates.implementation_readiness.requires` in `.blueprint/blueprint.toml` from a clean checkout, using the same repository-owned commands locally and in CI.
+- Record the commands and selected tools in `design/foundation/tech.md`; record stage triggers, trust boundaries, evidence, and blocking behavior in `design/foundation/delivery.md`.
+- Record the pipeline run, generated-document freshness, versioned artifact, and non-production delivery evidence in `design/foundation/implementation-readiness.md`.
+- Do not grant untrusted validation jobs deployment authority. Production promotion automation is not required for readiness, but its owner and future trigger must be explicit.
 
-## Delivery design
-
-- Define triggers, commands, required results, evidence, trust level, and blocking behavior in `design/foundation/delivery.md`.
-- Keep provider workflow files thin; reusable logic belongs in repository scripts or build tooling.
-- Validate untrusted proposed changes without granting deployment authority.
-- Build once and promote the same artifact when the selected platform supports it.
-- Production promotion automation is not required for implementation readiness, but its ownership and trigger must be explicit.
+Use the toolkit's `ci-cd-design` skill when available for general pipeline design and validation. This file specifies the minimum evidence required before full development.
 
 ## Evolution
 
-Add integration, end-to-end, deployment health, promotion, observability, and rollback controls as assembled behavior and operational risk grow. Do not defer discovering that the project cannot build, document, package, or follow its intended delivery path until full development.
+Add integrated tests, deployment health, promotion, observability, and rollback controls as assembled behavior and operational risk grow. Do not defer proving the initial build, documentation, package, or non-production delivery path until full development.

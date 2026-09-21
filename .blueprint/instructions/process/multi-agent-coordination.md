@@ -4,32 +4,11 @@
 
 Use the role boundaries in `AGENTS.md`. Delegate a bounded outcome, not an open-ended phase, and keep one owner for each enduring decision.
 
-## Delegation packet
+## Repository handoff record
 
-Provide only the context needed for the task:
+Use the fields declared in `.blueprint/blueprint.toml` under `coordination.handoff_fields` for a compact handoff. Link approved inputs and evidence rather than copying entire artifacts or repeating repository discovery.
 
-- scope and stable identifiers
-- owning role and expected next owner
-- approved inputs and constraints
-- exact output or evidence expected
-- decisions that are fixed versus open
-- relevant files and commands
-- stopping condition and escalation boundary
-
-Do not ask another agent to rediscover the whole repository when the task tracker or a focused handoff can provide the answer.
-
-## Handoff packet
-
-Record:
-
-- completed scope and changed identifiers
-- decisions and evidence
-- commands or checks run
-- unresolved risks or accepted exceptions
-- downstream artifacts that may need re-review
-- next owner and requested decision
-
-Update `design/foundation/task.md` before handing off. Keep transient reasoning out of enduring artifacts.
+Before handing off, update `design/foundation/task.md` with the bounded scope, owning and next roles, current gate status, blockers, and any downstream re-review trigger. The role-specific agent instructions govern the detailed handoff content; this file only defines the durable repository record.
 
 ## Parallel work
 

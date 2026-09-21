@@ -19,7 +19,7 @@
 
 - The `product_owner` owns product intent, design-thinking evidence, MVP boundaries, requirements, and acceptance intent.
 - The `solutions_architect` owns technical direction, system scope, domain boundaries, C4 context, and authoritative container boundaries.
-- The `technical_architect` owns components, contracts, internal structure, test seams, walking skeletons, and documentation-generation tooling inside approved containers.
+- The `technical_architect` owns components, contracts, internal structure, test seams, walking skeletons, and documentation-generation tooling inside approved containers; code-level projections are generated, not authored by hand.
 - The `software_engineer` implements approved skeleton bodies through TDD after implementation readiness is approved.
 - The `infrastructure_engineer` owns the delivery foundation, CI/CD, environments, infrastructure as code, and documentation execution in CI.
 - The `test_engineer` owns independent integration, contract, end-to-end, acceptance, smoke, and regression verification.

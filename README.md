@@ -5,7 +5,6 @@ This repository is a reusable, heavyweight blueprint for software projects that 
 ## Start here
 
 - [Blueprint configuration](./.blueprint/blueprint.toml)
-- [Version 2 migration](./MIGRATION.md)
 - [Instruction index](./.blueprint/instructions/README.md)
 - [Task and handoff dashboard](./design/foundation/task.md)
 - [Product](./design/foundation/product.md)

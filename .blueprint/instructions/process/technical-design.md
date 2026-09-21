@@ -4,22 +4,13 @@
 
 Refine approved containers into implementation-ready components and prove architecture-significant assumptions without beginning broad feature development.
 
-## Required work
+## Blueprint obligations
 
-1. Confirm requirement IDs, owning container, design decisions, constraints, and risks.
-2. Partition components by cohesive responsibility, domain ownership, change pattern, and dependency direction rather than framework layers alone.
-3. Define provided and consumed contracts using `../standards/design-by-contract.md`.
-4. Model important flows, state transitions, transactions, concurrency, external calls, and failure recovery.
-5. Prefer established, actively maintained libraries and selected platform capabilities when they satisfy the approved needs; justify custom plumbing.
-6. Define unit, component, contract, and integration test seams plus the first architecture-significant TDD slices.
-7. Create the minimal source interfaces, executable skeleton, and representative tests needed to prove the design.
-8. Configure ecosystem-native API documentation and deterministic compact code projections.
-9. Escalate any required system, domain, or container-boundary change to the solutions architect.
+- Confirm the owning container and design approval before adding component artifacts under `design/c4/containers/`.
+- Keep `component.md` and component architecture diagrams human-authored; use them for intent, boundaries, and test seams rather than a manual API inventory.
+- Create only the source interfaces, walking skeleton, and representative tests needed to prove architecture-significant decisions before the readiness gate.
+- Select and configure the documentation generator. Generate `code.md` and code-diagram sources from source, API comments, and tests; never author those projections manually.
+- Record the resulting evidence in `design/foundation/traceability-matrix.md` and `design/foundation/task.md` for the scoped readiness review.
+- Return changes to system, domain, or container boundaries to the solutions architect and the affected approval gate.
 
-## Boundaries
-
-- Keep component narratives and architecture diagrams human-authored.
-- Keep exhaustive signatures and implementation inventories out of component documents.
-- Do not implement routine feature bodies merely to make the skeleton appear complete.
-- Do not add speculative layers, interfaces, patterns, or extension points.
-- Record implementation-only discoveries without letting them silently redefine approved architecture.
+Use the toolkit's `technical-design` skill when available for the general component-design method. The obligations above apply even when that skill is not installed.
