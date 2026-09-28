@@ -62,7 +62,7 @@
 
 ## Enduring artifacts
 
-- Keep product, requirements, technology, design, delivery, traceability, task status, and readiness evidence in `design/foundation/`.
+- Keep product, MVP and prioritization, requirements, technology, design, delivery, traceability, task status, and readiness evidence in `design/foundation/`.
 - Keep human-authored C4 content focused on system, container, and component intent.
 - Treat source interfaces, ecosystem-native API comments, and executable tests as the implementation contract source.
 - Generate deterministic `code.md` and code-diagram sources from code and tests. Do not edit them manually.

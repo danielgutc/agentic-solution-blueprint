@@ -7,7 +7,7 @@ Set `selected_workflow` in `.blueprint/blueprint.toml` before advancing a consum
 Use requirements-first when desired behavior and user outcomes are clearer than the implementation approach:
 
 ```text
-product -> requirements -> tech -> design -> design approval
+product -> MVP and prioritization -> requirements -> tech -> design -> design approval
 -> C4 solution -> traceability -> technical design -> delivery foundation
 -> implementation readiness approval -> full development -> integrated verification
 ```
@@ -15,15 +15,16 @@ product -> requirements -> tech -> design -> design approval
 Use design-first when constraints, integrations, feasibility, or architecture risk lead:
 
 ```text
-product -> tech -> design -> design approval -> requirements
+product -> MVP and prioritization -> tech -> design -> design approval -> requirements
 -> C4 solution -> traceability -> technical design -> delivery foundation
 -> implementation readiness approval -> full development -> integrated verification
 ```
 
 ## Phase outcomes
 
-- Product: problem, actors, outcomes, MVP boundaries, non-goals, and assumptions are explicit.
-- Requirements: stable IDs express verifiable functional behavior, quality attributes, constraints, and assumptions.
+- Product: problem, actors, outcomes, non-goals, and assumptions are explicit.
+- MVP and prioritization: the first feedbackable slice, priority model, scope, learning loop, and later candidates are explicit.
+- Requirements: stable IDs express verifiable functional behavior, quality attributes, constraints, and assumptions; priority and target connect requirements to MVP slices.
 - Tech: enduring stack, platform, tooling, documentation, test, delivery, and deployment choices are recorded.
 - Design: system direction, domain boundaries, tradeoffs, integrations, and operational decisions are reviewable.
 - C4 solution: system context and authoritative container boundaries reflect the approved design.

@@ -1,5 +1,25 @@
 # Implementation Readiness
 
+[README](../../../README.md) / Foundation / Implementation readiness
+
+Related foundation documents:
+- [Product](./product.template.md)
+- [MVP and prioritization](./mvp.template.md)
+- [Requirements](./requirements.template.md)
+- [Tech](./tech.template.md)
+- [Design](./design.template.md)
+- [Delivery governance](./delivery.template.md)
+- [Traceability matrix](./traceability-matrix.template.md)
+- [Task tracker](./task.template.md)
+
+## Table of contents
+
+- [Scope](#scope)
+- [Status](#status)
+- [Required evidence](#required-evidence)
+- [Deferred items and accepted exceptions](#deferred-items-and-accepted-exceptions)
+- [Approval](#approval)
+
 ## Scope
 
 ## Status

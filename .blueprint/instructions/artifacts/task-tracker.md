@@ -11,6 +11,7 @@ Use `.blueprint/templates/foundation/task.template.md`.
 ## Rules
 
 - Track phase status by explicit scope.
+- Summarize MVP slices by ID, priority, status, linked requirements, and next feedback decision; keep the hypothesis and scope in `mvp.md`.
 - Link evidence rather than copying artifact content.
 - Give each active slice a stable ID, one owning role, expected output, next owner, and stopping condition.
 - Record approvals and re-review needs durably.
