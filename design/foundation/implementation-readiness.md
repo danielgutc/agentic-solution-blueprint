@@ -1,8 +1,26 @@
 # Implementation Readiness
 
-## Scope
+[README](../../README.md) / Foundation / Implementation readiness
 
-Describe the containers, components, or implementation slice covered by this gate.
+Related foundation documents:
+- [Product](./product.md)
+- [MVP and prioritization](./mvp.md)
+- [Requirements](./requirements.md)
+- [Tech](./tech.md)
+- [Design](./design.md)
+- [Delivery governance](./delivery.md)
+- [Traceability matrix](./traceability-matrix.md)
+- [Task tracker](./task.md)
+
+## Table of contents
+
+- [Scope](#scope)
+- [Status](#status)
+- [Required evidence](#required-evidence)
+- [Deferred items and accepted exceptions](#deferred-items-and-accepted-exceptions)
+- [Approval](#approval)
+
+## Scope
 
 ## Status
 
@@ -11,7 +29,7 @@ Describe the containers, components, or implementation slice covered by this gat
 - Reviewed by:
 - Review date:
 
-## Required Evidence
+## Required evidence
 
 | ID | Capability | Command or artifact | Status | Evidence or notes |
 | --- | --- | --- | --- | --- |
@@ -25,14 +43,12 @@ Describe the containers, components, or implementation slice covered by this gat
 | IR-008 | Generated `code.md` and code-diagram sources are current | Documentation verification command | Not assessed | |
 | IR-009 | Formatting and static analysis pass | Project quality commands | Not assessed | |
 | IR-010 | A versioned artifact is produced | Project package command | Not assessed | |
-| IR-011 | The walking skeleton follows a non-production delivery path | Development deployment or package-publishing evidence | Not assessed | |
-| IR-012 | CI executes the required readiness checks successfully | Pipeline run | Not assessed | |
+| IR-011 | The walking skeleton follows a non-production delivery path | Delivery evidence | Not assessed | |
+| IR-012 | CI executes required readiness checks successfully | Pipeline run | Not assessed | |
 
-## Deferred Items and Accepted Exceptions
+## Deferred items and accepted exceptions
 
 | ID | Rationale | Owner | Compensating evidence | Expiry or trigger |
 | --- | --- | --- | --- | --- |
 
 ## Approval
-
-Record the decision to enter full development, including accepted risks and follow-up actions.

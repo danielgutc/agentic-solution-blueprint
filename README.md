@@ -8,11 +8,13 @@ This repository is a reusable, heavyweight blueprint for software projects that 
 - [Instruction index](./.blueprint/instructions/README.md)
 - [Task and handoff dashboard](./design/foundation/task.md)
 - [Product](./design/foundation/product.md)
+- [MVP and prioritization](./design/foundation/mvp.md)
 - [Requirements](./design/foundation/requirements.md)
 - [Technical direction](./design/foundation/tech.md)
 - [Design](./design/foundation/design.md)
 - [Delivery governance](./design/foundation/delivery.md)
 - [Implementation readiness](./design/foundation/implementation-readiness.md)
+- [Traceability matrix](./design/foundation/traceability-matrix.md)
 - [C4 system](./design/c4/system/system.md)
 - [C4 container landscape](./design/c4/containers/system-containers.md)
 
@@ -29,12 +31,21 @@ This repository is a reusable, heavyweight blueprint for software projects that 
 
 The reusable template leaves `selected_workflow` unset. Each consuming project must choose `requirements-first` or `design-first` before advancing its enduring project artifacts.
 
+## Recommended reading order
+
+1. [Product](./design/foundation/product.md) and [MVP and prioritization](./design/foundation/mvp.md)
+2. [Task tracker](./design/foundation/task.md) and [lifecycle](./.blueprint/instructions/process/lifecycle.md) to see the selected workflow and current gate
+3. [Requirements](./design/foundation/requirements.md), [Tech](./design/foundation/tech.md), and [Design](./design/foundation/design.md) in the selected workflow sequence
+4. [C4 system](./design/c4/system/system.md) and [C4 container landscape](./design/c4/containers/system-containers.md), after design approval
+5. [Traceability matrix](./design/foundation/traceability-matrix.md), [Delivery governance](./design/foundation/delivery.md), and [Implementation readiness](./design/foundation/implementation-readiness.md)
+
 ## Design layout
 
 ```text
 design/
   foundation/
     product.md
+    mvp.md
     requirements.md
     tech.md
     design.md
@@ -42,6 +53,7 @@ design/
     task.md
     traceability-matrix.md
     implementation-readiness.md
+    _diagrams/               # optional foundation diagram sources and exports
   c4/
     README.md
     system/
