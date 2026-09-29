@@ -2,34 +2,34 @@
 
 This folder contains the container-level subtree of the C4 architecture.
 
-Use `system-containers.md` and `diagrams/` for the authoritative system-wide container view. Add one folder per approved container only after that landscape is reviewed.
+Use `system-containers.md` and `_diagrams/` for the authoritative system-wide container view. Add one folder per approved container only after that landscape is reviewed.
 
 ## Container subtree
 
 - `container.md`
-- `diagrams/`
+- `_diagrams/`
 - `components/`
 
 ## Component subtree
 
 - `component.md`: human-authored component responsibilities, boundaries, and design intent
-- `diagrams/`: human-authored architecture diagram sources
+- `_diagrams/`: human-authored Draw.io sources and sibling SVG exports
 - `code.md`: generated compact projection of source interfaces and important types
-- `code-diagrams/`: generated code-structure diagram sources
+- `_code-diagrams/`: generated code-structure diagram sources
 
 ## Folder shape
 
 ```text
 containers/
   system-containers.md
-  diagrams/
+  _diagrams/
   <container>/
     container.md
-    diagrams/
+    _diagrams/
     components/
       <component>/
         component.md
-        diagrams/
+        _diagrams/
         code.md          # generated
-        code-diagrams/   # generated sources
+        _code-diagrams/  # generated sources
 ```

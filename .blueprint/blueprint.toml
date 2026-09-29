@@ -33,7 +33,9 @@ handoff_fields = ["scope", "inputs", "decisions", "evidence", "risks", "next_own
 
 [documentation]
 policy = ".blueprint/instructions/file-types/api-documentation.md"
-diagram_source = "plantuml"
+diagram_source = "drawio"
+diagram_export = "svg"
+diagram_export_policy = "committed-sibling"
 code_contract_source = "implementation-source-comments-and-tests"
 component_narrative = "human-authored"
 code_summary = "generated-and-committed"
@@ -41,7 +43,7 @@ code_diagram_sources = "generated-and-committed"
 api_reference = "generated-ci-artifact"
 api_reference_output = "artifacts/api-docs"
 code_summary_pattern = "design/c4/containers/<container>/components/<component>/code.md"
-code_diagram_pattern = "design/c4/containers/<container>/components/<component>/code-diagrams"
+code_diagram_pattern = "design/c4/containers/<container>/components/<component>/_code-diagrams"
 
 [gates.design_approval]
 required = true

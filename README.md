@@ -58,18 +58,18 @@ design/
     README.md
     system/
       system.md
-      diagrams/
+      _diagrams/
     containers/
       system-containers.md
       <container>/
         container.md
-        diagrams/
+        _diagrams/
         components/
           <component>/
             component.md
-            diagrams/
+            _diagrams/
             code.md              # generated from source and tests
-            code-diagrams/       # generated diagram sources
+            _code-diagrams/      # generated diagram sources
 implementation/
   <component>/
 ```
@@ -95,6 +95,7 @@ See the [lifecycle instructions](./.blueprint/instructions/process/lifecycle.md)
 ## Documentation model
 
 - Keep system, container, and component intent human-authored.
+- Keep human-authored diagrams in Draw.io with sibling SVG exports for embedded navigation.
 - Treat source interfaces, API comments, and executable tests as the code-contract source.
 - Generate compact `code.md` files and code-diagram sources and commit them when deterministic.
 - Publish full Javadoc, DocFX, TypeDoc, or equivalent output as a CI artifact rather than committing it by default.

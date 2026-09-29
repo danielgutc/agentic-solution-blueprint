@@ -15,8 +15,8 @@ When instructions conflict, follow the higher-precedence source and remove the l
 
 ## Progressive loading
 
-- Product, MVP, or requirements work: read `process/lifecycle.md` and `artifacts/foundation.md`.
-- Architecture work: also read `process/approval-gates.md`, `artifacts/c4.md`, and `standards/design-by-contract.md`.
+- Product, MVP, or requirements work: read `process/lifecycle.md`, `artifacts/foundation.md`, and `standards/navigation.md`.
+- Architecture work: also read `process/approval-gates.md`, `artifacts/c4.md`, `standards/design-by-contract.md`, `standards/navigation.md`, `standards/diagram-tooling.md`, and `file-types/drawio.md` when drawing diagrams.
 - Multi-agent delegation or handoff: read `process/multi-agent-coordination.md` and `artifacts/task-tracker.md`.
 - Technical design or walking-skeleton work: read `process/technical-design.md` and the relevant file-type rules.
 - Delivery work: read `process/delivery-foundation.md`, `artifacts/delivery.md`, and `file-types/ci-cd.md`.

@@ -2,8 +2,8 @@
 
 ## Rules
 
-- Use PlantUML as the committed source format for architecture and design diagrams unless `design/foundation/tech.md` records another approved choice.
-- Commit `.puml` source and publish rendered output as a CI artifact by default.
+- Use PlantUML only when `design/foundation/tech.md` explicitly records it as an approved exception to the blueprint's Draw.io default.
+- Record the committed source, rendered export, and link-validation policy for that exception before authoring diagrams.
 - Keep source beside the enduring artifact it supports.
 - Use one concern per diagram and split views before readability degrades.
 - Keep titles, identifiers, names, and domain vocabulary aligned with narrative artifacts.

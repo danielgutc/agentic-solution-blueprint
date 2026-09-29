@@ -1,3 +1,3 @@
 # Foundation Diagrams
 
-Store foundation-level diagram sources and rendered exports here when a project needs them. Use the diagram format selected in [Tech](../tech.md) and link rendered diagrams from the owning foundation document. Keep project-specific flows out of the reusable template until delivery decisions justify them.
+Store approved foundation-level `.drawio` sources and sibling `.svg` exports here when a project needs them. Embed each SVG in the owning foundation document, link its source, and follow [diagram tooling](../../../.blueprint/instructions/standards/diagram-tooling.md). Keep project-specific flows out of the reusable template until decisions justify them.
