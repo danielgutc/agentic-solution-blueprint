@@ -16,10 +16,10 @@ Generate code-level documentation from implementation source, public API comment
 The repository documentation command must produce:
 
 - compact `code.md` under each owning C4 component
-- deterministic code-diagram sources under each component's `code-diagrams/`
+- deterministic code-diagram sources under each component's `_code-diagrams/`
 - a complete API reference under `artifacts/api-docs/`
 
-Commit compact Markdown and diagram sources when deterministic and reviewable. Publish the full API site and rendered diagrams as CI artifacts by default.
+Commit compact Markdown and diagram sources when deterministic and reviewable. Publish the full API site as a CI artifact by default. Human-authored Draw.io diagrams used in Markdown navigation keep committed sibling SVG exports; generated code-diagram exports follow the project's selected documentation pipeline.
 
 ## Compact projection
 

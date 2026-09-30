@@ -21,6 +21,7 @@ Related foundation documents:
 - [Testing approach](#testing-approach)
 - [Developer feedback and delivery commands](#developer-feedback-and-delivery-commands)
 - [API documentation and code projections](#api-documentation-and-code-projections)
+- [Diagram tooling](#diagram-tooling)
 - [CI/CD platform and quality gates](#cicd-platform-and-quality-gates)
 - [Persistence and data ownership](#persistence-and-data-ownership)
 - [Deployment model](#deployment-model)
@@ -47,6 +48,7 @@ Related foundation documents:
 | Integration and end-to-end tests | |
 | Formatting and static analysis | |
 | API documentation and code projections | |
+| Draw.io SVG export and link check | |
 | Generated-document freshness check | |
 | Versioned artifact packaging | |
 | Non-production delivery | |
@@ -58,6 +60,14 @@ Related foundation documents:
 - Compact projection generator:
 - Full API reference output: `artifacts/api-docs/`
 - Publication target:
+
+## Diagram tooling
+
+- Human-authored source format: Draw.io (`.drawio`) unless an approved exception is recorded here.
+- Embedded export format: sibling `.svg`, committed with its source.
+- Export command or editor workflow:
+- Source/export freshness and link-validation command:
+- Approved format exception, owner, and rationale (if any):
 
 ## CI/CD platform and quality gates
 

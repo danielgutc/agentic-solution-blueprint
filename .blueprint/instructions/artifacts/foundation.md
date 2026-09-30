@@ -21,7 +21,7 @@ Use the corresponding files under `.blueprint/templates/foundation/`.
 - Design explains system direction, domain boundaries, decisions, tradeoffs, integrations, data ownership, operations, and open questions.
 - Traceability maps each requirement to architecture, implementation scope, and verification evidence without duplicating those artifacts.
 - Keep task status and approval evidence aligned with the underlying artifacts.
-- Use a README breadcrumb, related foundation links, and a section table of contents in each foundation artifact. Keep links relative and point only to files that exist.
+- Follow `../standards/navigation.md` for breadcrumbs, related foundation links, and contents lists. Keep links relative and point only to files that exist.
 
 ## Technical direction defaults
 

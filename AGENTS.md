@@ -66,7 +66,7 @@
 - Keep human-authored C4 content focused on system, container, and component intent.
 - Treat source interfaces, ecosystem-native API comments, and executable tests as the implementation contract source.
 - Generate deterministic `code.md` and code-diagram sources from code and tests. Do not edit them manually.
-- Publish full API references and rendered outputs as CI artifacts by default rather than committing them.
+- Publish full API references as CI artifacts by default. Commit sibling SVG exports for human-authored Draw.io diagrams used in Markdown navigation.
 - During technical design, create only the walking skeleton needed to prove architecture-significant contracts, tests, documentation, packaging, and delivery.
 - Begin full feature implementation only after scoped implementation readiness is approved.
 
@@ -76,6 +76,7 @@
 - Model one abstraction level at a time and keep components nested under their owning container.
 - Add containers only after design approval and components only during technical design.
 - Follow `.blueprint/instructions/artifacts/c4.md`, `.blueprint/instructions/standards/design-by-contract.md`, and the relevant templates.
+- Follow `.blueprint/instructions/standards/navigation.md` and `.blueprint/instructions/standards/diagram-tooling.md` for C4 pages and diagrams.
 
 ## Implementation
 

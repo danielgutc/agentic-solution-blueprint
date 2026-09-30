@@ -11,10 +11,10 @@ This folder contains the canonical architecture description for the project crea
 
 ## Documentation model
 
-- Human-authored Markdown and PlantUML describe system, container, and component intent.
+- Human-authored Markdown and Draw.io diagrams with sibling SVG exports describe system, container, and component intent.
 - Source interfaces, API comments, and executable tests define code contracts.
 - The documentation toolchain generates compact code-level Markdown and code-diagram sources.
-- Full API reference and rendered diagrams are CI artifacts by default.
+- Full API references are CI artifacts by default; navigable human-authored SVG diagrams are committed beside their Draw.io sources.
 
 ## Folder shape
 
@@ -23,18 +23,18 @@ c4/
   README.md
   system/
     system.md
-    diagrams/
+    _diagrams/
   containers/
     README.md
     system-containers.md
-    diagrams/
+    _diagrams/
     <container>/
       container.md
-      diagrams/
+      _diagrams/
       components/
         <component>/
           component.md
-          diagrams/
+          _diagrams/
           code.md          # generated
-          code-diagrams/   # generated sources
+          _code-diagrams/  # generated sources
 ```

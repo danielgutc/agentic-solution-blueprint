@@ -1,5 +1,20 @@
 # System
 
+[README](../../../README.md) / Foundation / [Design](../../foundation/design.md) / C4 / System
+
+Next level: [System containers](../containers/system-containers.md)
+
+## Table of contents
+
+- [Purpose](#purpose)
+- [Summary](#summary)
+- [Actors](#actors)
+- [External systems](#external-systems)
+- [Responsibilities](#responsibilities)
+- [Boundaries](#boundaries)
+- [Open questions](#open-questions)
+- [Diagrams](#diagrams)
+
 ## Purpose
 
 Describe the software system as a whole, including its scope, primary actors, external systems, and overall responsibilities.
@@ -30,4 +45,4 @@ Capture unresolved system-level questions, assumptions, or follow-up decisions.
 
 ## Diagrams
 
-Reference the system-level diagrams stored in the adjacent `diagrams/` folder.
+After design approval, create a system-context `.drawio` diagram and sibling `.svg` export in `_diagrams/` before this C4 view is approved. Embed the SVG here, link the source, and validate both links and any visual drill-down.

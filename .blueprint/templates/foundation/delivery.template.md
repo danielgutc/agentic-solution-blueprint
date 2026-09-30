@@ -31,7 +31,7 @@ Related foundation documents:
 
 ## Delivery flow
 
-Describe the approved path from local feedback through validation, packaging, non-production delivery, and promotion. Store any project-specific diagram source and export in [_diagrams](../../../design/foundation/_diagrams/README.md).
+Describe the approved path from local feedback through validation, packaging, non-production delivery, and promotion. When the flow is approved, store its `.drawio` source and sibling `.svg` export in [_diagrams](../../../design/foundation/_diagrams/README.md), then embed the SVG and link the source here.
 
 ## Project delivery decisions
 
