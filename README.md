@@ -1,104 +1,72 @@
 # Project Blueprint
 
-This repository is a reusable, heavyweight blueprint for software projects that need explicit product discovery, requirements, architecture, delivery, implementation, and verification governance.
+This repository is a reusable blueprint for software projects that need explicit product, requirements, architecture, delivery, implementation, and verification governance. It provides the same path from foundation documents to C4 architecture as a consuming project, while leaving project-specific decisions to that project.
 
 ## Start here
 
-- [Blueprint configuration](./.blueprint/blueprint.toml)
-- [Instruction index](./.blueprint/instructions/README.md)
-- [Task and handoff dashboard](./design/foundation/task.md)
-- [Product](./design/foundation/product.md)
+- [Task tracker](./design/foundation/task.md)
+- [Foundation overview](./design/foundation/product.md)
 - [MVP and prioritization](./design/foundation/mvp.md)
-- [Requirements](./design/foundation/requirements.md)
 - [Technical direction](./design/foundation/tech.md)
-- [Design](./design/foundation/design.md)
+- [Design decisions](./design/foundation/design.md)
 - [Delivery governance](./design/foundation/delivery.md)
-- [Implementation readiness](./design/foundation/implementation-readiness.md)
-- [Traceability matrix](./design/foundation/traceability-matrix.md)
-- [C4 system](./design/c4/system/system.md)
-- [C4 container landscape](./design/c4/containers/system-containers.md)
-
-## Repository model
-
-- `.agents/skills/` contains project-specific skills only. Reusable roles and skills come from the user-level engineering toolkit.
-- `.blueprint/` contains lifecycle policy, modular instructions, and canonical templates.
-- `.codex/` contains short-lived Codex working context only.
-- `design/foundation/` contains enduring project decisions, coordination state, traceability, and gate evidence.
-- `design/c4/` contains enduring system, container, and component architecture.
-- `implementation/` contains real application components.
-- `tools/` contains repo-local utilities and automation scripts.
-- `tests/` contains cross-component integration and end-to-end tests.
-
-The reusable template leaves `selected_workflow` unset. Each consuming project must choose `requirements-first` or `design-first` before advancing its enduring project artifacts.
+- [System](./design/c4/system/system.md)
+- [System containers](./design/c4/containers/system-containers.md)
 
 ## Recommended reading order
 
-1. [Product](./design/foundation/product.md) and [MVP and prioritization](./design/foundation/mvp.md)
-2. [Task tracker](./design/foundation/task.md) and [lifecycle](./.blueprint/instructions/process/lifecycle.md) to see the selected workflow and current gate
-3. [Requirements](./design/foundation/requirements.md), [Tech](./design/foundation/tech.md), and [Design](./design/foundation/design.md) in the selected workflow sequence
-4. [C4 system](./design/c4/system/system.md) and [C4 container landscape](./design/c4/containers/system-containers.md), after design approval
-5. [Traceability matrix](./design/foundation/traceability-matrix.md), [Delivery governance](./design/foundation/delivery.md), and [Implementation readiness](./design/foundation/implementation-readiness.md)
+1. [Product](./design/foundation/product.md)
+2. [MVP and prioritization](./design/foundation/mvp.md)
+3. [Task tracker](./design/foundation/task.md)
+4. Follow the selected workflow: [Requirements](./design/foundation/requirements.md), [Tech](./design/foundation/tech.md), then [Design](./design/foundation/design.md) for requirements-first; Tech, Design, then Requirements for design-first.
+5. [System](./design/c4/system/system.md) and [System containers](./design/c4/containers/system-containers.md), after design approval
+6. [Traceability matrix](./design/foundation/traceability-matrix.md)
+7. [Delivery governance](./design/foundation/delivery.md)
+8. [Implementation readiness](./design/foundation/implementation-readiness.md)
 
-## Design layout
+The [lifecycle](./.blueprint/instructions/process/lifecycle.md) defines phase order and approval gates for each workflow.
 
-```text
-design/
-  foundation/
-    product.md
-    mvp.md
-    requirements.md
-    tech.md
-    design.md
-    delivery.md
-    task.md
-    traceability-matrix.md
-    implementation-readiness.md
-    _diagrams/               # optional foundation diagram sources and exports
-  c4/
-    README.md
-    system/
-      system.md
-      _diagrams/
-    containers/
-      system-containers.md
-      <container>/
-        container.md
-        _diagrams/
-        components/
-          <component>/
-            component.md
-            _diagrams/
-            code.md              # generated from source and tests
-            _code-diagrams/      # generated diagram sources
-implementation/
-  <component>/
-```
+## Repository structure
 
-## Delivery model
+- `.blueprint/` contains lifecycle instructions, configuration, and reusable templates.
+- `.agents/skills/` contains project-specific skills; reusable roles and skills come from the user-level engineering toolkit.
+- `.codex/` contains Codex working context.
+- `design/` contains enduring product, technical, design, and architecture documentation.
+- `implementation/` contains real application components once implementation is approved.
+- `tools/` contains repository utilities and developer automation.
+- `tests/` contains cross-component validation and end-to-end checks.
 
-The blueprint separates architecture, a walking skeleton, and full development:
+## Documentation structure
 
-```text
-approved design
-  -> C4 system and containers
-  -> component technical design and walking skeleton
-  -> minimum viable CI/CD pipeline
-  -> implementation-readiness approval
-  -> full development
-  -> integrated verification
-```
+### Foundation
 
-Before full development, CI must build, test, analyze, document, package, and exercise a non-production delivery path from a clean checkout.
+Use [design/foundation/](./design/foundation/) for the enduring project definition:
 
-See the [lifecycle instructions](./.blueprint/instructions/process/lifecycle.md) for the requirements-first and design-first ordering models.
+- [Product](./design/foundation/product.md)
+- [MVP and prioritization](./design/foundation/mvp.md)
+- [Task tracker](./design/foundation/task.md)
+- [Requirements](./design/foundation/requirements.md)
+- [Tech](./design/foundation/tech.md)
+- [Design](./design/foundation/design.md)
+- [Delivery governance](./design/foundation/delivery.md)
+- [Traceability matrix](./design/foundation/traceability-matrix.md)
+- [Implementation readiness](./design/foundation/implementation-readiness.md)
 
-## Documentation model
+### C4 architecture
 
-- Keep system, container, and component intent human-authored.
-- Keep human-authored diagrams in Draw.io with sibling SVG exports for embedded navigation.
-- Treat source interfaces, API comments, and executable tests as the code-contract source.
-- Generate compact `code.md` files and code-diagram sources and commit them when deterministic.
-- Publish full Javadoc, DocFX, TypeDoc, or equivalent output as a CI artifact rather than committing it by default.
+Use [design/c4/](./design/c4/) for the enduring architecture:
+
+- [System](./design/c4/system/system.md)
+- [System containers](./design/c4/containers/system-containers.md)
+
+Add links to container and component pages as approved architecture creates them. The [C4 index](./design/c4/README.md) provides the next navigation level.
+
+## Blueprint use
+
+- Set `selected_workflow` in the [blueprint configuration](./.blueprint/blueprint.toml) to `requirements-first` or `design-first` when starting a consuming project. It remains `unset` in this reusable template.
+- Use the [instruction index](./.blueprint/instructions/README.md) and [canonical templates](./.blueprint/templates/README.md) when creating project artifacts.
+- Record phase status and approvals in the [task tracker](./design/foundation/task.md). Design approval precedes enduring C4 work; implementation readiness approval precedes full feature development.
+- Keep human-authored diagrams in Draw.io with sibling SVG exports. Generate code summaries and API references from source and tests according to the [documentation rules](./.blueprint/instructions/file-types/api-documentation.md).
 
 ## Top-level layout
 
@@ -108,6 +76,6 @@ See the [lifecycle instructions](./.blueprint/instructions/process/lifecycle.md)
 .codex/
 design/
 implementation/
-tests/
 tools/
+tests/
 ```
