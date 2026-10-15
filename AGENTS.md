@@ -10,7 +10,7 @@
 
 - Read `.blueprint/blueprint.toml` before selecting a workflow or lifecycle phase.
 - Work from the highest relevant abstraction downward and delay lower-level decisions until their inputs and boundaries are stable.
-- Keep durable project state in `design/foundation/`, architecture in `design/c4/`, runtime code in `implementation/`, and cross-system verification in `tests/`.
+- Keep durable project state, architecture, repository-owned implementation assets, and cross-system verification under the paths registered in `.blueprint/blueprint.toml`.
 - Use `design/foundation/task.md` as the compact multi-agent status and handoff dashboard. Do not rely on conversation history as the only record of progress or approval.
 - Keep project-specific skills in `.agents/skills/`. Use reusable roles and engineering skills from the user-level engineering toolkit rather than copying them into this repository.
 - Do not create containers, components, extension points, or infrastructure before approved requirements and architecture justify them.
@@ -29,9 +29,10 @@
 
 - Keep reusable policy and canonical shapes in `.blueprint/`.
 - Keep enduring project decisions and evidence in `design/`.
-- Keep runtime code in `implementation/`, cross-system tests in `tests/`, and repository-owned automation in `tools/`.
+- Keep repository-owned implementation units, cross-system verification, deployment assets, and repository automation under their registered paths from `.blueprint/blueprint.toml`.
 - Keep Codex working memory in `.codex/` and project-specific skills in `.agents/skills/`.
 - Use the path registry in `.blueprint/blueprint.toml` rather than duplicating the full tree here.
+- Follow `.blueprint/instructions/standards/implementation-layout.md` when creating or moving implementation workspaces; do not infer filesystem boundaries directly from C4 containers.
 
 ## Lifecycle
 
@@ -81,6 +82,7 @@
 ## Implementation
 
 - Keep implementation aligned with approved requirements, C4 boundaries, contracts, and traceability.
+- Treat implementation units as repository and toolchain workspaces, and record their relationship to C4 containers in `design/foundation/tech.md`.
 - Before readiness approval, create only the walking skeleton needed to prove contracts and delivery assumptions.
 - After readiness approval, follow `.blueprint/instructions/process/full-development.md` and implement small TDD slices.
 - Return architecture drift to the owning role and gate before continuing.

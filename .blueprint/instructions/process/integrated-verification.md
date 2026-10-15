@@ -10,7 +10,10 @@ The test engineer may design integrated scenarios once contracts and acceptance 
 - Verify important cross-component and external boundaries, primary workflows, and deployment health at the lowest level that exercises the real risk.
 - Record where each applicable test level runs in `design/foundation/delivery.md`: local feedback, pull request, trusted main, deployed development, promotion, or scheduled assurance.
 - Keep developer-close unit and component tests in the selected stack's native framework; do not replace them with slower black-box suites.
+- Keep assembled integration and end-to-end suites in the registered repository test paths as independent verification workspaces. Give each suite explicit toolchain roots, commands, and generated-output locations.
 - Choose Robot Framework, browser tooling, or an equivalent only when project-approved and useful for the relevant black-box or UI scenarios. No framework is mandated by this blueprint.
 - Missing applicable coverage blocks the corresponding gate unless an approved, expiring exception names compensating verification.
 
 Use the toolkit's `integration-e2e-testing` skill when available for scenario design, execution, diagnosis, and reporting. This file records the repository's timing and evidence obligations.
+
+Follow `../standards/implementation-layout.md` for the boundary between unit-local tests and assembled repository verification.

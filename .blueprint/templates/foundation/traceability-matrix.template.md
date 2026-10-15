@@ -21,7 +21,7 @@ Related foundation documents:
 
 Requirement priority, target, and status are owned by [Requirements](./requirements.template.md). Connect each requirement to architecture, work items, implementation scope, and verification evidence here.
 
-| Requirement ID | Requirement summary | Task ID(s) | C4 element(s) | Implementation component(s) | Verification / evidence | Notes |
+| Requirement ID | Requirement summary | Task ID(s) | C4 element(s) | Implementation unit(s) and path(s) | Verification / evidence | Notes |
 | --- | --- | --- | --- | --- | --- | --- |
 
 ## Optional adjacent handoff views
@@ -40,7 +40,7 @@ Use these views only when a phase boundary needs more detail. Keep the matrix ab
 
 ### C4 contract to implementation task
 
-| C4 contract or element | Task ID(s) | Implementation track or phase | Notes |
+| C4 contract or element | Task ID(s) | Implementation unit and track or phase | Notes |
 | --- | --- | --- | --- |
 
 ### Task to evidence

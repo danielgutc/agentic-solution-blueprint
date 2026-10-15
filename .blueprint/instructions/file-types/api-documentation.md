@@ -17,7 +17,7 @@ The repository documentation command must produce:
 
 - compact `code.md` under each owning C4 component
 - deterministic code-diagram sources under each component's `_code-diagrams/`
-- a complete API reference under `artifacts/api-docs/`
+- a complete aggregate API reference under the configured `documentation.api_reference_output` path (by default `artifacts/api-docs/`)
 
 Commit compact Markdown and diagram sources when deterministic and reviewable. Publish the full API site as a CI artifact by default. Human-authored Draw.io diagrams used in Markdown navigation keep committed sibling SVG exports; generated code-diagram exports follow the project's selected documentation pipeline.
 
@@ -43,6 +43,7 @@ Exclude exhaustive private members, repeated signatures, and prose already prese
 ## CI checks
 
 - Generate from a clean checkout.
+- Generate unit-local intermediate output within the owning implementation unit, then assemble publishable repository documentation under the registered repository artifacts path.
 - Fail on invalid public documentation or broken references.
 - Regenerate committed projections and fail when the working tree would change.
 - Publish the full reference without adding it to source control.

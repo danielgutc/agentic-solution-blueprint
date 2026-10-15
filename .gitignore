@@ -4,8 +4,16 @@ Thumbs.db
 *.tmp
 *.log
 
-# Generated API sites and rendered documentation artifacts
+# Generated aggregate API sites, packages, and reports
 /artifacts/
+
+# Generated output owned by an implementation unit
+/implementation/artifacts/
+/implementation/**/artifacts/
+
+# Generated output owned by an assembled verification workspace
+/tests/artifacts/
+/tests/**/artifacts/
 
 # IDE files
 .idea/

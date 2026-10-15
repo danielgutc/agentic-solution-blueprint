@@ -18,6 +18,7 @@ Use the corresponding files under `.blueprint/templates/foundation/`.
 - Keep functional behavior, quality attributes, mandated constraints, and uncertain assumptions distinct.
 - Do not hide architecture choices inside functional requirements or process rules inside non-functional requirements.
 - Tech records enduring stack, framework, tooling, testing, documentation, delivery, persistence, and deployment choices with rationale.
+- Tech maps each implementation unit to its path, C4 container or non-runtime owner and purpose, toolchain root, commands, and produced artifacts. Record command working directories explicitly.
 - Design explains system direction, domain boundaries, decisions, tradeoffs, integrations, data ownership, operations, and open questions.
 - Traceability maps each requirement to architecture, implementation scope, and verification evidence without duplicating those artifacts.
 - Keep task status and approval evidence aligned with the underlying artifacts.
@@ -29,6 +30,7 @@ Use the corresponding files under `.blueprint/templates/foundation/`.
 - Record the platform facilities that shape component design, including dependency injection, validation, configuration, background work, persistence, messaging, observability, and testing.
 - Keep physical data-store ownership, schema or namespace ownership, migration ownership, and access enforcement explicit.
 - Treat deployment technology as a project decision. The blueprint does not mandate Kubernetes, a cloud, or a CI provider.
+- Apply `../standards/implementation-layout.md` when recording implementation units and repository command scopes.
 
 ## Quality checks
 
