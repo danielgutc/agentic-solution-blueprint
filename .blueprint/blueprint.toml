@@ -1,5 +1,5 @@
 schema_version = 1
-blueprint_version = "2.0"
+blueprint_version = "2.1"
 profile = "full-software-development"
 supported_workflows = ["requirements-first", "design-first"]
 # Keep unset only in the reusable template. A consuming project must select one.
@@ -21,6 +21,8 @@ c4 = "design/c4"
 c4_system = "design/c4/system/system.md"
 c4_system_containers = "design/c4/containers/system-containers.md"
 implementation = "implementation"
+deployment = "deployment"
+repository_artifacts = "artifacts"
 integration_tests = "tests/integration"
 end_to_end_tests = "tests/e2e"
 tools = "tools"

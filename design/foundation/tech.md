@@ -17,6 +17,7 @@ Related foundation documents:
 - [Languages and runtimes](#languages-and-runtimes)
 - [Frameworks and platforms](#frameworks-and-platforms)
 - [Build and package tools](#build-and-package-tools)
+- [Implementation workspace map](#implementation-workspace-map)
 - [Selected framework capabilities](#selected-framework-capabilities)
 - [Testing approach](#testing-approach)
 - [Developer feedback and delivery commands](#developer-feedback-and-delivery-commands)
@@ -34,24 +35,32 @@ Related foundation documents:
 
 ## Build and package tools
 
+## Implementation workspace map
+
+Use stable unit IDs. A unit maps to one or more approved C4 containers, or names its non-runtime owner and purpose. Paths are relative to the registered implementation root unless stated otherwise.
+
+| Unit ID | Path | C4 container(s) or non-runtime owner and purpose | Toolchain root(s) | Build, test, and package entry points | Produced artifacts |
+| --- | --- | --- | --- | --- | --- |
+| | | | | | |
+
 ## Selected framework capabilities
 
 ## Testing approach
 
 ## Developer feedback and delivery commands
 
-| Capability | Repository command |
-| --- | --- |
-| Clean build | |
-| Unit and component tests | |
-| Contract tests | |
-| Integration and end-to-end tests | |
-| Formatting and static analysis | |
-| API documentation and code projections | |
-| Draw.io SVG export and link check | |
-| Generated-document freshness check | |
-| Versioned artifact packaging | |
-| Non-production delivery | |
+| Capability | Unit ID or aggregate scope | Working directory | Repository command |
+| --- | --- | --- | --- |
+| Clean build | | | |
+| Unit and component tests | | | |
+| Contract tests | | | |
+| Integration and end-to-end tests | | | |
+| Formatting and static analysis | | | |
+| API documentation and code projections | | | |
+| Draw.io SVG export and link check | | | |
+| Generated-document freshness check | | | |
+| Versioned artifact packaging | | | |
+| Non-production delivery | | | |
 
 ## API documentation and code projections
 

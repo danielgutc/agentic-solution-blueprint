@@ -17,6 +17,7 @@ Related foundation documents:
 - [Purpose and scope](#purpose-and-scope)
 - [Delivery flow](#delivery-flow)
 - [Project delivery decisions](#project-delivery-decisions)
+- [Implementation and aggregate command ownership](#implementation-and-aggregate-command-ownership)
 - [Pipeline stage contracts](#pipeline-stage-contracts)
 - [Test execution matrix](#test-execution-matrix)
 - [Artifact and promotion model](#artifact-and-promotion-model)
@@ -41,16 +42,22 @@ Describe the approved path from local feedback through validation, packaging, no
 - Local developer entry point:
 - Branch and repository governance:
 
+## Implementation and aggregate command ownership
+
+| Unit ID or aggregate scope | Working directory | Commands owned here | Output or promoted artifact | CI owner |
+| --- | --- | --- | --- | --- |
+| | | | | |
+
 ## Pipeline stage contracts
 
-| Stage | Trigger | Repository command(s) | Required result | Evidence | Trust level | Blocking behavior |
-| --- | --- | --- | --- | --- | --- | --- |
-| Local feedback | | | | | Developer workstation | Advisory |
-| Pull request | | | | | Untrusted proposed change | |
-| Trusted main | | | | | Trusted source state | |
-| Non-production delivery | | | | | Deployment environment | |
-| Promotion | | | | | Protected environment | |
-| Scheduled assurance | | | | | Declared per job | |
+| Stage | Trigger | Scope and working directory | Repository command(s) | Required result | Evidence | Trust level | Blocking behavior |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Local feedback | | | | | | Developer workstation | Advisory |
+| Pull request | | | | | | Untrusted proposed change | |
+| Trusted main | | | | | | Trusted source state | |
+| Non-production delivery | | | | | | Deployment environment | |
+| Promotion | | | | | | Protected environment | |
+| Scheduled assurance | | | | | | Declared per job | |
 
 ## Test execution matrix
 

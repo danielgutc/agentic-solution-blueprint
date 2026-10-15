@@ -12,4 +12,4 @@ Before implementation readiness can be approved, the selected technology stack m
 - Versioned artifact packaging
 - Non-production delivery
 
-Record the concrete commands in `design/foundation/tech.md`. CI/CD workflows should invoke these commands rather than duplicate their logic.
+Record each concrete command, its working directory, and whether it applies to one implementation unit or the assembled repository in `design/foundation/tech.md`. CI/CD workflows should invoke these commands rather than duplicate their logic.

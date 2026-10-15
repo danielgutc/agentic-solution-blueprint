@@ -32,9 +32,13 @@ The [lifecycle](./.blueprint/instructions/process/lifecycle.md) defines phase or
 - `.agents/skills/` contains project-specific skills; reusable roles and skills come from the user-level engineering toolkit.
 - `.codex/` contains Codex working context.
 - `design/` contains enduring product, technical, design, and architecture documentation.
-- `implementation/` contains real application components once implementation is approved.
+- `implementation/` contains repository-owned implementation units once implementation is approved.
+- `deployment/` contains repository-owned deployment topology, environment composition, and infrastructure assets.
 - `tools/` contains repository utilities and developer automation.
-- `tests/` contains cross-component validation and end-to-end checks.
+- `tests/` contains assembled cross-unit integration and end-to-end checks.
+- `artifacts/` is the ignored aggregate output location for packages, reports, and generated API documentation.
+
+An implementation unit is a build, test, or packaging workspace. It is related to, but does not mechanically mirror, the C4 container model: a managed service might need no repository implementation, while an application and its embedded store can share one unit. Follow the [implementation workspace standard](./.blueprint/instructions/standards/implementation-layout.md) and record the project-specific mapping in [Tech](./design/foundation/tech.md).
 
 ## Documentation structure
 
@@ -76,6 +80,10 @@ Add links to container and component pages as approved architecture creates them
 .codex/
 design/
 implementation/
+deployment/
 tools/
 tests/
+artifacts/                 # generated and ignored
 ```
+
+Multiple independently owned workspaces normally live at `implementation/<unit>/`. A documented single-unit project can place its workspace directly in `implementation/`. Unit-local `src/`, `tests/`, `docs/`, and `artifacts/` directories are optional; use the structure native to the selected ecosystem and create directories only when they contain owned files.
