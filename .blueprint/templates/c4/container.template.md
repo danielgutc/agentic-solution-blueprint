@@ -14,6 +14,7 @@ When materializing this template, adjust the breadcrumb for the destination and 
 - [Consumed contracts](#consumed-contracts)
 - [Dependencies](#dependencies)
 - [Contained components](#contained-components)
+- [Owned technical documents](#owned-technical-documents)
 - [Architecture decisions and split triggers](#architecture-decisions-and-split-triggers)
 - [Open questions](#open-questions)
 - [Diagrams](#diagrams)
@@ -33,6 +34,10 @@ When materializing this template, adjust the breadcrumb for the destination and 
 ## Dependencies
 
 ## Contained components
+
+## Owned technical documents
+
+Link existing container-owned or same-container cross-component documents here, such as a walking skeleton, focused assessment, recovery note, contract design, or test design. Do not add placeholder links. Keep component-owned documents with their component and keep exact source signatures in implementation source, API comments, and executable tests.
 
 ## Architecture decisions and split triggers
 

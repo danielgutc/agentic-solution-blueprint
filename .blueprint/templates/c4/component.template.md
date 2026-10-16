@@ -14,6 +14,7 @@ When materializing this template, insert the approved owning container in the br
 - [Dependencies](#dependencies)
 - [Invariants and constraints](#invariants-and-constraints)
 - [Test seams](#test-seams)
+- [Owned technical documents](#owned-technical-documents)
 - [Design rationale and patterns](#design-rationale-and-patterns)
 - [Open questions](#open-questions)
 - [Diagrams](#diagrams)
@@ -33,6 +34,10 @@ When materializing this template, insert the approved owning container in the br
 ## Invariants and constraints
 
 ## Test seams
+
+## Owned technical documents
+
+Link existing documents whose primary technical owner is this component, such as a focused assessment, recovery note, contract design, or test design. Do not add placeholder links or duplicate container-level documents here. Keep exact source signatures in implementation source, API comments, and executable tests.
 
 ## Design rationale and patterns
 

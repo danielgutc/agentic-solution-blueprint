@@ -21,6 +21,8 @@ Use the corresponding files under `.blueprint/templates/foundation/`.
 - Tech maps each implementation unit to its path, C4 container or non-runtime owner and purpose, toolchain root, commands, and produced artifacts. Record command working directories explicitly.
 - Design explains system direction, domain boundaries, decisions, tradeoffs, integrations, data ownership, operations, and open questions.
 - Traceability maps each requirement to architecture, implementation scope, and verification evidence without duplicating those artifacts.
+- Container- and component-owned technical documents live with their owning C4 scope under `design/c4/containers/`. Foundation retains system-wide product intent, requirements, technical direction, decisions, governance, coordination, traceability, and readiness records; those artifacts link to owned technical detail and record its status or evidence instead of duplicating it.
+- Technical detail with shared ownership across containers and no single container owner belongs at an explicit shared/common C4 scope with links from participating containers. Keep a system-wide decision in Foundation only when its primary purpose is the foundation-level decision or governance record, not merely because it mentions several containers.
 - Keep task status and approval evidence aligned with the underlying artifacts.
 - Follow `../standards/navigation.md` for breadcrumbs, related foundation links, and contents lists. Keep links relative and point only to files that exist.
 
