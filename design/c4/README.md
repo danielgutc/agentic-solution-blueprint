@@ -8,6 +8,7 @@ This folder contains the canonical architecture description for the project crea
 - `containers/system-containers.md` contains the authoritative container landscape.
 - `containers/` contains one folder per approved container in the system.
 - Each container owns its components under `components/`.
+- Container-specific technical documents live beside their owning `container.md`; component-specific documents live beside their owning `component.md`. Scope and ownership determine placement; see the [C4 artifact conventions](../../.blueprint/instructions/artifacts/c4.md).
 
 ## Documentation model
 
@@ -30,10 +31,12 @@ c4/
     _diagrams/
     <container>/
       container.md
+      <document>.md     # optional container-owned technical detail
       _diagrams/
       components/
         <component>/
           component.md
+          <document>.md # optional component-owned technical detail
           _diagrams/
           code.md          # generated
           _code-diagrams/  # generated sources
