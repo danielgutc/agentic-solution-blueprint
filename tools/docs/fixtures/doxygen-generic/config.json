@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "doxygen_version": "1.18.0",
+  "doxyfile": "Doxyfile",
+  "doxygen_xml": "xml",
+  "repository_root": "repository",
+  "reproduce_command": "python tools/docs/generate_doxygen_docs.py --config tools/docs/doxygen.json",
+  "code_fence_language": "csharp",
+  "components": [
+    {
+      "id": "example",
+      "title": "Example component",
+      "output_dir": "design/c4/containers/sample/components/example",
+      "architecture_page": "design/c4/containers/sample/components/example/component.md",
+      "api_scope": "example-api",
+      "qualified_prefixes": ["Example.Api."],
+      "source_prefixes": ["src/Example.Api/"],
+      "expected_symbols": [
+        "Example.Api.IClock",
+        "Example.Api.ClockService"
+      ]
+    }
+  ]
+}

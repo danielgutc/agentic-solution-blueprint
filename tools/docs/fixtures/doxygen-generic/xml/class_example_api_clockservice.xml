@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doxygen version="1.18.0" xml:lang="en-US">
+  <compounddef id="class_example_api_clockservice" kind="class" language="C#" prot="public">
+    <compoundname>Example.Api.ClockService</compoundname>
+    <basecompoundref refid="interface_example_api_iclock" prot="public" virt="non-virtual">Example.Api.IClock</basecompoundref>
+    <briefdescription><para>Formats clock values for display.</para></briefdescription>
+    <detaileddescription>
+      <para>The service keeps formatting separate from the time source.</para>
+      <para>Use an <ref refid="interface_example_api_iclock" kindref="compound">IClock</ref> supplied by the composition root.</para>
+    </detaileddescription>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_example_api_clockservice_1format" prot="public" static="no">
+        <type>string</type>
+        <definition>string Example.Api.ClockService.Format</definition>
+        <argsstring>(<ref refid="interface_example_api_iclock" kindref="compound">IClock</ref> clock, string format)</argsstring>
+        <name>Format</name>
+        <param>
+          <type><ref refid="interface_example_api_iclock" kindref="compound">IClock</ref></type>
+          <declname>clock</declname>
+        </param>
+        <param><type>string</type><declname>format</declname></param>
+        <briefdescription><para>Formats the value supplied by <parametername>clock</parametername>.</para></briefdescription>
+        <detaileddescription>
+          <para>Pass a non-empty <paramref name="format"/> compatible with the runtime formatter.</para>
+          <programlisting>
+            <codeline><highlight class="normal">var text = service.Format(clock, &quot;O&quot;);</highlight></codeline>
+          </programlisting>
+          <parameterlist kind="param">
+            <parameteritem>
+              <parameternamelist><parametername>clock</parametername></parameternamelist>
+              <parameterdescription><para>The source of the instant.</para></parameterdescription>
+            </parameteritem>
+            <parameteritem>
+              <parameternamelist><parametername>format</parametername></parameternamelist>
+              <parameterdescription><para>The runtime format string.</para></parameterdescription>
+            </parameteritem>
+          </parameterlist>
+          <simplesect kind="return"><para>The formatted instant.</para></simplesect>
+          <simplesect kind="exception"><para><computeroutput>ArgumentException</computeroutput> when <parametername>format</parametername> is invalid.</para></simplesect>
+          <simplesect kind="see"><para><ref refid="interface_example_api_iclock" kindref="compound">Example.Api.IClock</ref></para></simplesect>
+          <para><seealso cref="Example.Api.IClock">See the clock contract.</seealso></para>
+        </detaileddescription>
+        <location file="src/Example.Api/ClockService.cs" line="14" column="5"/>
+      </memberdef>
+    </sectiondef>
+    <location file="src/Example.Api/ClockService.cs" line="5" column="1"/>
+  </compounddef>
+</doxygen>

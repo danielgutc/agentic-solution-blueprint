@@ -114,6 +114,7 @@ Resolve drift in the lower-precedence source instead of carrying contradictory r
 - Keep Codex-specific memory in `.codex/` and project-specific skills in `.agents/skills/`.
 - Keep reusable agents and skills in the external engineering toolkit and install them through user-level symbolic links.
 - Keep `.blueprint/blueprint.toml`, instructions, templates, and seeded artifacts aligned in the same change.
+- Bundle referenced reusable repository tools and their tests/fixtures under `tools/`, register them in `.blueprint/tooling.toml`, and synchronize those files with consuming projects without overwriting project-specific adapters. Declare external prerequisites explicitly.
 - Keep reusable policy technology-neutral unless the blueprint explicitly selects a default.
 - Prefer established, actively maintained libraries and platform capabilities over custom plumbing when they satisfy approved constraints.
 - Record exceptions, owners, expiry conditions, and compensating evidence rather than weakening a gate silently.

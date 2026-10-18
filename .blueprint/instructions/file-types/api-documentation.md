@@ -6,6 +6,8 @@ Generate readable code guides, API reference, and code-structure navigation from
 
 ## Default toolchain
 
+The blueprint ships the configurable Doxygen XML renderer at [generate_doxygen_docs.py](../../../tools/docs/generate_doxygen_docs.py) and the [Markdown link checker](../../../tools/docs/check_navigation.py). Follow the [tooling guide](../../../tools/docs/doxygen-tooling.md) for configuration and tested scope. Adopt these tools and their tests/fixtures using the [portable manifest](../../tooling.toml); keep language-specific compiler adapters and component ownership configuration project-owned. The shipped renderer is a starting implementation, not proof that a consuming project's language or strict documentation gates pass.
+
 - Use Doxygen as the default source parser and documented structural-relationship engine when it supports the selected implementation language and the constructs present in the repository.
 - Pin the accepted Doxygen version and configuration in repository-owned tooling after capability fixtures pass. The blueprint does not prescribe one global Doxygen version.
 - Generate Doxygen XML as the normalized intermediate input. Render committed Markdown through a deterministic, repository-owned adapter; Doxygen does not provide the selected Markdown output directly.

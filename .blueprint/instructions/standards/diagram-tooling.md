@@ -9,6 +9,8 @@
 
 ## Update and verification
 
+- The blueprint includes [export_drawio_svg.py](../../../tools/diagrams/export_drawio_svg.py) for deterministic export/checking of its documented subset of uncompressed Draw.io models. Run `python tools/diagrams/export_drawio_svg.py --check` for freshness and links; inspect `--help` and the [diagram tooling guide](../../../tools/diagrams/README.md) for root/input selection and unsupported features. Native Draw.io remains an external option for features outside that subset. Do not treat the limited renderer as a general Draw.io implementation.
+
 - Regenerate the SVG from the `.drawio` source after every source change; do not edit the SVG as the primary source.
 - A project may use the Draw.io CLI, for example `drawio --export --format svg --svg-links-target same-win --output view.svg view.drawio`, or a documented editor export. Use the command selected in `tech.md` so another contributor can reproduce the result.
 - Check that the SVG represents the current source and that Markdown references resolve to both files.

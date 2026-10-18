@@ -1,5 +1,7 @@
 # Navigation Standard
 
+The supplied `python tools/docs/check_navigation.py` command validates repository Markdown links and contents lists. Use its explicit root or input options for another checkout or aggregate reference; see the [tools guide](../../../tools/README.md). Its tests and portable dependencies are listed in the [portable manifest](../../tooling.toml).
+
 ## Foundation pages
 
 - Start with a breadcrumb back to the repository README, followed by `Related foundation documents` links to existing sibling artifacts.

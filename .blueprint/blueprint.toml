@@ -33,6 +33,14 @@ role_catalog = "user-level-agentic-engineering-toolkit"
 status_standard = ".blueprint/instructions/standards/status-taxonomy.md"
 handoff_fields = ["scope", "inputs", "decisions", "evidence", "risks", "next_owner"]
 
+[tooling]
+manifest = ".blueprint/tooling.toml"
+runtime = "python>=3.11"
+adoption = "copy-manifest-files-with-pinned-blueprint-preserve-project-adapters"
+doxygen_renderer = "tools/docs/generate_doxygen_docs.py"
+markdown_checker = "tools/docs/check_navigation.py"
+drawio_exporter = "tools/diagrams/export_drawio_svg.py"
+
 [documentation]
 policy = ".blueprint/instructions/file-types/api-documentation.md"
 default_api_generator = "doxygen"

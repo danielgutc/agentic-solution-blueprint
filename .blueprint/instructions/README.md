@@ -28,4 +28,6 @@ When instructions conflict, follow the higher-precedence source and remove the l
 
 Keep policy in instructions, reusable shapes in templates, project decisions in `design/`, and executable behavior in `implementation/`, `tests/`, or `tools/`. Do not duplicate a detailed rule in `AGENTS.md`.
 
+Ship reusable repository tools referenced by instructions or templates under `tools/`, with their tests, fixtures, usage, and limitations. Register the portable files in `.blueprint/tooling.toml`. When adopting a pinned `.blueprint/` revision, also copy the manifest's tool files from that same source revision. Preserve project-specific adapters, configuration, pins, and tests rather than replacing them with example configuration. Declare external executables as prerequisites; do not imply that they are bundled.
+
 The reusable engineering toolkit supplies role-specific methods through agents and skills when installed. Blueprint instructions remain usable without that toolkit and state only this repository's additional paths, approval gates, and evidence obligations.

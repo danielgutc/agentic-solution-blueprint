@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doxygen version="1.18.0" xml:lang="en-US">
+  <compounddef id="interface_example_api_iclock" kind="interface" language="C#" prot="public">
+    <compoundname>Example.Api.IClock</compoundname>
+    <briefdescription><para>Supplies the current instant.</para></briefdescription>
+    <detaileddescription>
+      <para>Callers depend on this contract when deterministic time is required.</para>
+    </detaileddescription>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="interface_example_api_iclock_1now" prot="public" static="no">
+        <type>DateTimeOffset</type>
+        <definition>DateTimeOffset Example.Api.IClock.Now</definition>
+        <argsstring>()</argsstring>
+        <name>Now</name>
+        <briefdescription><para>Gets the current instant.</para></briefdescription>
+        <detaileddescription>
+          <para>The returned value includes an offset.</para>
+          <simplesect kind="return"><para>The current instant.</para></simplesect>
+        </detaileddescription>
+        <location file="src/Example.Api/IClock.cs" line="8" column="5"/>
+      </memberdef>
+    </sectiondef>
+    <location file="src/Example.Api/IClock.cs" line="3" column="1"/>
+  </compounddef>
+</doxygen>
