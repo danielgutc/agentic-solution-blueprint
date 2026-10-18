@@ -43,8 +43,8 @@ Related foundation documents:
 | IR-004 | Delivery stages, trust boundaries, evidence, and exceptions are recorded | | `design/foundation/delivery.md` | Not assessed | |
 | IR-005 | Walking skeleton builds from a clean checkout | | Project build command | Not assessed | |
 | IR-006 | Initial unit, component, and contract tests pass | | Project test commands | Not assessed | |
-| IR-007 | API reference and compact code projections generate successfully | | Documentation generation command | Not assessed | |
-| IR-008 | Generated `code.md` and code-diagram sources are current | | Documentation verification command | Not assessed | |
+| IR-007 | Native source documentation, Doxygen capability fixtures, component guides, API pages, and code projections generate successfully | | Documentation generation command | Not assessed | |
+| IR-008 | Generated `code.md`, component `api/` pages, code-diagram sources, provenance, and navigation are current | | Documentation verification command | Not assessed | |
 | IR-009 | Formatting and static analysis pass | | Project quality commands | Not assessed | |
 | IR-010 | A versioned artifact is produced | | Project package command | Not assessed | |
 | IR-011 | The walking skeleton follows a non-production delivery path | | Delivery evidence | Not assessed | |

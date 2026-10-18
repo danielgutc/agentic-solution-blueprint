@@ -19,6 +19,7 @@ Use the corresponding files under `.blueprint/templates/foundation/`.
 - Do not hide architecture choices inside functional requirements or process rules inside non-functional requirements.
 - Tech records enduring stack, framework, tooling, testing, documentation, delivery, persistence, and deployment choices with rationale.
 - Tech maps each implementation unit to its path, C4 container or non-runtime owner and purpose, toolchain root, commands, and produced artifacts. Record command working directories explicitly.
+- Tech records the code-documentation generator and pinned version, configuration path, native source-comment format, capability-fixture scope, known parser limitations, generated-output paths, freshness command, and any evidenced language-specific exception to the Doxygen default.
 - Design explains system direction, domain boundaries, decisions, tradeoffs, integrations, data ownership, operations, and open questions.
 - Traceability maps each requirement to architecture, implementation scope, and verification evidence without duplicating those artifacts.
 - Container- and component-owned technical documents live with their owning C4 scope under `design/c4/containers/`. Foundation retains system-wide product intent, requirements, technical direction, decisions, governance, coordination, traceability, and readiness records; those artifacts link to owned technical detail and record its status or evidence instead of duplicating it.

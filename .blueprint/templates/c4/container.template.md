@@ -35,9 +35,11 @@ When materializing this template, adjust the breadcrumb for the destination and 
 
 ## Contained components
 
+List only approved components with existing detail pages. Show code-documentation availability through each component page; do not bypass component ownership by linking container navigation directly to generated per-symbol API pages.
+
 ## Owned technical documents
 
-Link existing container-owned or same-container cross-component documents here, such as a walking skeleton, focused assessment, recovery note, contract design, or test design. Do not add placeholder links. Keep component-owned documents with their component and keep exact source signatures in implementation source, API comments, and executable tests.
+Link existing container-owned or same-container cross-component documents here, such as a walking skeleton, focused assessment, recovery note, contract design, or test design. Do not add placeholder links. Keep component-owned documents and generated code documentation with their component, and keep exact source signatures in implementation source, API comments, and executable tests.
 
 ## Architecture decisions and split triggers
 

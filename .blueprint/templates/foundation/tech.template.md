@@ -64,11 +64,18 @@ Use stable unit IDs. A unit maps to one or more approved C4 containers, or names
 
 ## API documentation and code projections
 
-- Generator:
-- Public API comment format:
-- Compact projection generator:
-- Full API reference output: `artifacts/api-docs/`
-- Publication target:
+- Default parser: Doxygen
+- Accepted Doxygen version and configuration path:
+- Native API comment format by language:
+- Capability-fixture scope and command:
+- Known parser limitations and deterministic normalization:
+- Approved language-specific generator exception, evidence, owner, and revisit trigger:
+- Doxygen XML and other unit-local intermediate output:
+- Markdown renderer and committed component guide/API-page patterns:
+- Code-relationship renderer and edge-evidence policy:
+- Aggregate API reference output: `artifacts/api-docs/`
+- Generation, freshness, and link-validation commands:
+- Publication target and retention:
 
 ## Diagram tooling
 

@@ -14,8 +14,9 @@ This folder contains the canonical architecture description for the project crea
 
 - Human-authored Markdown and Draw.io diagrams with sibling SVG exports describe system, container, and component intent.
 - Source interfaces, API comments, and executable tests define code contracts.
-- The documentation toolchain generates compact code-level Markdown and code-diagram sources.
-- Full API references are CI artifacts by default; navigable human-authored SVG diagrams are committed beside their Draw.io sources.
+- The documentation toolchain uses Doxygen by default after language capability fixtures pass, then renders committed component guides, per-symbol Markdown API pages, and code-diagram sources from Doxygen XML and native source documentation.
+- Optional aggregate API sites are CI artifacts; navigable generated Markdown and human-authored SVG diagrams remain available from a fresh clone.
+- Each implemented `component.md` links its generated `code.md`; generated guides and API pages link back to the owning component and source declarations. Components without repository-owned implementation do not link placeholders.
 
 ## Folder shape
 
@@ -39,5 +40,6 @@ c4/
           <document>.md # optional component-owned technical detail
           _diagrams/
           code.md          # generated
+          api/             # generated committed Markdown by scope and stable symbol ID
           _code-diagrams/  # generated sources
 ```
