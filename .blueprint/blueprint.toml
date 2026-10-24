@@ -33,8 +33,19 @@ role_catalog = "user-level-agentic-engineering-toolkit"
 status_standard = ".blueprint/instructions/standards/status-taxonomy.md"
 handoff_fields = ["scope", "inputs", "decisions", "evidence", "risks", "next_owner"]
 
+[tooling]
+manifest = ".blueprint/tooling.toml"
+runtime = "python>=3.11"
+adoption = "copy-manifest-files-with-pinned-blueprint-preserve-project-adapters"
+doxygen_renderer = "tools/docs/generate_doxygen_docs.py"
+markdown_checker = "tools/docs/check_navigation.py"
+drawio_exporter = "tools/diagrams/export_drawio_svg.py"
+
 [documentation]
 policy = ".blueprint/instructions/file-types/api-documentation.md"
+default_api_generator = "doxygen"
+default_api_intermediate = "doxygen-xml"
+api_generator_exception_policy = "record-in-design/foundation/tech.md-with-capability-evidence"
 diagram_source = "drawio"
 diagram_export = "svg"
 diagram_export_policy = "committed-sibling"
@@ -42,11 +53,13 @@ code_contract_source = "implementation-source-comments-and-tests"
 component_narrative = "human-authored"
 code_summary = "generated-and-committed"
 code_diagram_sources = "generated-and-committed"
+component_api_reference = "generated-and-committed"
 api_reference = "generated-ci-artifact"
 api_reference_output = "artifacts/api-docs"
 c4_container_document_pattern = "design/c4/containers/<container>/<document>.md"
 c4_component_document_pattern = "design/c4/containers/<container>/components/<component>/<document>.md"
 code_summary_pattern = "design/c4/containers/<container>/components/<component>/code.md"
+component_api_reference_pattern = "design/c4/containers/<container>/components/<component>/api/<scope>/<stable-symbol-id>.md"
 code_diagram_pattern = "design/c4/containers/<container>/components/<component>/_code-diagrams"
 
 [gates.design_approval]

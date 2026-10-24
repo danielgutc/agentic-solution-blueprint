@@ -75,6 +75,15 @@ Describe the approved path from local feedback through validation, packaging, no
 
 ## Documentation and generated artifacts
 
+- Repository documentation command and working directory:
+- Pinned Doxygen acquisition or cache policy:
+- Native source-documentation build and validation:
+- Doxygen capability fixtures and symbol-coverage check:
+- Committed component `code.md`, `api/`, and code-diagram freshness check:
+- Architecture, API, and source-link validation:
+- Optional aggregate API artifact and retention:
+- Pull-request blocking behavior and evidence:
+
 ## Trust and security boundaries
 
 ## Evidence and retention

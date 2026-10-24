@@ -1,0 +1,37 @@
+schema_version = 1
+runtime = "python>=3.11"
+source_revision = "same-as-the-pinned-blueprint-copy"
+adoption = "copy-listed-files-preserve-project-adapters-and-configuration"
+files = [
+  "tools/README.md",
+  "tools/diagrams/README.md",
+  "tools/diagrams/export_drawio_svg.py",
+  "tools/diagrams/test_export_drawio_svg_portable.py",
+  "tools/docs/Doxyfile.example",
+  "tools/docs/check_navigation.py",
+  "tools/docs/doxygen-tooling.md",
+  "tools/docs/doxygen.example.json",
+  "tools/docs/doxygen_markdown.py",
+  "tools/docs/fixtures/doxygen-generic/Doxyfile",
+  "tools/docs/fixtures/doxygen-generic/config.json",
+  "tools/docs/fixtures/doxygen-generic/repository/design/c4/containers/sample/components/example/component.md",
+  "tools/docs/fixtures/doxygen-generic/repository/src/Example.Api/ClockService.cs",
+  "tools/docs/fixtures/doxygen-generic/repository/src/Example.Api/IClock.cs",
+  "tools/docs/fixtures/doxygen-generic/xml/class_example_api_clockservice.xml",
+  "tools/docs/fixtures/doxygen-generic/xml/index.xml",
+  "tools/docs/fixtures/doxygen-generic/xml/interface_example_api_iclock.xml",
+  "tools/docs/generate_doxygen_docs.py",
+  "tools/docs/test_check_navigation.py",
+  "tools/docs/test_generate_doxygen_docs.py",
+]
+
+[commands]
+doxygen = "python tools/docs/generate_doxygen_docs.py --config <project-config.json> --run-doxygen"
+navigation = "python tools/docs/check_navigation.py"
+diagram_freshness = "python tools/diagrams/export_drawio_svg.py --check"
+tests = "python -m unittest tools.docs.test_generate_doxygen_docs tools.docs.test_check_navigation tools.diagrams.test_export_drawio_svg_portable"
+
+[external_prerequisites]
+doxygen = "Required for source extraction; each project pins and validates its accepted executable."
+drawio = "Optional native editor/exporter for diagram features outside the bundled subset."
+graphviz = "Optional when a project selects Graphviz-rendered graphs; project-owned version pin."

@@ -66,8 +66,9 @@
 - Keep product, MVP and prioritization, requirements, technology, design, delivery, traceability, task status, and readiness evidence in `design/foundation/`.
 - Keep human-authored C4 content focused on system, container, and component intent.
 - Treat source interfaces, ecosystem-native API comments, and executable tests as the implementation contract source.
-- Generate deterministic `code.md` and code-diagram sources from code and tests. Do not edit them manually.
-- Publish full API references as CI artifacts by default. Commit sibling SVG exports for human-authored Draw.io diagrams used in Markdown navigation.
+- Use Doxygen as the default code-documentation parser when capability fixtures support the selected language and repository constructs; record a scoped, evidenced exception in Tech when another ecosystem generator is required.
+- Generate deterministic component `code.md`, committed Markdown API pages, and code-diagram sources from source comments, declarations, and tests. Do not edit them manually.
+- Publish optional aggregate API sites as CI artifacts. Commit sibling SVG exports for human-authored Draw.io diagrams used in Markdown navigation.
 - During technical design, create only the walking skeleton needed to prove architecture-significant contracts, tests, documentation, packaging, and delivery.
 - Begin full feature implementation only after scoped implementation readiness is approved.
 
@@ -113,6 +114,7 @@ Resolve drift in the lower-precedence source instead of carrying contradictory r
 - Keep Codex-specific memory in `.codex/` and project-specific skills in `.agents/skills/`.
 - Keep reusable agents and skills in the external engineering toolkit and install them through user-level symbolic links.
 - Keep `.blueprint/blueprint.toml`, instructions, templates, and seeded artifacts aligned in the same change.
+- Bundle referenced reusable repository tools and their tests/fixtures under `tools/`, register them in `.blueprint/tooling.toml`, and synchronize those files with consuming projects without overwriting project-specific adapters. Declare external prerequisites explicitly.
 - Keep reusable policy technology-neutral unless the blueprint explicitly selects a default.
 - Prefer established, actively maintained libraries and platform capabilities over custom plumbing when they satisfy approved constraints.
 - Record exceptions, owners, expiry conditions, and compensating evidence rather than weakening a gate silently.

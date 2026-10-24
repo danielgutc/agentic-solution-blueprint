@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "repository_root": "../..",
+  "doxygen_version": "REPLACE_WITH_EXACT_DOXYGEN_VERSION_OUTPUT",
+  "doxyfile": "Doxyfile.example",
+  "doxygen_xml": "../../implementation/<unit>/artifacts/docs/doxygen/xml",
+  "reproduce_command": "python tools/docs/generate_doxygen_docs.py --config tools/docs/doxygen.json --run-doxygen",
+  "code_fence_language": "cpp",
+  "components": [
+    {
+      "id": "<component>",
+      "title": "<Component title>",
+      "output_dir": "design/c4/containers/<container>/components/<component>",
+      "architecture_page": "design/c4/containers/<container>/components/<component>/component.md",
+      "api_scope": "<module-or-package>",
+      "qualified_prefixes": [
+        "Example::"
+      ],
+      "source_prefixes": [
+        "implementation/<unit>/src/"
+      ],
+      "expected_symbols": [
+        "Example::PublicType"
+      ]
+    }
+  ]
+}

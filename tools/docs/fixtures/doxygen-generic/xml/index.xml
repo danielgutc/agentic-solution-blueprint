@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doxygenindex version="1.18.0" xml:lang="en-US">
+  <compound refid="interface_example_api_iclock" kind="interface">
+    <name>Example.Api.IClock</name>
+    <member refid="interface_example_api_iclock_1now" kind="function"><name>Now</name></member>
+  </compound>
+  <compound refid="class_example_api_clockservice" kind="class">
+    <name>Example.Api.ClockService</name>
+    <member refid="class_example_api_clockservice_1format" kind="function"><name>Format</name></member>
+  </compound>
+</doxygenindex>
