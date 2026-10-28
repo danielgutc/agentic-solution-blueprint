@@ -45,7 +45,7 @@ List only approved components with existing detail pages. A container may have n
 
 ## Internal interfaces
 
-Describe approved component-to-component ports and responsibilities without copying source signatures. When source bindings exist, link the generated [`_code-views/interfaces.md`](./_code-views/interfaces.md) view; otherwise do not create a placeholder.
+Describe approved component-to-component ports and responsibilities without copying source signatures. When source bindings exist, link the generated `_code-views/interfaces.md` view; otherwise do not create a placeholder.
 
 ## Owned technical documents
 
@@ -56,6 +56,8 @@ Link existing container-owned or same-container cross-component documents here, 
 After repository-owned implementation and a generated container entry exist, add a direct `[Code documentation](./code.md)` link. Until then, state that no code projection exists; do not create or link a placeholder. The generated entry links to canonical pages under `design/code/<implementation-unit>/<documentation-profile>/`.
 
 ## Architecture decisions and split triggers
+
+For MVP scope, the technical architect records how the approved product and solution direction is realized by this scope's responsibilities, contracts, dependencies, data structures, and test seams. Explain known next-capability extension paths, delayed decisions, assumptions, and PoC-to-product gaps with owners. Link representative walking-skeleton or contract evidence and existing owned technical documents; do not copy source signatures or create future-feature placeholders.
 
 ## Open questions
 

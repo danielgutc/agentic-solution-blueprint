@@ -23,6 +23,12 @@ A final architecture is the approved production-intent baseline for the implemen
 
 ## Adoption and ownership
 
-The product owner records MVP scope and version 1.0 acceptance intent. Solution and technical architects own alignment with the intended architecture and extension evidence. Implementation and infrastructure roles satisfy the approved contracts and delivery obligations; independent verification owns the acceptance verdict. The coordinator records policy approval, downstream re-review needs and the next owner in the task tracker.
+This is project-authoring guidance for the blueprint. Develop the rationale in the project's product and architecture artifacts; do not install it as a blanket policy in global Codex/Copilot coordinator instructions or repeat it in every engineering role.
+
+- The product owner owns the product rationale in `design/foundation/product.md` and `mvp.md`: users, smallest useful outcome, included and deferred journeys, quality and acceptance intent, learning evidence, and sequencing. Architecture choices remain with the architects.
+- The solutions architect owns the solution rationale in `design/foundation/design.md`: why the selected production architecture satisfies that scope and its quality scenarios, alternatives and tradeoffs, known roadmap extension evidence, assumptions, and re-review triggers. Supporting technology decisions belong in `tech.md`.
+- The technical architect owns the technical rationale in container/component-owned documents under `design/c4/containers/`: responsibilities, contracts, dependencies, data structures, test seams, and evidence that realizes the approved direction. Foundation links this detail without duplicating it.
+- Implementation and infrastructure roles satisfy the resulting approved project contracts and delivery obligations. Independent verification assesses the recorded acceptance criteria and reports evidence and gaps. These roles do not redefine the MVP rationale.
+- The coordinator routes work, records approval and downstream re-review needs in the task tracker, and preserves phase ownership. A role definition or generic skill assigns responsibility and method; it does not substitute for project-specific rationale or approval.
 
 When adopting these rules in an existing project, preserve earlier PoC results and approvals as scoped history. Record any required MVP compliance review without marking existing builds or the product version as 1.0-ready. Do not silently broaden functional scope, prescribe a project per container, or start a structural refactor as part of a policy update.

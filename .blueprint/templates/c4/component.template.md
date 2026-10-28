@@ -50,6 +50,8 @@ When this approved component has source bindings and a generated filtered view, 
 
 ## Design rationale and patterns
 
+For MVP scope, the technical architect records how the approved product and solution direction is realized by this scope's responsibilities, contracts, dependencies, data structures, and test seams. Explain known next-capability extension paths, delayed decisions, assumptions, and PoC-to-product gaps with owners. Link representative walking-skeleton or contract evidence and existing owned technical documents; do not copy source signatures or create future-feature placeholders.
+
 ## Open questions
 
 ## Diagrams

@@ -15,7 +15,7 @@ Related foundation documents:
 ## Table of contents
 
 - [Purpose](#purpose)
-- [Version 1.0 baseline](#version-10-baseline)
+- [MVP product rationale](#mvp-product-rationale)
 - [MVP hypothesis](#mvp-hypothesis)
 - [Priority model](#priority-model)
 - [MVP slices](#mvp-slices)
@@ -28,15 +28,17 @@ Related foundation documents:
 
 Define the smallest useful production-quality version 1.0 and the priority model for sequencing work. Requirement-level priority, target, and status belong in [Requirements](./requirements.md).
 
-## Version 1.0 baseline
+## MVP product rationale
 
-Follow the [MVP quality policy](../../.blueprint/instructions/standards/mvp-quality.md). The implemented scope uses the approved final technical architecture and establishes a foundation that the known roadmap can extend without a prerequisite corrective rewrite. Defer features instead of lowering engineering standards. Keep PoC-only shortcuts and evidence separate from release acceptance; routine refactoring and reviewed evolution for new requirements remain possible.
+Owner: product owner. Apply the [MVP quality guidance](../../.blueprint/instructions/standards/mvp-quality.md) when defining the smallest useful production-quality version 1.0. Explain the product decision here; link solution and technical rationale from their owning artifacts.
 
-- Version 1.0 supported outcome and scope:
-- Intended architecture and technical-design references:
-- Known next capabilities and extension rationale/evidence:
-- PoC-to-product gaps and owners:
-- Release acceptance evidence and decision:
+- Target users, problem, and why this is the smallest useful outcome:
+- Included journeys, declared limits, and deferred scope:
+- Quality outcomes and release acceptance criteria:
+- Known next outcomes and sequencing assumptions:
+- Approved solution rationale and owned technical-design references:
+- Separate PoC/pilot evidence, release gaps, and owners:
+- Product approval and release acceptance evidence:
 
 ## MVP hypothesis
 

@@ -22,14 +22,14 @@ product -> MVP and prioritization -> tech -> design -> design approval -> requir
 
 ## Phase outcomes
 
-- Product: problem, actors, outcomes, non-goals, and assumptions are explicit.
+- Product: the product owner explains the problem, actors, outcomes, non-goals, and assumptions; the MVP rationale justifies included/deferred journeys and quality and acceptance intent.
 - MVP and prioritization: the production-quality version 1.0 outcome, limited feature scope, priority model, learning loop, and later candidates are explicit. Apply [MVP quality](../standards/mvp-quality.md); a PoC is separate feasibility evidence.
 - Requirements: stable IDs express verifiable functional behavior, quality attributes, constraints, and assumptions; priority and target connect requirements to MVP slices.
 - Tech: enduring stack, platform, tooling, documentation, test, delivery, and deployment choices are recorded.
-- Design: system direction, domain boundaries, tradeoffs, integrations, and operational decisions are reviewable.
+- Design: the solutions architect justifies the MVP architecture against approved scope, quality scenarios, and known roadmap; system direction, domain boundaries, alternatives, integrations, assumptions, and operational decisions are reviewable.
 - C4 solution: system context and authoritative container boundaries reflect the approved design.
 - Traceability: requirements map to architecture, implementation scope, and verification evidence.
-- Technical design: approved containers are refined into components, contracts, test seams, and a minimal walking skeleton.
+- Technical design: the technical architect records how components, contracts, dependencies, and test seams realize the approved MVP direction, with known extension paths and evidence from a minimal walking skeleton.
 - Delivery foundation: repository commands and CI prove clean build, tests, analysis, documentation, packaging, and non-production delivery.
 - Full development: approved slices are implemented through TDD without crossing architecture boundaries silently.
 - Integrated verification: assembled behavior is proven through real boundaries and user-observable workflows.

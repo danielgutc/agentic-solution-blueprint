@@ -22,6 +22,6 @@ Follow `../file-types/api-documentation.md` for the default Doxygen pipeline, la
 
 Add integrated tests, deployment health, promotion, observability, and rollback controls as assembled behavior and operational risk grow. Do not defer proving the initial build, documentation, package, or non-production delivery path until full development.
 
-## MVP delivery baseline
+## MVP delivery commitments
 
-Apply [MVP version 1.0 quality](../standards/mvp-quality.md) to the supported release scope. An experimental package or non-production walking-skeleton path proves only its named delivery seams; it does not establish complete release acceptance. Qualify or replace PoC-only mechanisms before release, while keeping operational complexity proportional to approved requirements.
+Derive delivery obligations from the approved product acceptance criteria, solution operational decisions, and technical contracts. Record delivery evidence and unresolved gaps against those commitments. An experimental package or non-production walking-skeleton path proves only its named seams; the product and architecture owners resolve changes to the supported release scope or direction.
