@@ -7,7 +7,7 @@
 - Keep public APIs intentional, minimal, typed, and aligned with approved contracts.
 - Use Microsoft C# XML documentation for exported and architecturally significant contracts. Add applicable `summary`, `remarks`, `param`, `typeparam`, `returns`, `value`, `exception`, `example`, `see`, `seealso`, and `inheritdoc` content without promising behavior the implementation does not provide.
 - Document preconditions, postconditions, invariants, side effects, idempotency, retry and recovery behavior, cancellation, concurrency, compatibility, and trust constraints when they matter to callers.
-- Generate component developer guides, per-symbol API pages, and code projections through the repository documentation command.
+- Generate canonical unit/profile API pages and configured container/component/interface projections through the repository documentation command.
 - Separate domain logic from transport, persistence, UI, and infrastructure concerns.
 - Prefer dependency injection at boundaries rather than hard-coded infrastructure.
 - Favor composition over inheritance unless the substitutability requirement is explicit.

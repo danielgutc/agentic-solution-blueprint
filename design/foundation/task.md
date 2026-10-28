@@ -85,13 +85,20 @@ Use stable `TASK-*` IDs. Include status, owner, bounded scope, linked evidence, 
 
 Format each item as `TASK-001` (`Not started`, priority, MVP slice) followed by an action, owning role, evidence link, and next decision. Omit priority or slice only when genuinely inapplicable.
 
+- **TASK-001** (`Verified`, reusable blueprint maintenance) — The developer approved [API documentation model Option C](api-documentation-model-review.md) on 2026-10-26. Policy, templates, registry, tooling, tests, and portable fixtures implement canonical implementation-unit/profile API pages plus container, optional component, and source-bound interface views. The full portable suite passed 22 tests; independent review also passed the 17 renderer/navigation tests and provider-scope probe. Navigation and whitespace checks pass. `selected_workflow` remains unset and seeded lifecycle rows remain unchanged. Changes are prepared for pull request review on `codex/canonical-docs-mvp-v1`; publication and consuming-project adoption evidence are recorded separately. No runtime-container change is approved.
+
+- **TASK-002** (`Verified`, reusable MVP version 1.0 policy) — On 2026-10-28 the developer required MVPs to use their final intended technical architecture, represent the first production-quality version 1.0, support later approved capabilities without a prerequisite corrective rewrite, and remain distinct from shortcut-tolerant PoCs. The [canonical policy](../../.blueprint/instructions/standards/mvp-quality.md) is routed through foundation/lifecycle/design/implementation/approval instructions and MVP/readiness templates; the seeded MVP artifact is aligned. Routine maintenance refactoring and reviewed evolution for new evidence remain valid; future features are not prebuilt. This is reusable governance maintenance, not a new product lifecycle approval. Independent documentation review passed. Navigation/contents checks passed for all 18 seeded design documents and nine changed policy/template files; policy synchronization and whitespace checks passed. The engineering toolkit now applies the same baseline in both coordinator files, all six canonical roles and generated Copilot profiles, and seven lifecycle skills. Its complete validation suite and seven standalone skill checks pass. Independent semantic review passed four explicitly synthetic reasoning cases: temporary authoritative storage, normal TDD refactoring, extension without future-feature overbuild, and shared-solution ownership. Blueprint navigation and all eleven touched reusable instruction/template pages pass; the consuming solution has refreshed its 42-file policy overlay and 28-file portable-bundle digest. Changes are prepared for pull request review on `codex/canonical-docs-mvp-v1`; the consuming solution records the exact source revision and its version 1.0 compliance-review need.
+
 ## Pending approvals
 
 | Gate or phase | Scope | Requested decision | Evidence | Decision owner | Status |
 | --- | --- | --- | --- | --- | --- |
+| Documentation model maintenance | Canonical source API reference and C4 navigation | Option C approved for reusable blueprint policy, templates, registry, and tooling; consuming-project migration remains separately gated | [Model review](api-documentation-model-review.md) | Developer, advised by technical architect | Approved 2026-10-26 |
 
 ## Re-review triggers
 
 ## Parking lot
 
 ## Done recently
+
+- 2026-10-26 — Approved Option C for the reusable API documentation publication model. The approval preserves existing C4/runtime boundaries and leaves repository-intelligence APP boundary review open.

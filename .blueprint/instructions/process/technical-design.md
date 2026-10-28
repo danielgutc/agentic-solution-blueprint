@@ -14,9 +14,15 @@ Refine approved containers into implementation-ready components and prove archit
 - Determine ownership from the document's primary decision scope, not its filename or incidental mentions. Keep implementation-local documentation with its implementation unit and keep source interfaces, API comments, executable tests, generated projections, and full API reports in their registered source/output locations.
 - Create only the source interfaces, walking skeleton, and representative tests needed to prove architecture-significant decisions before the readiness gate.
 - Select and configure the code-documentation pipeline under `../file-types/api-documentation.md`. Use Doxygen by default after the selected version and language constructs pass capability fixtures; record an evidenced, scoped alternative in `design/foundation/tech.md` when Doxygen cannot represent the implementation safely.
-- Author rich ecosystem-native API comments as part of the source contract. Generate committed component `code.md`, per-symbol Markdown API pages, and code-diagram sources from source, API comments, and tests; never author those projections manually.
-- Add the direct `component.md` to `code.md` link only after the component has repository-owned implementation and the generated page exists. Keep generated guides and API pages linked back to the owning component and source declarations.
+- Author rich ecosystem-native API comments as part of the source contract. Define coherent documentation profiles that may span several projects when language, target/runtime, compile symbols, native documentation evidence, and parser configuration are compatible.
+- Generate one canonical committed page per stable symbol identity within an implementation-unit/documentation-profile context. Generate container entry views, architectural-interface views, optional filtered component guides, and code-diagram sources as link projections; never author those projections manually.
+- Bind generated views only to stable IDs from approved C4 artifacts. Separate one explicit owner (component or shared container/unit) from zero or more consumer roles; do not invent a component for shared code or infer architecture visibility from language visibility.
+- Add architecture-to-code links only after the generated view exists. Keep every canonical page linked to its source declaration and every relevant configured architecture view.
 - Record the resulting implementation-unit path and evidence in `design/foundation/traceability-matrix.md` and `design/foundation/task.md` for the scoped readiness review.
 - Return changes to system, domain, or container boundaries to the solutions architect and the affected approval gate.
 
 Use the toolkit's `technical-design` skill when available for the general component-design method. The obligations above apply even when that skill is not installed.
+
+## MVP architecture baseline
+
+For MVP work, apply [MVP version 1.0 quality](../standards/mvp-quality.md). The technical design and walking skeleton use the intended production architecture for their scope. Identify PoC-only mechanisms and required qualification or replacement before release; do not schedule a mandatory structural rewrite merely to add the known approved roadmap. Shared solutions or binaries require justified dependency and runtime boundaries, not a blanket MVP exception.

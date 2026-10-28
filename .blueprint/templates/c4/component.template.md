@@ -9,8 +9,8 @@ When materializing this template, insert the approved owning container in the br
 - [Purpose](#purpose)
 - [Ownership](#ownership)
 - [Responsibilities](#responsibilities)
-- [Provided contracts](#provided-contracts)
-- [Consumed contracts](#consumed-contracts)
+- [Provided ports](#provided-ports)
+- [Required ports](#required-ports)
 - [Dependencies](#dependencies)
 - [Invariants and constraints](#invariants-and-constraints)
 - [Test seams](#test-seams)
@@ -26,9 +26,13 @@ When materializing this template, insert the approved owning container in the br
 
 ## Responsibilities
 
-## Provided contracts
+## Provided ports
 
-## Consumed contracts
+Describe architectural ports and obligations without copying source signatures or listing implementation types.
+
+## Required ports
+
+Describe consumed architectural ports and obligations without copying source signatures or listing implementation types.
 
 ## Dependencies
 
@@ -38,11 +42,11 @@ When materializing this template, insert the approved owning container in the br
 
 ## Owned technical documents
 
-Link existing documents whose primary technical owner is this component, such as a focused assessment, recovery note, contract design, or test design. Do not add placeholder links or duplicate container-level documents here. Keep exact source signatures in implementation source, API comments, and executable tests.
+Link existing documents whose primary technical owner is this component, such as a focused assessment, recovery note, contract design, or test design. Do not add placeholder links or duplicate container-level documents here. Keep exact source signatures in implementation source, API comments, executable tests, and canonical generated pages.
 
 ## Code documentation
 
-After repository-owned implementation and generated output exist, add a direct `[Developer guide and API reference](./code.md)` link. Until then, state that no code projection exists; do not create or link a placeholder. The generated guide must link back here and lead to committed per-symbol API pages and source declarations.
+When this approved component has source bindings and a generated filtered view, add a direct `[Component code view](./code.md)` link. Until then, state that no component-specific projection exists; do not create or link a placeholder. The optional generated view links back here and to canonical per-symbol pages and source declarations. Do not use this section as an inventory of inner classes or other implementation types.
 
 ## Design rationale and patterns
 

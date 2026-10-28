@@ -1,27 +1,70 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "repository_root": "../..",
-  "doxygen_version": "REPLACE_WITH_EXACT_DOXYGEN_VERSION_OUTPUT",
-  "doxyfile": "Doxyfile.example",
-  "doxygen_xml": "../../implementation/<unit>/artifacts/docs/doxygen/xml",
   "reproduce_command": "python tools/docs/generate_doxygen_docs.py --config tools/docs/doxygen.json --run-doxygen",
-  "code_fence_language": "cpp",
-  "components": [
+  "architecture": {
+    "containers": [
+      {
+        "id": "<container>",
+        "title": "<Container title>",
+        "output_dir": "design/c4/containers/<container>",
+        "architecture_page": "design/c4/containers/<container>/container.md"
+      }
+    ],
+    "components": []
+  },
+  "profiles": [
     {
-      "id": "<component>",
-      "title": "<Component title>",
-      "output_dir": "design/c4/containers/<container>/components/<component>",
-      "architecture_page": "design/c4/containers/<container>/components/<component>/component.md",
-      "api_scope": "<module-or-package>",
-      "qualified_prefixes": [
-        "Example::"
+      "id": "default",
+      "title": "<Implementation unit API>",
+      "implementation_unit": "<unit>",
+      "doxygen_version": "REPLACE_WITH_EXACT_DOXYGEN_VERSION_OUTPUT",
+      "doxyfile": "Doxyfile.example",
+      "doxygen_xml": "../../implementation/<unit>/artifacts/docs/doxygen/xml",
+      "code_fence_language": "cpp",
+      "parser_limitations": [
+        "Record the qualified limitations established by the selected language capability fixture."
       ],
-      "source_prefixes": [
-        "implementation/<unit>/src/"
+      "source_coverage": {
+        "included": [
+          "implementation/<unit>/src/**"
+        ],
+        "excluded": [
+          {
+            "scope": "implementation/<unit>/src/internal/**",
+            "reason": "Private implementation is outside this exported profile."
+          }
+        ]
+      },
+      "inventory_evidence": "implementation/<unit>/artifacts/docs/exported-api.txt",
+      "symbols": [
+        {
+          "key": "example-public-type",
+          "qualified_name": "Example::PublicType",
+          "api_scope": "example",
+          "selectors": {
+            "qualified_names": [
+              "Example::PublicType"
+            ]
+          }
+        }
       ],
-      "expected_symbols": [
-        "Example::PublicType"
-      ]
+      "bindings": [
+        {
+          "symbol_key": "example-public-type",
+          "role": "owned-implementation",
+          "container_id": "<container>"
+        },
+        {
+          "symbol_key": "example-public-type",
+          "role": "provided-interface",
+          "interface_scope": "external-runtime",
+          "container_id": "<container>",
+          "narrative": "Describe why this source contract represents the configured runtime port."
+        }
+      ],
+      "compatibility_stubs": [],
+      "legacy_stub_roots": []
     }
   ]
 }

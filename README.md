@@ -7,6 +7,7 @@ This repository is a reusable blueprint for software projects that need explicit
 - [Task tracker](./design/foundation/task.md)
 - [Foundation overview](./design/foundation/product.md)
 - [MVP and prioritization](./design/foundation/mvp.md)
+- [MVP version 1.0 quality rules](./.blueprint/instructions/standards/mvp-quality.md)
 - [Technical direction](./design/foundation/tech.md)
 - [Design decisions](./design/foundation/design.md)
 - [Delivery governance](./design/foundation/delivery.md)
@@ -32,6 +33,7 @@ The [lifecycle](./.blueprint/instructions/process/lifecycle.md) defines phase or
 - `.agents/skills/` contains project-specific skills; reusable roles and skills come from the user-level engineering toolkit.
 - `.codex/` contains Codex working context.
 - `design/` contains enduring product, technical, design, and architecture documentation.
+- `design/code/` contains canonical generated API pages grouped by implementation unit and documentation profile; generated C4 code views link to these pages.
 - `implementation/` contains repository-owned implementation units once implementation is approved.
 - `deployment/` contains repository-owned deployment topology, environment composition, and infrastructure assets.
 - `tools/` contains repository utilities and developer automation.
@@ -55,6 +57,7 @@ Use [design/foundation/](./design/foundation/) for the enduring project definiti
 - [Delivery governance](./design/foundation/delivery.md)
 - [Traceability matrix](./design/foundation/traceability-matrix.md)
 - [Implementation readiness](./design/foundation/implementation-readiness.md)
+- [API documentation model review](./design/foundation/api-documentation-model-review.md)
 
 ### C4 architecture
 
@@ -70,7 +73,7 @@ Add links to container and component pages as approved architecture creates them
 - Set `selected_workflow` in the [blueprint configuration](./.blueprint/blueprint.toml) to `requirements-first` or `design-first` when starting a consuming project. It remains `unset` in this reusable template.
 - Use the [instruction index](./.blueprint/instructions/README.md) and [canonical templates](./.blueprint/templates/README.md) when creating project artifacts.
 - Record phase status and approvals in the [task tracker](./design/foundation/task.md). Design approval precedes enduring C4 work; implementation readiness approval precedes full feature development.
-- Keep human-authored diagrams in Draw.io with sibling SVG exports. Generate code summaries and API references from source and tests according to the [documentation rules](./.blueprint/instructions/file-types/api-documentation.md).
+- Keep human-authored diagrams in Draw.io with sibling SVG exports. Generate canonical API references and C4 code views from source, tests, and approved architecture bindings according to the [documentation rules](./.blueprint/instructions/file-types/api-documentation.md).
 
 ## Top-level layout
 
@@ -79,6 +82,7 @@ Add links to container and component pages as approved architecture creates them
 .blueprint/
 .codex/
 design/
+  code/                   # generated unit/profile API reference when implementation exists
 implementation/
 deployment/
 tools/

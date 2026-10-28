@@ -79,7 +79,7 @@ Describe the approved path from local feedback through validation, packaging, no
 - Pinned Doxygen acquisition or cache policy:
 - Native source-documentation build and validation:
 - Doxygen capability fixtures and symbol-coverage check:
-- Committed component `code.md`, `api/`, and code-diagram freshness check:
+- Committed canonical unit/profile API pages, C4 code views, compatibility stubs, and code-diagram freshness check:
 - Architecture, API, and source-link validation:
 - Optional aggregate API artifact and retention:
 - Pull-request blocking behavior and evidence:

@@ -27,3 +27,7 @@ The gate must prove every applicable capability listed in `.blueprint/blueprint.
 - When an approved upstream artifact changes, mark affected downstream approvals for re-review.
 - Scope gates narrowly enough that one approval does not silently cover future components or capabilities.
 - Do not use a passing pipeline to substitute for an architecture decision, or a reviewed document to substitute for executable evidence.
+
+## MVP version 1.0 acceptance
+
+Apply [MVP quality](../standards/mvp-quality.md). Implementation-readiness approval authorizes its scoped development; it is not version 1.0 release acceptance. A PoC pass, pilot result, bounded runtime approval or package version string cannot establish MVP completion. Before version 1.0 acceptance, verify the supported scope against its intended architecture and applicable product/quality obligations, and resolve PoC-only shortcuts or planned prerequisite rewrites for the known roadmap. Future requirements may reopen architecture through the normal gate.

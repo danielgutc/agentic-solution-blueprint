@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate component-owned Markdown documentation from Doxygen XML."""
+"""Generate profile-canonical API pages and configured C4 code views from Doxygen XML."""
 
 from __future__ import annotations
 
@@ -34,6 +34,12 @@ def main(argv: list[str] | None = None) -> int:
     args = _parser().parse_args(argv)
     try:
         config = load_config(args.config)
+        if config.schema_version == 1:
+            print(
+                "warning: documentation schema_version 1 is deprecated; migrate to the "
+                "profile-canonical schema_version 2 publication model",
+                file=sys.stderr,
+            )
         if args.run_doxygen:
             run_doxygen(config, args.doxygen)
         messages = synchronize(config, args.check)

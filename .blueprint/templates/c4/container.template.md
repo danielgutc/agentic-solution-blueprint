@@ -14,7 +14,9 @@ When materializing this template, adjust the breadcrumb for the destination and 
 - [Consumed contracts](#consumed-contracts)
 - [Dependencies](#dependencies)
 - [Contained components](#contained-components)
+- [Internal interfaces](#internal-interfaces)
 - [Owned technical documents](#owned-technical-documents)
+- [Code documentation](#code-documentation)
 - [Architecture decisions and split triggers](#architecture-decisions-and-split-triggers)
 - [Open questions](#open-questions)
 - [Diagrams](#diagrams)
@@ -29,17 +31,29 @@ When materializing this template, adjust the breadcrumb for the destination and 
 
 ## Provided contracts
 
+Describe externally provided runtime contracts at the container boundary. Keep exact source signatures in generated source-bound documentation.
+
 ## Consumed contracts
+
+Describe externally consumed runtime contracts at the container boundary. Keep internal component ports in the distinct section below.
 
 ## Dependencies
 
 ## Contained components
 
-List only approved components with existing detail pages. Show code-documentation availability through each component page; do not bypass component ownership by linking container navigation directly to generated per-symbol API pages.
+List only approved components with existing detail pages. A container may have no component decomposition; do not invent components to organize source types.
+
+## Internal interfaces
+
+Describe approved component-to-component ports and responsibilities without copying source signatures. When source bindings exist, link the generated [`_code-views/interfaces.md`](./_code-views/interfaces.md) view; otherwise do not create a placeholder.
 
 ## Owned technical documents
 
-Link existing container-owned or same-container cross-component documents here, such as a walking skeleton, focused assessment, recovery note, contract design, or test design. Do not add placeholder links. Keep component-owned documents and generated code documentation with their component, and keep exact source signatures in implementation source, API comments, and executable tests.
+Link existing container-owned or same-container cross-component documents here, such as a walking skeleton, focused assessment, recovery note, contract design, or test design. Do not add placeholder links. Keep component-owned documents with their component, and keep exact source signatures in implementation source, API comments, executable tests, and canonical generated pages.
+
+## Code documentation
+
+After repository-owned implementation and a generated container entry exist, add a direct `[Code documentation](./code.md)` link. Until then, state that no code projection exists; do not create or link a placeholder. The generated entry links to canonical pages under `design/code/<implementation-unit>/<documentation-profile>/`.
 
 ## Architecture decisions and split triggers
 
