@@ -1,0 +1,174 @@
+{
+  "schema_version": 2,
+  "repository_root": "../doxygen-generic/repository",
+  "reproduce_command": "python tools/docs/generate_doxygen_docs.py --config tools/docs/doxygen.json",
+  "architecture": {
+    "containers": [
+      {
+        "id": "sample",
+        "title": "Sample container",
+        "output_dir": "design/c4/containers/sample",
+        "architecture_page": "design/c4/containers/sample/container.md"
+      },
+      {
+        "id": "reporting",
+        "title": "Reporting container",
+        "output_dir": "design/c4/containers/reporting",
+        "architecture_page": "design/c4/containers/reporting/container.md"
+      }
+    ],
+    "components": [
+      {
+        "id": "example",
+        "container_id": "sample",
+        "title": "Example component",
+        "output_dir": "design/c4/containers/sample/components/example",
+        "architecture_page": "design/c4/containers/sample/components/example/component.md"
+      },
+      {
+        "id": "consumer",
+        "container_id": "sample",
+        "title": "Consumer component",
+        "output_dir": "design/c4/containers/sample/components/consumer",
+        "architecture_page": "design/c4/containers/sample/components/consumer/component.md"
+      },
+      {
+        "id": "report-reader",
+        "container_id": "reporting",
+        "title": "Report reader",
+        "output_dir": "design/c4/containers/reporting/components/report-reader",
+        "architecture_page": "design/c4/containers/reporting/components/report-reader/component.md"
+      }
+    ]
+  },
+  "profiles": [
+    {
+      "id": "default",
+      "title": "Shared library default profile",
+      "implementation_unit": "shared-library",
+      "doxygen_version": "1.18.0",
+      "doxyfile": "../doxygen-generic/Doxyfile",
+      "doxygen_xml": "../doxygen-generic/xml",
+      "code_fence_language": "csharp",
+      "parser_limitations": [
+        "Only public/protected class, interface, and struct compounds are in the generic fixture scope."
+      ],
+      "source_coverage": {
+        "included": ["src/Example.Api/**/*.cs"],
+        "excluded": [
+          {
+            "scope": "src/Example.Api/Internal/**",
+            "reason": "Private helpers are outside the exported contract."
+          }
+        ]
+      },
+      "inventory_evidence": "docs/exported-api.txt",
+      "symbols": [
+        {
+          "key": "example-api-iclock",
+          "qualified_name": "Example.Api.IClock",
+          "api_scope": "example-api",
+          "selectors": {
+            "compound_ids": ["interface_example_api_iclock"]
+          }
+        },
+        {
+          "key": "example-api-clockservice",
+          "qualified_name": "Example.Api.ClockService",
+          "api_scope": "example-api",
+          "selectors": {
+            "qualified_names": ["Example.Api.ClockService"]
+          }
+        }
+      ],
+      "bindings": [
+        {
+          "symbol_key": "example-api-iclock",
+          "role": "provided-interface",
+          "interface_scope": "external-runtime",
+          "container_id": "sample",
+          "component_id": "example",
+          "narrative": "The component implements the container's externally exposed time contract."
+        },
+        {
+          "symbol_key": "example-api-iclock",
+          "role": "provided-interface",
+          "interface_scope": "internal-component",
+          "container_id": "sample",
+          "component_id": "example",
+          "narrative": "The same declaration is also the component port used inside the container."
+        },
+        {
+          "symbol_key": "example-api-iclock",
+          "role": "consumed-interface",
+          "interface_scope": "internal-component",
+          "container_id": "sample",
+          "component_id": "consumer"
+        },
+        {
+          "symbol_key": "example-api-iclock",
+          "role": "consumed-interface",
+          "interface_scope": "internal-component",
+          "container_id": "reporting",
+          "component_id": "report-reader"
+        },
+        {
+          "symbol_key": "example-api-clockservice",
+          "role": "owned-implementation",
+          "container_id": "sample",
+          "component_id": "example"
+        },
+        {
+          "symbol_key": "example-api-clockservice",
+          "role": "supporting-code",
+          "container_id": "reporting"
+        }
+      ],
+      "compatibility_stubs": [
+        {
+          "path": "design/c4/containers/sample/components/example/api/example-api/example-api-iclock.md",
+          "symbol_key": "example-api-iclock"
+        }
+      ],
+      "legacy_stub_roots": [
+        "design/c4/containers/sample/components/example/api"
+      ]
+    },
+    {
+      "id": "alternate",
+      "title": "Shared library alternate compile profile",
+      "implementation_unit": "shared-library",
+      "doxygen_version": "1.18.0",
+      "doxyfile": "../doxygen-generic/Doxyfile",
+      "doxygen_xml": "../doxygen-generic/xml",
+      "code_fence_language": "csharp",
+      "parser_limitations": [
+        "Only public/protected class, interface, and struct compounds are in the generic fixture scope."
+      ],
+      "source_coverage": {
+        "included": ["src/Example.Api/**/*.cs"],
+        "excluded": []
+      },
+      "inventory_evidence": "docs/exported-api-alternate.txt",
+      "symbols": [
+        {
+          "key": "example-api-iclock",
+          "qualified_name": "Example.Api.IClock",
+          "api_scope": "example-api",
+          "selectors": {
+            "compound_ids": ["interface_example_api_iclock"]
+          }
+        },
+        {
+          "key": "example-api-clockservice",
+          "qualified_name": "Example.Api.ClockService",
+          "api_scope": "example-api",
+          "selectors": {
+            "compound_ids": ["class_example_api_clockservice"]
+          }
+        }
+      ],
+      "bindings": []
+    }
+  ]
+}

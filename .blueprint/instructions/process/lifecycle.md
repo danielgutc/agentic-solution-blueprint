@@ -23,7 +23,7 @@ product -> MVP and prioritization -> tech -> design -> design approval -> requir
 ## Phase outcomes
 
 - Product: problem, actors, outcomes, non-goals, and assumptions are explicit.
-- MVP and prioritization: the first feedbackable slice, priority model, scope, learning loop, and later candidates are explicit.
+- MVP and prioritization: the production-quality version 1.0 outcome, limited feature scope, priority model, learning loop, and later candidates are explicit. Apply [MVP quality](../standards/mvp-quality.md); a PoC is separate feasibility evidence.
 - Requirements: stable IDs express verifiable functional behavior, quality attributes, constraints, and assumptions; priority and target connect requirements to MVP slices.
 - Tech: enduring stack, platform, tooling, documentation, test, delivery, and deployment choices are recorded.
 - Design: system direction, domain boundaries, tradeoffs, integrations, and operational decisions are reviewable.

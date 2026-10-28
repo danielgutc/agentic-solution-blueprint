@@ -67,11 +67,16 @@ Use stable unit IDs. A unit maps to one or more approved C4 containers, or names
 - Default parser: Doxygen
 - Accepted Doxygen version and configuration path:
 - Native API comment format by language:
+- Documentation configuration schema: version 2 (`profiles[]` plus approved architecture registry and bindings); version 1 compatibility/migration status:
+- Documentation profiles, implementation units, included/excluded language and source scope, visibility coverage, and inventory evidence:
 - Capability-fixture scope and command:
 - Known parser limitations and deterministic normalization:
 - Approved language-specific generator exception, evidence, owner, and revisit trigger:
 - Doxygen XML and other unit-local intermediate output:
-- Markdown renderer and committed component guide/API-page patterns:
+- Markdown renderer; canonical unit/profile index and API-page patterns:
+- Container entry, optional component, and source-bound interface view patterns:
+- Architecture binding IDs and ownership/consumer policy:
+- Legacy component-local API stub window and removal evidence:
 - Code-relationship renderer and edge-evidence policy:
 - Aggregate API reference output: `artifacts/api-docs/`
 - Generation, freshness, and link-validation commands:

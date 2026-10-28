@@ -11,7 +11,7 @@ Use the corresponding files under `.blueprint/templates/foundation/`.
 ## Authoring rules
 
 - Product captures actors, problem, outcomes, user journeys, UX hypotheses, design-thinking evidence, goals, non-goals, and assumptions.
-- MVP and prioritization owns the first feedbackable slice, priority model, scope, feedback loop, and sequencing rationale. Link requirement targets to stable MVP slice IDs.
+- MVP and prioritization owns the production-quality version 1.0 outcome, smallest useful scope, priority model, feedback loop, and sequencing rationale under [MVP quality](../standards/mvp-quality.md). Link requirement targets to stable MVP slice IDs. Keep PoC experiments and pilot evidence distinct from version 1.0 acceptance.
 - Requirements use stable IDs: `FR-*`, `NFR-*`, `CON-*`, and `ASM-*`.
 - Record each functional and non-functional requirement's acceptance or verification intent, priority, target slice or later horizon, and status in requirements. Define project-specific target values there; do not duplicate those fields in traceability.
 - Prefer EARS for functional requirements when it makes behavior clearer.

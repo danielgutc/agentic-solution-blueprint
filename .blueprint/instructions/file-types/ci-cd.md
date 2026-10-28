@@ -9,7 +9,7 @@
 - Grant each job the minimum permissions it needs.
 - Never place credentials in definitions, generated documentation, logs, or committed configuration.
 - Preserve actionable test, analysis, documentation, package, deployment, and provenance evidence.
-- Documentation jobs acquire the project-pinned Doxygen version, run native documentation validation and capability fixtures, regenerate committed component guides/API pages/relationship sources, validate links and provenance, and fail on a dirty generated diff.
+- Documentation jobs acquire the project-pinned Doxygen version, run native documentation validation and capability fixtures, regenerate committed canonical unit/profile pages and configured architecture views/relationship sources, validate links, C4 bindings, coverage disclosure, compatibility stubs, and provenance, and fail on a dirty generated diff.
 - Apply concurrency, retry, timeout, and cancellation behavior deliberately.
 - Validate syntax and safe non-deployment paths before activating external mutations.
 

@@ -1,4 +1,4 @@
-"""Reusable Doxygen XML to component-owned Markdown projection helpers."""
+"""Reusable Doxygen XML Markdown helpers with deprecated schema v1 support."""
 
 from __future__ import annotations
 
@@ -121,8 +121,14 @@ def load_config(path: Path) -> Config:
         raise DocumentationError(f"cannot read config {path}: {exc}") from exc
     if not isinstance(data, dict):
         raise DocumentationError("configuration root must be an object")
+    if data.get("schema_version") == 2:
+        try:
+            from .doxygen_publication import load_publication_config
+        except ImportError:
+            from doxygen_publication import load_publication_config
+        return load_publication_config(path, data)  # type: ignore[return-value]
     if data.get("schema_version") != 1:
-        raise DocumentationError("schema_version must be 1")
+        raise DocumentationError("schema_version must be 1 or 2")
 
     base = path.parent
     repository_root = (base / _required_string(data, "repository_root")).resolve()
@@ -212,6 +218,13 @@ def doxygen_version(executable: str) -> str:
 
 
 def run_doxygen(config: Config, executable: str) -> None:
+    if config.schema_version == 2:
+        try:
+            from .doxygen_publication import run_publication_doxygen
+        except ImportError:
+            from doxygen_publication import run_publication_doxygen
+        run_publication_doxygen(config, executable)  # type: ignore[arg-type]
+        return
     actual = doxygen_version(executable)
     if actual != config.doxygen_version:
         raise DocumentationError(
@@ -805,6 +818,12 @@ def _broken_links(outputs: dict[Path, str]) -> list[str]:
 
 
 def synchronize(config: Config, check: bool) -> list[str]:
+    if config.schema_version == 2:
+        try:
+            from .doxygen_publication import synchronize_publication
+        except ImportError:
+            from doxygen_publication import synchronize_publication
+        return synchronize_publication(config, check)  # type: ignore[arg-type]
     outputs = render_outputs(config)
     for path in outputs:
         if path.is_file():

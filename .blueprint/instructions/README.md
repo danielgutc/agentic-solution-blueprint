@@ -15,9 +15,10 @@ When instructions conflict, follow the higher-precedence source and remove the l
 
 ## Progressive loading
 
-- Product, MVP, or requirements work: read `process/lifecycle.md`, `artifacts/foundation.md`, and `standards/navigation.md`.
+- Product, MVP, or requirements work: read `process/lifecycle.md`, `artifacts/foundation.md`, `standards/mvp-quality.md`, and `standards/navigation.md`.
 - Architecture work: also read `process/approval-gates.md`, `artifacts/c4.md`, `standards/design-by-contract.md`, `standards/navigation.md`, `standards/diagram-tooling.md`, and `file-types/drawio.md` when drawing diagrams.
 - Multi-agent delegation or handoff: read `process/multi-agent-coordination.md` and `artifacts/task-tracker.md`.
+- MVP architecture, delivery, implementation or release acceptance: also read `standards/mvp-quality.md`; keep PoC shortcuts separate from the version 1.0 baseline.
 - Technical design or walking-skeleton work: read `process/technical-design.md`, `standards/implementation-layout.md`, and the relevant file-type rules.
 - Delivery work: read `process/delivery-foundation.md`, `artifacts/delivery.md`, `standards/implementation-layout.md`, and `file-types/ci-cd.md`.
 - Full implementation: read `process/full-development.md`, `standards/design-by-contract.md`, `standards/implementation-layout.md`, and the relevant language rules.

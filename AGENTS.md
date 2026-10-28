@@ -64,10 +64,12 @@
 ## Enduring artifacts
 
 - Keep product, MVP and prioritization, requirements, technology, design, delivery, traceability, task status, and readiness evidence in `design/foundation/`.
-- Keep human-authored C4 content focused on system, container, and component intent.
+- Keep human-authored C4 content focused on system, container, and component intent. A container page owns external runtime contracts and distinguishes its component overview from internal interfaces; a component page owns responsibilities and provided/required ports rather than a source-type inventory.
 - Treat source interfaces, ecosystem-native API comments, and executable tests as the implementation contract source.
 - Use Doxygen as the default code-documentation parser when capability fixtures support the selected language and repository constructs; record a scoped, evidenced exception in Tech when another ecosystem generator is required.
-- Generate deterministic component `code.md`, committed Markdown API pages, and code-diagram sources from source comments, declarations, and tests. Do not edit them manually.
+- Generate one canonical Markdown API page per symbol in each validated implementation-unit/documentation-profile context. Generate container entry views, optional bound component guides, source-bound architectural-interface views when provided/consumed bindings exist, configured compatibility stubs, and code-diagram sources as link projections from source comments, declarations, tests, and approved C4 bindings. Do not edit generated projections manually.
+- A coherent documentation profile may extract several language projects; do not require one profile per project, component, or container. Keep source visibility distinct from architectural visibility and disclose included and excluded languages, source scopes, private-member coverage, and parser limits without claiming complete container coverage.
+- Publish canonical generated documentation below `design/code/<implementation-unit>/<documentation-profile>/`. Link it from generated container `code.md`, optional component `code.md`, and container `_code-views/interfaces.md` views using binding IDs from approved C4 artifacts.
 - Publish optional aggregate API sites as CI artifacts. Commit sibling SVG exports for human-authored Draw.io diagrams used in Markdown navigation.
 - During technical design, create only the walking skeleton needed to prove architecture-significant contracts, tests, documentation, packaging, and delivery.
 - Begin full feature implementation only after scoped implementation readiness is approved.
@@ -83,6 +85,7 @@
 ## Implementation
 
 - Keep implementation aligned with approved requirements, C4 boundaries, contracts, and traceability.
+- Apply `.blueprint/instructions/standards/mvp-quality.md` for MVP scope and delivery: version 1.0 uses the intended architecture and production quality; PoC shortcuts do not qualify.
 - Treat implementation units as repository and toolchain workspaces, and record their relationship to C4 containers in `design/foundation/tech.md`.
 - Before readiness approval, create only the walking skeleton needed to prove contracts and delivery assumptions.
 - After readiness approval, follow `.blueprint/instructions/process/full-development.md` and implement small TDD slices.

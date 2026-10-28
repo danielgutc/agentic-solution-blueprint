@@ -6,6 +6,7 @@ The test engineer may design integrated scenarios once contracts and acceptance 
 
 ## Blueprint obligations
 
+- For MVP version 1.0 acceptance, apply [MVP quality](../standards/mvp-quality.md): verify the supported scope against the intended final architecture and applicable production obligations. Distinguish PoC/skeleton passes from release evidence, and record unresolved shortcut-driven rewrites as release gaps. Do not require future features or reject routine refactoring.
 - Map approved functional requirements and public contracts to test evidence in `design/foundation/traceability-matrix.md`, or record an owned gap.
 - Verify important cross-component and external boundaries, primary workflows, and deployment health at the lowest level that exercises the real risk.
 - Record where each applicable test level runs in `design/foundation/delivery.md`: local feedback, pull request, trusted main, deployed development, promotion, or scheduled assurance.
