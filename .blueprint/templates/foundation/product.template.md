@@ -36,7 +36,7 @@ Related foundation documents:
 
 ## Core outcomes
 
-Describe the first feedbackable scope in [MVP and prioritization](./mvp.template.md).
+The product owner explains why the smallest useful release serves the target users, which outcomes and quality expectations it must meet, and what is deferred. Record that MVP product rationale in [MVP and prioritization](./mvp.template.md); leave solution and technical choices to their architecture owners.
 
 ## Goals
 

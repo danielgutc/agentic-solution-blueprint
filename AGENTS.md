@@ -85,7 +85,7 @@
 ## Implementation
 
 - Keep implementation aligned with approved requirements, C4 boundaries, contracts, and traceability.
-- Apply `.blueprint/instructions/standards/mvp-quality.md` for MVP scope and delivery: version 1.0 uses the intended architecture and production quality; PoC shortcuts do not qualify.
+- Follow the approved product acceptance criteria, solution architecture, and technical design. Load `.blueprint/instructions/standards/mvp-quality.md` when defining or reviewing MVP rationale in those artifacts.
 - Treat implementation units as repository and toolchain workspaces, and record their relationship to C4 containers in `design/foundation/tech.md`.
 - Before readiness approval, create only the walking skeleton needed to prove contracts and delivery assumptions.
 - After readiness approval, follow `.blueprint/instructions/process/full-development.md` and implement small TDD slices.

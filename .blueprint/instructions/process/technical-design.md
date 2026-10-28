@@ -23,6 +23,6 @@ Refine approved containers into implementation-ready components and prove archit
 
 Use the toolkit's `technical-design` skill when available for the general component-design method. The obligations above apply even when that skill is not installed.
 
-## MVP architecture baseline
+## MVP technical rationale
 
-For MVP work, apply [MVP version 1.0 quality](../standards/mvp-quality.md). The technical design and walking skeleton use the intended production architecture for their scope. Identify PoC-only mechanisms and required qualification or replacement before release; do not schedule a mandatory structural rewrite merely to add the known approved roadmap. Shared solutions or binaries require justified dependency and runtime boundaries, not a blanket MVP exception.
+For MVP work, the technical architect records the rationale in container/component-owned technical documents under [MVP quality](../standards/mvp-quality.md). Trace the approved product scope and solution decisions to component responsibilities, contracts, dependencies, data structures, test seams, and walking-skeleton evidence. Explain how known approved next capabilities fit, which decisions remain delayed, and which assumptions would trigger re-review. Identify PoC-only mechanisms and their qualification or replacement owners before release. Justify shared solutions or binaries through dependency and runtime needs. Link this evidence from Foundation readiness and traceability; do not replace it with a global agent rule or prebuild future capabilities.
