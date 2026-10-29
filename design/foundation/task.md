@@ -105,3 +105,7 @@ Format each item as `TASK-001` (`Not started`, priority, MVP slice) followed by 
 ## Done recently
 
 - 2026-10-26 — Approved Option C for the reusable API documentation publication model. The approval preserves existing C4/runtime boundaries and leaves repository-intelligence APP boundary review open.
+
+## 2026-10-29 native diagram freshness maintenance
+
+A consuming project exposed a check-only defect: native Draw.io exports with styles outside the portable subset were rendered before their embedded model could be validated. The reusable checker now verifies canonical source and link anchors independently of portable rendering. Export still rejects unsupported styles, stale and missing-link exports fail, and check mode never rewrites drawings. Two regression cases first reproduced the failure; seven portable tests and seven project-specific tests pass in the consuming repository, including all six real diagram pairs. The checker, portable tests and usage guide are mirrored here from that authorized reusable-tool maintenance. Local changes await review/commit; no upstream publication or pin advancement is claimed.

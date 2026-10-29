@@ -235,11 +235,25 @@ def render(source: Path) -> bytes:
     return ET.tostring(document, encoding="utf-8", xml_declaration=True) + b"\n"
 
 
+def source_links(source: Path) -> tuple[str, ...]:
+    """Read drill-down links without applying the portable renderer's style limits."""
+    root = ET.parse(source).find("./diagram/mxGraphModel/root")
+    if root is None:
+        raise ValueError(f"{source}: missing uncompressed graph root")
+    links = []
+    for child in root:
+        cell = child.find("mxCell") if child.tag == "UserObject" else child
+        if cell is not None and cell.get("vertex") == "1":
+            link = child.get("link")
+            if link:
+                links.append(link)
+    return tuple(links)
+
+
 def validate_links(source: Path) -> None:
-    _, _, vertices, _ = read_source(source)
-    for vertex in vertices:
-        if vertex.link and not (source.with_suffix(".svg").parent / vertex.link).resolve().is_file():
-            raise ValueError(f"{source}: broken diagram link {vertex.link}")
+    for link in source_links(source):
+        if not (source.with_suffix(".svg").parent / link).resolve().is_file():
+            raise ValueError(f"{source}: broken diagram link {link}")
 
 
 def canonical_model(document: ET.Element) -> str:
@@ -253,8 +267,7 @@ def canonical_model(document: ET.Element) -> str:
 
 
 def has_source_links(source: Path, document: ET.Element) -> bool:
-    _, _, vertices, _ = read_source(source)
-    required = Counter(vertex.link for vertex in vertices if vertex.link)
+    required = Counter(source_links(source))
     actual = Counter(
         anchor.get("href") or anchor.get("{http://www.w3.org/1999/xlink}href")
         for anchor in document.iter(f"{{{SVG_NS}}}a")
@@ -262,7 +275,7 @@ def has_source_links(source: Path, document: ET.Element) -> bool:
     return all(actual[link] >= count for link, count in required.items())
 
 
-def is_current_svg(source: Path, output: Path, expected: bytes) -> bool:
+def is_current_svg(source: Path, output: Path, expected: bytes | None = None) -> bool:
     if not output.is_file():
         return False
     content = output.read_bytes()
@@ -303,13 +316,20 @@ def main() -> int:
         return 1
     stale = []
     for source in sources:
-        result = render(source)
         output = source.with_suffix(".svg")
         if args.check:
+            if is_current_svg(source, output):
+                continue
+            try:
+                result = render(source)
+            except ValueError:
+                # Native-only features require a matching native export.
+                stale.append(output)
+                continue
             if not is_current_svg(source, output, result):
                 stale.append(output)
         else:
-            output.write_bytes(result)
+            output.write_bytes(render(source))
     for source in sources:
         validate_links(source)
     if stale:

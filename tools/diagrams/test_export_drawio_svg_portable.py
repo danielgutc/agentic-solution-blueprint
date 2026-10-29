@@ -39,6 +39,40 @@ class PortableExporterTests(unittest.TestCase):
         source.with_name("child.svg").write_text("<svg/>", encoding="utf-8")
         return source
 
+    def test_check_native_styles_without_portable_rendering(self) -> None:
+        with TemporaryDirectory(dir=TEST_ARTIFACTS) as temporary:
+            source = self.diagram(Path(temporary))
+            source.write_text(MODEL.replace("endArrow=block", "endArrow=block;entryPerimeter=0"), encoding="utf-8")
+            output = source.with_suffix(".svg")
+            output.write_bytes(native_svg(source, ("child.svg",)))
+            original = output.read_bytes()
+            arguments = sys.argv
+            try:
+                sys.argv = ["export_drawio_svg.py", "--check", str(source)]
+                with redirect_stdout(StringIO()), redirect_stderr(StringIO()):
+                    self.assertEqual(exporter.main(), 0)
+            finally:
+                sys.argv = arguments
+            self.assertEqual(output.read_bytes(), original)
+            with self.assertRaisesRegex(ValueError, "unsupported Draw.io styles"):
+                exporter.render(source)
+
+    def test_check_rejects_stale_or_unlinked_native_styles(self) -> None:
+        with TemporaryDirectory(dir=TEST_ARTIFACTS) as temporary:
+            source = self.diagram(Path(temporary))
+            source.write_text(MODEL.replace("endArrow=block", "endArrow=block;entryPerimeter=0"), encoding="utf-8")
+            output = source.with_suffix(".svg")
+            arguments = sys.argv
+            try:
+                sys.argv = ["export_drawio_svg.py", "--check", str(source)]
+                for content in (native_svg(source, ()), native_svg(source, ("child.svg",)).replace(b'label=&quot;First&quot;', b'label=&quot;Stale&quot;')):
+                    with self.subTest(content=content[:70]):
+                        output.write_bytes(content)
+                        with redirect_stdout(StringIO()), redirect_stderr(StringIO()):
+                            self.assertEqual(exporter.main(), 1)
+            finally:
+                sys.argv = arguments
+
     def test_discovery_render_and_check_are_root_neutral(self) -> None:
         with TemporaryDirectory(dir=TEST_ARTIFACTS) as temporary:
             root = Path(temporary)
