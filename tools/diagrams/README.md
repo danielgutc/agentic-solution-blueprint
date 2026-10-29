@@ -15,3 +15,9 @@ an explicit missing source fails. `--check` never writes SVGs. It accepts either
 the deterministic renderer bytes or a native Draw.io SVG only when its embedded
 model canonically matches the source and every source drill-down link is present
 in an SVG anchor.
+
+Native freshness validation reads source links directly from XML and does not
+apply portable rendering style limits. Native-only geometry/styles are accepted
+only with a matching embedded source and complete anchors; a stale or unlinked
+native export fails. Export mode still rejects unsupported styles rather than
+rendering them approximately. This check preserves native editor layout.
