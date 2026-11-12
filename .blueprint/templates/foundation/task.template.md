@@ -81,9 +81,11 @@ Keep hypothesis, scope, and rationale in [MVP and prioritization](./mvp.template
 
 ## Active TODO
 
-Use stable `TASK-*` IDs. Include status, owner, bounded scope, linked evidence, and the next owner or decision. Add priority and MVP slice for work that contributes to a prioritized slice.
+Use stable `TASK-*` IDs. Include status, owner, bounded scope, compact evidence or an existing evidence link, and the next owner or decision. Add priority and MVP slice for work that contributes to a prioritized slice.
 
-Format each item as `TASK-001` (`Not started`, priority, MVP slice) followed by an action, owning role, evidence link, and next decision. Omit priority or slice only when genuinely inapplicable.
+Format each item as `TASK-001` (`Not started`, priority, MVP slice) followed by an action, owning role, evidence summary or link, and next decision. Omit priority or slice only when genuinely inapplicable.
+
+Follow `.blueprint/instructions/standards/verification-evidence.md`: routine results belong in chat; keep only compact durable evidence at handoffs and gates. A separate verification report is not a required task deliverable.
 
 ## Pending approvals
 

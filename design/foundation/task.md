@@ -104,6 +104,8 @@ Format each item as `TASK-001` (`Not started`, priority, MVP slice) followed by 
 
 ## Done recently
 
+- 2026-11-12: user requested removing routine verification-report creation. Added the verification-evidence standard and aligned routing, development/verification instructions, and task guidance/templates; evidence and approval gates remain in force.
+
 - 2026-10-26 — Approved Option C for the reusable API documentation publication model. The approval preserves existing C4/runtime boundaries and leaves repository-intelligence APP boundary review open.
 
 ## 2026-10-29 native diagram freshness maintenance

@@ -23,6 +23,7 @@ When instructions conflict, follow the higher-precedence source and remove the l
 - Delivery work: read `process/delivery-foundation.md`, `artifacts/delivery.md`, `standards/implementation-layout.md`, and `file-types/ci-cd.md`.
 - Full implementation: read `process/full-development.md`, `standards/design-by-contract.md`, `standards/implementation-layout.md`, and the relevant language rules.
 - Integration, acceptance, or end-to-end work: read `process/integrated-verification.md` and `standards/implementation-layout.md`.
+- Recording or handing off verification results: read [verification evidence](standards/verification-evidence.md).
 - Read templates only when creating or repairing the corresponding artifact.
 
 ## Authoring rule
