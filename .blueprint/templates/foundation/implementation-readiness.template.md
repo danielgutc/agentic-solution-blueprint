@@ -30,6 +30,8 @@ This gate authorizes scoped implementation. For an MVP, apply [version 1.0 quali
 
 ## Status
 
+Keep the current scoped assessment and approval conditions here. Replace superseded criterion summaries; do not append assessment rounds, command logs, or handoff histories. Execution results belong in chat or generated outputs under `.blueprint/instructions/standards/verification-evidence.md`.
+
 - State: Not assessed
 - Decision owner:
 - Reviewed by:
@@ -37,7 +39,7 @@ This gate authorizes scoped implementation. For an MVP, apply [version 1.0 quali
 
 ## Required evidence
 
-| ID | Capability | Scope/unit and working directory | Command or artifact | Status | Evidence or notes |
+| ID | Capability | Scope/unit and working directory | Command or artifact | Status | Current evidence reference / blocker / limit |
 | --- | --- | --- | --- | --- | --- |
 | IR-001 | Approved system and container architecture | | `design/foundation/design.md` and `design/c4/` | Not assessed | |
 | IR-002 | Requirements traced to the implementation scope | | `design/foundation/traceability-matrix.md` | Not assessed | |
@@ -58,3 +60,5 @@ This gate authorizes scoped implementation. For an MVP, apply [version 1.0 quali
 | --- | --- | --- | --- | --- |
 
 ## Approval
+
+Record the explicit decision, approving authority, date or source, named scope, conditions, and re-review triggers. Readiness authorizes only this implementation scope; record release acceptance as a distinct decision in the existing MVP/task artifacts, not a standalone acceptance report.

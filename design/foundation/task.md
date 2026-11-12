@@ -19,10 +19,8 @@ Related foundation documents:
 - [Maturity guide](#maturity-guide)
 - [MVP slices and priorities](#mvp-slices-and-priorities)
 - [Active TODO](#active-todo)
-- [Pending approvals](#pending-approvals)
+- [Current approvals](#current-approvals)
 - [Re-review triggers](#re-review-triggers)
-- [Parking lot](#parking-lot)
-- [Done recently](#done-recently)
 
 ## Snapshot
 
@@ -81,33 +79,15 @@ Keep hypothesis, scope, and rationale in [MVP and prioritization](./mvp.md). Sum
 
 ## Active TODO
 
-Use stable `TASK-*` IDs. Include status, owner, bounded scope, linked evidence, and the next owner or decision. Add priority and MVP slice for work that contributes to a prioritized slice.
+No active implementation work is assigned in this reusable blueprint. Consuming projects populate their own scoped tasks and approvals.
 
-Format each item as `TASK-001` (`Not started`, priority, MVP slice) followed by an action, owning role, evidence link, and next decision. Omit priority or slice only when genuinely inapplicable.
+## Current approvals
 
-- **TASK-001** (`Verified`, reusable blueprint maintenance) — The developer approved [API documentation model Option C](api-documentation-model-review.md) on 2026-10-26. Policy, templates, registry, tooling, tests, and portable fixtures implement canonical implementation-unit/profile API pages plus container, optional component, and source-bound interface views. The full portable suite passed 22 tests; independent review also passed the 17 renderer/navigation tests and provider-scope probe. Navigation and whitespace checks pass. `selected_workflow` remains unset and seeded lifecycle rows remain unchanged. Changes are prepared for pull request review on `codex/canonical-docs-mvp-v1`; publication and consuming-project adoption evidence are recorded separately. No runtime-container change is approved.
-
-- **TASK-002** (`Verified`, reusable MVP version 1.0 policy) — On 2026-10-28 the developer required MVPs to use their final intended technical architecture, represent the first production-quality version 1.0, support later approved capabilities without a prerequisite corrective rewrite, and remain distinct from shortcut-tolerant PoCs. The [canonical policy](../../.blueprint/instructions/standards/mvp-quality.md) is routed through foundation/lifecycle/design/implementation/approval instructions and MVP/readiness templates; the seeded MVP artifact is aligned. Routine maintenance refactoring and reviewed evolution for new evidence remain valid; future features are not prebuilt. This is reusable governance maintenance, not a new product lifecycle approval. Independent documentation review passed. Navigation/contents checks passed for all 18 seeded design documents and nine changed policy/template files; policy synchronization and whitespace checks passed. The engineering toolkit now applies the same baseline in both coordinator files, all six canonical roles and generated Copilot profiles, and seven lifecycle skills. Its complete validation suite and seven standalone skill checks pass. Independent semantic review passed four explicitly synthetic reasoning cases: temporary authoritative storage, normal TDD refactoring, extension without future-feature overbuild, and shared-solution ownership. Blueprint navigation and all eleven touched reusable instruction/template pages pass; the consuming solution has refreshed its 42-file policy overlay and 28-file portable-bundle digest. Changes are prepared for pull request review on `codex/canonical-docs-mvp-v1`; the consuming solution records the exact source revision and its version 1.0 compliance-review need.
-
-- **TASK-003** (`Implemented`, reusable MVP rationale ownership refactoring) - On 2026-10-28 the developer corrected TASK-002's placement and explicitly authorized this refactoring. Product owns the MVP outcome, scope, quality, and acceptance rationale; solution architecture owns boundary justification and known-roadmap tradeoffs; technical architecture owns internal realization and supporting evidence. The [quality guidance](../../.blueprint/instructions/standards/mvp-quality.md), foundation/C4 instructions, lifecycle handoffs, templates, and seeded artifacts now place rationale at those owners. The toolkit removes the blanket MVP baseline from global Codex/Copilot instructions and downstream roles/skills; the three owning roles and their skills require project-artifact rationale. Copilot profiles were regenerated. TASK-002 remains historical evidence of the earlier implementation; its cross-role global policy placement is superseded by this correction. No consuming-project migration or new product/architecture lifecycle approval is claimed. Validation: seeded navigation and changed Markdown checks, template/seed alignment, policy placement checks, and whitespace checks pass. Eight toolkit validation checks pass; aggregate validation stops on pre-existing software/test model and reasoning assertions (committed Qwen/high versus validator Terra/Luna/medium). Specialist consultation was unavailable because its configured model could not be loaded; no independent review pass is claimed. Installed global coordinators already omit the blanket policy; their unrelated differences and older installed role/skill copies are preserved. Next owner: developer reviews the maintenance diff; toolkit configuration validation and any installation refresh remain separate follow-through.
-
-## Pending approvals
-
-| Gate or phase | Scope | Requested decision | Evidence | Decision owner | Status |
-| --- | --- | --- | --- | --- | --- |
-| Documentation model maintenance | Canonical source API reference and C4 navigation | Option C approved for reusable blueprint policy, templates, registry, and tooling; consuming-project migration remains separately gated | [Model review](api-documentation-model-review.md) | Developer, advised by technical architect | Approved 2026-10-26 |
-| MVP rationale ownership maintenance | Product, solution architecture, and technical architecture artifacts plus toolkit instruction cleanup | Refactoring authorized in this chat; no product or runtime-boundary change | TASK-003 and linked guidance | Developer | Approved 2026-10-28 |
+| Decision | Scope and authority | Conditions |
+| --- | --- | --- |
+| API publication model Option C | Developer approved reusable policy, templates, registry, and tooling on 2026-10-26; see [API documentation policy](../../.blueprint/instructions/file-types/api-documentation.md). | Consuming-project migration remains separately gated. This approval does not approve runtime boundary changes. |
+| MVP rationale ownership | Developer authorized refactoring on 2026-10-28; see [MVP quality policy](../../.blueprint/instructions/standards/mvp-quality.md). Product owns outcomes, scope, and acceptance rationale; solution architecture owns boundaries and roadmap tradeoffs; technical architecture owns internal realization. | No product or runtime-boundary change is authorized by this maintenance decision. |
 
 ## Re-review triggers
 
-## Parking lot
-
-## Done recently
-
-- 2026-11-12: user requested removing routine verification-report creation. Added the verification-evidence standard and aligned routing, development/verification instructions, and task guidance/templates; evidence and approval gates remain in force.
-
-- 2026-10-26 — Approved Option C for the reusable API documentation publication model. The approval preserves existing C4/runtime boundaries and leaves repository-intelligence APP boundary review open.
-
-## 2026-10-29 native diagram freshness maintenance
-
-A consuming project exposed a check-only defect: native Draw.io exports with styles outside the portable subset were rendered before their embedded model could be validated. The reusable checker now verifies canonical source and link anchors independently of portable rendering. Export still rejects unsupported styles, stale and missing-link exports fail, and check mode never rewrites drawings. Two regression cases first reproduced the failure; seven portable tests and seven project-specific tests pass in the consuming repository, including all six real diagram pairs. The checker, portable tests and usage guide are mirrored here from that authorized reusable-tool maintenance. Local changes await review/commit; no upstream publication or pin advancement is claimed.
+Reassess a relied-on maintenance decision when its scope or governing policy changes. Consuming projects must establish their own lifecycle approvals before advancing project work.

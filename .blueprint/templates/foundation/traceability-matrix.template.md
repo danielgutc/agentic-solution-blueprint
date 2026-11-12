@@ -12,38 +12,9 @@ Related foundation documents:
 - [Task tracker](./task.template.md)
 - [Implementation readiness](./implementation-readiness.template.md)
 
-## Table of contents
-
-- [Traceability matrix](#traceability-matrix)
-- [Optional adjacent handoff views](#optional-adjacent-handoff-views)
-
 ## Traceability matrix
 
-Requirement priority, target, and status are owned by [Requirements](./requirements.template.md). Connect each requirement to architecture, work items, implementation scope, and verification evidence here.
+Requirement criteria, priority, target, and status are owned by [Requirements](./requirements.template.md). Connect each requirement to architecture, current work items, implementation scope, executable tests, and applicable CI/generated evidence references here. Keep this matrix canonical; do not duplicate criteria, result narratives, or handoff/status histories.
 
 | Requirement ID | Requirement summary | Task ID(s) | C4 element(s) | Implementation unit(s) and path(s) | Verification / evidence | Notes |
 | --- | --- | --- | --- | --- | --- | --- |
-
-## Optional adjacent handoff views
-
-Use these views only when a phase boundary needs more detail. Keep the matrix above canonical.
-
-### Product outcome to requirement
-
-| Product outcome | Requirement ID(s) | Notes |
-| --- | --- | --- |
-
-### Requirement to C4 element
-
-| Requirement ID | C4 element(s) | Contract or boundary note |
-| --- | --- | --- |
-
-### C4 contract to implementation task
-
-| C4 contract or element | Task ID(s) | Implementation unit and track or phase | Notes |
-| --- | --- | --- | --- |
-
-### Task to evidence
-
-| Task ID | Verification / evidence | Notes |
-| --- | --- | --- |

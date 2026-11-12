@@ -14,6 +14,7 @@ Use the corresponding files under `.blueprint/templates/foundation/`.
 - The product owner records the MVP rationale in MVP and prioritization: why the smallest useful scope delivers the version 1.0 outcome, included and deferred journeys, quality and acceptance intent, priority model, feedback loop, and sequencing rationale under [MVP quality](../standards/mvp-quality.md). Link requirement targets to stable MVP slice IDs. Link architectural justification from its owning artifacts instead of choosing architecture here. Keep PoC experiments and pilot evidence distinct from version 1.0 acceptance.
 - Requirements use stable IDs: `FR-*`, `NFR-*`, `CON-*`, and `ASM-*`.
 - Record each functional and non-functional requirement's acceptance or verification intent, priority, target slice or later horizon, and status in requirements. Define project-specific target values there; do not duplicate those fields in traceability.
+- Keep acceptance criteria in requirements and executable scenarios/assertions in tests. Link them from traceability and gate summaries; do not create standalone acceptance or verification narratives.
 - Prefer EARS for functional requirements when it makes behavior clearer.
 - Keep functional behavior, quality attributes, mandated constraints, and uncertain assumptions distinct.
 - Do not hide architecture choices inside functional requirements or process rules inside non-functional requirements.
@@ -26,6 +27,7 @@ Use the corresponding files under `.blueprint/templates/foundation/`.
 - Container- and component-owned technical documents live with their owning C4 scope under `design/c4/containers/`. Foundation retains system-wide product intent, requirements, technical direction, decisions, governance, coordination, traceability, and readiness records; those artifacts link to owned technical detail and record its status or evidence instead of duplicating it.
 - Technical detail with shared ownership across containers and no single container owner belongs at an explicit shared/common C4 scope with links from participating containers. Keep a system-wide decision in Foundation only when its primary purpose is the foundation-level decision or governance record, not merely because it mentions several containers.
 - Keep task status and approval evidence aligned with the underlying artifacts.
+- Apply [minimal and stable documentation](../standards/verification-evidence.md): update current owning artifacts, keep task/readiness summaries compact, and report test results in chat or generated outputs rather than maintaining intermediate assessments or histories.
 - Follow `../standards/navigation.md` for breadcrumbs, related foundation links, and contents lists. Keep links relative and point only to files that exist.
 
 ## Technical direction defaults

@@ -34,11 +34,11 @@ Owner: product owner. Apply the [MVP quality guidance](../../instructions/standa
 
 - Target users, problem, and why this is the smallest useful outcome:
 - Included journeys, declared limits, and deferred scope:
-- Quality outcomes and release acceptance criteria:
+- Quality outcomes and links to release acceptance criteria in Requirements/tests:
 - Known next outcomes and sequencing assumptions:
 - Approved solution rationale and owned technical-design references:
-- Separate PoC/pilot evidence, release gaps, and owners:
-- Product approval and release acceptance evidence:
+- Applicable PoC/pilot evidence references, current release gaps, and owners:
+- Product approval and distinct release acceptance decision, scope, authority, conditions, and evidence references (no standalone acceptance report):
 
 ## MVP hypothesis
 

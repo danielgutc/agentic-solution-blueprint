@@ -11,7 +11,8 @@
 - Read `.blueprint/blueprint.toml` before selecting a workflow or lifecycle phase.
 - Work from the highest relevant abstraction downward and delay lower-level decisions until their inputs and boundaries are stable.
 - Keep durable project state, architecture, repository-owned implementation assets, and cross-system verification under the paths registered in `.blueprint/blueprint.toml`.
-- Record verification outcomes according to [verification evidence](.blueprint/instructions/standards/verification-evidence.md).
+- Before authoring documentation, choose the canonical existing owner and update it in place. Follow [documentation and verification evidence](.blueprint/instructions/standards/verification-evidence.md); do not create a report per task, phase, or handoff, standalone acceptance/assessment/evidence documents, or test/status histories by default. Additional enduring documents require an explicit `documentation.additional_authored_documents` entry in `.blueprint/blueprint.toml` with `path`, `owner`, `reason`, and `review_trigger`. An explicit user report request overrides the default only for its named scope, never as blanket permission.
+- Report verification outcomes in chat or registered generated outputs. Keep only current scope, decision, evidence references, blockers, and approval/re-review needs in task and readiness summaries. Preserve executable gates and explicit approvals; generated API publication remains governed by its existing policy.
 - Use `design/foundation/task.md` as the compact multi-agent status and handoff dashboard. Do not rely on conversation history as the only record of progress or approval.
 - Keep project-specific skills in `.agents/skills/`. Use reusable roles and engineering skills from the user-level engineering toolkit rather than copying them into this repository.
 - Do not create containers, components, extension points, or infrastructure before approved requirements and architecture justify them.
@@ -29,7 +30,7 @@
 ## Repository model
 
 - Keep reusable policy and canonical shapes in `.blueprint/`.
-- Keep enduring project decisions and evidence in `design/`.
+- Keep enduring project decisions and current evidence references in their canonical `design/` artifacts; keep execution results in chat or registered generated outputs.
 - Keep repository-owned implementation units, cross-system verification, deployment assets, and repository automation under their registered paths from `.blueprint/blueprint.toml`.
 - Keep Codex working memory in `.codex/` and project-specific skills in `.agents/skills/`.
 - Use the path registry in `.blueprint/blueprint.toml` rather than duplicating the full tree here.

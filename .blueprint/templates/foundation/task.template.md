@@ -19,14 +19,13 @@ Related foundation documents:
 - [Maturity guide](#maturity-guide)
 - [MVP slices and priorities](#mvp-slices-and-priorities)
 - [Active TODO](#active-todo)
-- [Pending approvals](#pending-approvals)
+- [Approvals](#approvals)
 - [Re-review triggers](#re-review-triggers)
 - [Parking lot](#parking-lot)
-- [Done recently](#done-recently)
 
 ## Snapshot
 
-Use the lifecycle and task statuses in `.blueprint/instructions/standards/status-taxonomy.md`.
+Use the lifecycle and task statuses in `.blueprint/instructions/standards/status-taxonomy.md`. Keep a compact current-state summary; omit empty/inapplicable sections and unnecessary navigation under `.blueprint/instructions/standards/navigation.md`.
 
 | Area | Status | Coverage | Notes | Next action |
 | --- | --- | --- | --- | --- |
@@ -85,15 +84,15 @@ Use stable `TASK-*` IDs. Include status, owner, bounded scope, compact evidence 
 
 Format each item as `TASK-001` (`Not started`, priority, MVP slice) followed by an action, owning role, evidence summary or link, and next decision. Omit priority or slice only when genuinely inapplicable.
 
-Follow `.blueprint/instructions/standards/verification-evidence.md`: routine results belong in chat; keep only compact durable evidence at handoffs and gates. A separate verification report is not a required task deliverable.
+Follow `.blueprint/instructions/standards/verification-evidence.md`: results belong in chat or generated outputs; retain only current blockers, decisions, and evidence references here. Remove completed TODOs once their enduring outcomes and relied-on approvals are recorded in the owning artifacts. Do not keep per-handoff entries, completed-task diaries, or acceptance/verification reports.
 
-## Pending approvals
+## Approvals
 
-| Gate or phase | Scope | Requested decision | Evidence | Decision owner | Status |
-| --- | --- | --- | --- | --- | --- |
+Keep pending decisions and approvals still relied on, including their scope and conditions. Update affected decisions for re-review when inputs change; do not treat documentation cleanup as approval.
+
+| Gate or phase | Scope | Requested or granted decision / conditions | Evidence reference | Decision owner | Decision date or source | Status |
+| --- | --- | --- | --- | --- | --- | --- |
 
 ## Re-review triggers
 
 ## Parking lot
-
-## Done recently
