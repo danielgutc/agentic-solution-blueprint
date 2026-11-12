@@ -11,6 +11,7 @@
 - Read `.blueprint/blueprint.toml` before selecting a workflow or lifecycle phase.
 - Work from the highest relevant abstraction downward and delay lower-level decisions until their inputs and boundaries are stable.
 - Keep durable project state, architecture, repository-owned implementation assets, and cross-system verification under the paths registered in `.blueprint/blueprint.toml`.
+- Record verification outcomes according to [verification evidence](.blueprint/instructions/standards/verification-evidence.md).
 - Use `design/foundation/task.md` as the compact multi-agent status and handoff dashboard. Do not rely on conversation history as the only record of progress or approval.
 - Keep project-specific skills in `.agents/skills/`. Use reusable roles and engineering skills from the user-level engineering toolkit rather than copying them into this repository.
 - Do not create containers, components, extension points, or infrastructure before approved requirements and architecture justify them.

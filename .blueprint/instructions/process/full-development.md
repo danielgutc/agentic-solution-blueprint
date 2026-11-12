@@ -11,7 +11,7 @@ The relevant scope in `design/foundation/implementation-readiness.md` must be ex
 - Work within the implementation units and command working directories approved for that scope; do not broaden a unit's toolchain settings to unrelated workspaces.
 - Implement behavior through TDD and run the repository's required quality commands.
 - Update source-owned API comments with contract changes. Regenerate canonical unit/profile API pages and configured container/component/interface projections; verify committed outputs, reciprocal architecture links, coverage disclosure, and source links are current.
-- Update `design/foundation/traceability-matrix.md` and `design/foundation/task.md` with implementation and test evidence.
+- Update `design/foundation/traceability-matrix.md` and `design/foundation/task.md` with compact implementation and test evidence according to [verification evidence](../standards/verification-evidence.md).
 - Do not mark a slice implemented when only scaffolding, adapters, persistence wiring, or placeholders exist.
 - If behavior requires an architecture change, return to the owning role and affected approval gate before continuing.
 

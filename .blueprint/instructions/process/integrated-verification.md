@@ -15,6 +15,6 @@ The test engineer may design integrated scenarios once contracts and acceptance 
 - Choose Robot Framework, browser tooling, or an equivalent only when project-approved and useful for the relevant black-box or UI scenarios. No framework is mandated by this blueprint.
 - Missing applicable coverage blocks the corresponding gate unless an approved, expiring exception names compensating verification.
 
-Use the toolkit's `integration-e2e-testing` skill when available for scenario design, execution, diagnosis, and reporting. This file records the repository's timing and evidence obligations.
+Use the toolkit's `integration-e2e-testing` skill when available for scenario design, execution, diagnosis, and reporting. Record results according to [verification evidence](../standards/verification-evidence.md); reporting does not require a separate report file. This file records the repository's timing and evidence obligations.
 
 Follow `../standards/implementation-layout.md` for the boundary between unit-local tests and assembled repository verification.
