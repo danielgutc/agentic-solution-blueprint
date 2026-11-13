@@ -42,7 +42,7 @@ Describe consumed architectural ports and obligations without copying source sig
 
 ## Owned technical documents
 
-Link existing documents whose primary technical owner is this component, such as a focused assessment, recovery note, contract design, or test design. Do not add placeholder links or duplicate container-level documents here. Keep exact source signatures in implementation source, API comments, executable tests, and canonical generated pages.
+Prefer enduring decisions and contracts in this artifact. Link only existing specifications, test strategy, or recovery procedures that need focused detail owned by this component. Omit this section when none exist; do not create intermediate assessments, execution reports, or placeholder documents, or duplicate container-level detail. Keep exact source signatures in implementation source, API comments, executable tests, and canonical generated pages.
 
 ## Code documentation
 

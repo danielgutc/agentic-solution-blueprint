@@ -43,6 +43,10 @@ markdown_checker = "tools/docs/check_navigation.py"
 drawio_exporter = "tools/diagrams/export_drawio_svg.py"
 
 [documentation]
+authored_design_policy = "canonical-only"
+authored_design_roots = ["design"]
+additional_authored_documents = []
+additional_generated_documents = []
 policy = ".blueprint/instructions/file-types/api-documentation.md"
 generator_config_schema_version = 2
 compatible_generator_config_schema_versions = [1, 2]

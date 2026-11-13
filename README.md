@@ -57,7 +57,7 @@ Use [design/foundation/](./design/foundation/) for the enduring project definiti
 - [Delivery governance](./design/foundation/delivery.md)
 - [Traceability matrix](./design/foundation/traceability-matrix.md)
 - [Implementation readiness](./design/foundation/implementation-readiness.md)
-- [API documentation model review](./design/foundation/api-documentation-model-review.md)
+- [API documentation policy](./.blueprint/instructions/file-types/api-documentation.md)
 
 ### C4 architecture
 

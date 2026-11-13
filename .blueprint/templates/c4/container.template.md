@@ -49,7 +49,7 @@ Describe approved component-to-component ports and responsibilities without copy
 
 ## Owned technical documents
 
-Link existing container-owned or same-container cross-component documents here, such as a walking skeleton, focused assessment, recovery note, contract design, or test design. Do not add placeholder links. Keep component-owned documents with their component, and keep exact source signatures in implementation source, API comments, executable tests, and canonical generated pages.
+Prefer enduring decisions and contracts in this artifact. Link only existing container-owned or same-container cross-component specifications, test strategy, or recovery procedures that need focused detail. Omit this section when none exist; do not create intermediate assessments, execution reports, or placeholder documents. Keep component-owned detail with its component and exact source signatures in implementation source, API comments, executable tests, and canonical generated pages.
 
 ## Code documentation
 

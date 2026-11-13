@@ -27,6 +27,7 @@ The gate must prove every applicable capability listed in `.blueprint/blueprint.
 - When an approved upstream artifact changes, mark affected downstream approvals for re-review.
 - Scope gates narrowly enough that one approval does not silently cover future components or capabilities.
 - Do not use a passing pipeline to substitute for an architecture decision, or a reviewed document to substitute for executable evidence.
+- Keep the current scoped decision, authority, conditions, and evidence references in the owning artifact/task summary. A gate requires its applicable checks and explicit approval, not a standalone acceptance, verification, or status-history document; follow [documentation and verification evidence](../standards/verification-evidence.md).
 
 ## MVP version 1.0 acceptance
 

@@ -26,6 +26,8 @@ Related foundation documents:
 
 ## Traceability
 
+Own testable acceptance criteria and quality targets here. Keep executable scenarios and assertions in tests; link them from traceability. Do not create a separate acceptance plan, verification narrative, or results history.
+
 Use [Traceability matrix](./traceability-matrix.template.md) to connect each requirement to architecture, work items, implementation scope, and verification evidence. Define MVP slices in [MVP and prioritization](./mvp.template.md).
 
 ## Priority levels

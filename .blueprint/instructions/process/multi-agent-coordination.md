@@ -8,7 +8,7 @@ Use the role boundaries in `AGENTS.md`. Delegate a bounded outcome, not an open-
 
 Use the fields declared in `.blueprint/blueprint.toml` under `coordination.handoff_fields` for a compact handoff. Link approved inputs and evidence rather than copying entire artifacts or repeating repository discovery.
 
-Before handing off, update `design/foundation/task.md` with the bounded scope, owning and next roles, current gate status, blockers, and any downstream re-review trigger. The role-specific agent instructions govern the detailed handoff content; this file only defines the durable repository record.
+Before handing off, update the current `design/foundation/task.md` summary if bounded scope, owning or next roles, gate status, blockers, or downstream re-review triggers changed. Return conclusions, evidence, limits, and owner actions in the reply; do not create a per-handoff assessment, report, or chronological task entry. The role-specific agent instructions govern detailed handoff content within [documentation and evidence policy](../standards/verification-evidence.md); this file defines only the durable current-state summary.
 
 ## Parallel work
 
